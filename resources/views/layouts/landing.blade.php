@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Duacare Official Website</title>
-	{{-- <link rel="icon" href="{{ asset('safario/img/Fevicon.png') }}" type="image/png"> --}}
+	<link rel="icon" href="{{ asset('duacare-image/logo-icon.png') }}" type="image/png">
 
   <link rel="stylesheet" href="{{ asset('safario/vendors/bootstrap/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('safario/vendors/fontawesome/css/all.min.css') }}">

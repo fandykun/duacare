@@ -12,8 +12,9 @@
 
       <div class="row align-items-center text-center text-md-left">
         <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
-          <h1>Travel More To Discover Yourself</h1>
-          <p>Air seed winged lights saw kind whales in sixth dont seas dron image so fish all tree meat dont there is seed winged lights saw kind whales in sixth dont seas dron image so fish all tree meat dont there </p>
+          <h1>Welcome to</h1>
+          <h2>Duacare Official Website</h2>
+          {{-- <p>Air seed winged lights saw kind whales in sixth dont seas dron image so fish all tree meat dont there is seed winged lights saw kind whales in sixth dont seas dron image so fish all tree meat dont there </p> --}}
           <a class="button button-hero mt-4" href="#">Get Started</a>
         </div>
         <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
@@ -189,8 +190,10 @@
     <div class="container">
       <div class="section-intro text-center pb-90px">
         <img class="section-intro-img" src="{{ asset('safario/img/home/section-icon.png') }}" alt="">
-        <h2>Our client says</h2>
-        <p>Fowl have fruit moveth male they are that place you will lesser</p>
+
+        <!-- paddingnya perlu diedit nanti -->
+        <h2>Duacare Kata Mereka</h2>
+        {{-- <p>Fowl have fruit moveth male they are that place you will lesser</p> --}}
       </div>
 
 
