@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Testimony;
+use App\Event;
 
 class PagesController extends Controller
 {
 
     public function getHomePage() {
-        return view('pages.home');
+        $testimonies = Testimony::all();
+        $events = Event::all();
+        return view('pages.home', compact('testimonies', 'events'));
     }
 
     public function getAboutPage() {

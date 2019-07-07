@@ -15,10 +15,11 @@
           <h1>Welcome to</h1>
           <h2>Duacare Official Website</h2>
           {{-- <p>Air seed winged lights saw kind whales in sixth dont seas dron image so fish all tree meat dont there is seed winged lights saw kind whales in sixth dont seas dron image so fish all tree meat dont there </p> --}}
-          <a class="button button-hero mt-4" href="#">Get Started</a>
+          <a class="button button-hero mt-4" href="#overview">Get Started</a>
         </div>
         <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
-          <img class="img-fluid" src="{{ asset('safario/img/home/hero-img.png') }}" alt="">
+          {{-- <img class="img-fluid" src="{{ asset('safario/img/home/hero-img.png') }}" alt=""> --}}
+          <img class="img-fluid" src="{{ asset('duacare-image/logo-icon.png') }}" alt="">
         </div>
       </div>
     </div>
@@ -27,23 +28,23 @@
 
 
   <!--================Service Area Start =================-->
-  <section class="section-margin generic-margin">
+  <section class="section-margin generic-margin" id="overview">
     <div class="container">
       <div class="section-intro text-center pb-90px">
         <img class="section-intro-img" src="{{ asset('safario/img/home/section-icon.png') }}" alt="">
-        <h2>Our Popular Services</h2>
-        <p>Fowl have fruit moveth male they are that place you will lesser</p>
+        <h2>Overview</h2>
+        <p>Duacare adalah Organisasi sosial alumni SMAN 2 Lumajang yang berpegang teguh pada semboyan “Dare to care!</p>
       </div>
 
-      <div class="row">
+      <div class="row justify-content-center mb-3">
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="service-card text-center">
+          <div class="service-card text-center wow fadeInUp" data-wow-duration="2s" >
             <div class="service-card-img">
               <img class="img-fluid" src="{{ asset('safario/img/home/service1.png') }}" alt="">
             </div>
             <div class="service-card-body">
-              <h3>Hotel Booking</h3>
-              <p>Great so dominion two seed give dry rule be fowl him female you will gathered creeping and created air</p>
+              <h3>{{ $events[0]->title }}</h3>
+              <p>{{ $events[0]->description }}</p>
             </div>
           </div>
         </div>
@@ -53,8 +54,21 @@
               <img class="img-fluid" src="{{ asset('safario/img/home/service2.png') }}" alt="">
             </div>
             <div class="service-card-body">
-              <h3>Flight Booking</h3>
-              <p>Great so dominion two seed give dry rule be fowl him female you will gathered creeping and created air</p>
+              <h3>{{ $events[1]->title }}</h3>
+              <p>{{ $events[1]->description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="service-card text-center">
+            <div class="service-card-img">
+              <img class="img-fluid" src="{{ asset('safario/img/home/service3.png') }}" alt="">
+            </div>
+            <div class="service-card-body">
+              <h3>{{ $events[2]->title }}</h3>
+              <p>{{ $events[2]->description }}</p>
             </div>
           </div>
         </div>
@@ -64,8 +78,8 @@
               <img class="img-fluid" src="{{ asset('safario/img/home/service3.png') }}" alt="">
             </div>
             <div class="service-card-body">
-              <h3>Destination Booking</h3>
-              <p>Great so dominion two seed give dry rule be fowl him female you will gathered creeping and created air</p>
+              <h3>{{ $events[3]->title }}</h3>
+              <p>{{ $events[3]->description }}</p>
             </div>
           </div>
         </div>
@@ -198,57 +212,25 @@
 
 
       <div class="owl-carousel owl-theme testimonial pb-xl-5">
+        @foreach($testimonies as $testimony)
         <div class="testimonial__item">
           <div class="row">
             <div class="col-md-3 col-lg-2 align-self-center">
               <div class="testimonial__img">
-                <img class="card-img rounded-0" src="{{ asset('safario/img/testimonial/t-slider1.png') }}" alt="">
+                <img class="card-img rounded-0" src="{{ asset('duacare-image/logo_small.png') }}" alt="">
               </div>
             </div>
             <div class="col-md-9 col-lg-10">
               <div class="testimonial__content mt-3 mt-sm-0">
-                <h3>Daniel heart</h3>
-                <p>Project manager, Nestle</p>
-                <p class="testimonial__i">Also made from. Give may saying meat there from heaven it lights face had is gathered god earth light for life may itself shall whales made they're blessed whales also made from give may saying meat. There from heaven it lights face had</p>
+                <h3>{{ $testimony->title }}</h3>
+                <p>{{ $testimony->detail }}</p>
+                <p class="testimonial__i">{{ $testimony->description }}</p>
                 <span class="testimonial__icon"><i class="ti-quote-right"></i></span>
               </div>
             </div>
           </div>
         </div>
-        <div class="testimonial__item">
-          <div class="row">
-            <div class="col-md-3 col-lg-2 align-self-center">
-              <div class="testimonial__img">
-                <img class="card-img rounded-0" src="{{ asset('safario/img/testimonial/t-slider1.png') }}" alt="">
-              </div>
-            </div>
-            <div class="col-md-9 col-lg-10">
-              <div class="testimonial__content mt-3 mt-sm-0">
-                <h3>Daniel heart</h3>
-                <p>Project manager, Nestle</p>
-                <p class="testimonial__i">Also made from. Give may saying meat there from heaven it lights face had is gathered god earth light for life may itself shall whales made they're blessed whales also made from give may saying meat. There from heaven it lights face had</p>
-                <span class="testimonial__icon"><i class="ti-quote-right"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial__item">
-          <div class="row">
-            <div class="col-md-3 col-lg-2 align-self-center">
-              <div class="testimonial__img">
-                <img class="card-img rounded-0" src="{{ asset('safario/img/testimonial/t-slider1.png') }}" alt="">
-              </div>
-            </div>
-            <div class="col-md-9 col-lg-10">
-              <div class="testimonial__content mt-3 mt-sm-0">
-                <h3>Daniel heart</h3>
-                <p>Project manager, Nestle</p>
-                <p class="testimonial__i">Also made from. Give may saying meat there from heaven it lights face had is gathered god earth light for life may itself shall whales made they're blessed whales also made from give may saying meat. There from heaven it lights face had</p>
-                <span class="testimonial__icon"><i class="ti-quote-right"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </section>
@@ -386,7 +368,5 @@
 @endsection
 
 @section('script')
-  <script>
-    
-  </script>
+
 @endsection

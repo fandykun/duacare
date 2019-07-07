@@ -21,12 +21,10 @@ Route::get('/news/id', 'PagesController@getNewsDetailPage'); //temporary
 Route::get('/contact', 'PagesController@getContactPage');
 
 // Authentication Routes...
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 //Admin
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
-
+Route::group(['prefix' => 'admin'], function() {
+	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+	Route::post('login', 'Auth\LoginController@login');
+	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 });
-

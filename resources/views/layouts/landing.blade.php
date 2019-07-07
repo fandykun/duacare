@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="{{ asset('safario/vendors/nice-select/nice-select.css') }}">
 
   <link rel="stylesheet" href="{{ asset('safario/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('safario/css/animate.css') }}">
   @yield('style')
 </head>
 <body class="bg-shape">
@@ -35,6 +36,10 @@
   <script src="{{ asset('safario/js/mail-script.js') }}"></script>
   <script src="{{ asset('safario/js/skrollr.min.js') }}"></script>
   <script src="{{ asset('safario/js/main.js') }}"></script>
+  <script src="{{ asset('safario/js/wow.min.js') }}"></script>
+  <script>
+    new WOW().init();
+  </script>  
   @yield('script')
 </body>
 </html>
