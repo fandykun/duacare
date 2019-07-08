@@ -174,6 +174,6 @@
 
 @section('script')
   <script>
-    
+    $("#nav-about").addClass("active");
   </script>
 @endsection

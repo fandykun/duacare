@@ -3,12 +3,12 @@
 @section('style')
   <style>
     img.vert-move {
-    -webkit-animation: mover 1s infinite  alternate;
-    animation: mover 1s infinite  alternate;
+      -webkit-animation: mover 1s infinite  alternate;
+      animation: mover 1s infinite  alternate;
     }
     img.vert-move {
-        -webkit-animation: mover 1s infinite  alternate;
-        animation: mover 1s infinite  alternate;
+      -webkit-animation: mover 1s infinite  alternate;
+      animation: mover 1s infinite  alternate;
     }
     @-webkit-keyframes mover {
         0% { transform: translateY(0); }
@@ -385,5 +385,7 @@
 @endsection
 
 @section('script')
-
+  <script>
+    $("#nav-home").addClass("active");
+  </script>
 @endsection

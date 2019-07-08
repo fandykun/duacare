@@ -343,3 +343,9 @@
 
 
 @endsection
+
+@section('script')
+  <script>
+    $("#nav-news").addClass("active");
+  </script>
+@endsection

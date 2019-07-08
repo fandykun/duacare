@@ -107,3 +107,9 @@
 
 
 @endsection
+
+@section('script')
+  <script>
+    $("#nav-dld").addClass("active");
+  </script>
+@endsection

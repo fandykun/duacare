@@ -8,3 +8,9 @@
 @section('content')
 
 @endsection
+
+@section('script')
+  <script>
+    $("#nav-contact").addClass("active");
+  </script>
+@endsection
