@@ -2,6 +2,23 @@
 
 @section('style')
   <style>
+    img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+    }
+    img.vert-move {
+        -webkit-animation: mover 1s infinite  alternate;
+        animation: mover 1s infinite  alternate;
+    }
+    @-webkit-keyframes mover {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-15px); }
+    }
+    @keyframes mover {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-15px); }
+    }
+
   </style>
 @endsection
 
@@ -19,7 +36,7 @@
         </div>
         <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
           {{-- <img class="img-fluid" src="{{ asset('safario/img/home/hero-img.png') }}" alt=""> --}}
-          <img class="img-fluid" src="{{ asset('duacare-image/logo-icon.png') }}" alt="">
+          <img class="img-fluid vert-move" src="{{ asset('duacare-image/logo-icon.png') }}" alt="Duacare Image">
         </div>
       </div>
     </div>
@@ -38,7 +55,7 @@
 
       <div class="row justify-content-center mb-3">
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="service-card text-center wow fadeInUp" data-wow-duration="2s" >
+          <div class="service-card text-center wow slideInLeft">
             <div class="service-card-img">
               <img class="img-fluid" src="{{ asset('safario/img/home/service1.png') }}" alt="">
             </div>
@@ -49,7 +66,7 @@
           </div>
         </div>
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="service-card text-center">
+          <div class="service-card text-center wow slideInRight">
             <div class="service-card-img">
               <img class="img-fluid" src="{{ asset('safario/img/home/service2.png') }}" alt="">
             </div>
@@ -62,7 +79,7 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="service-card text-center">
+          <div class="service-card text-center wow slideInLeft">
             <div class="service-card-img">
               <img class="img-fluid" src="{{ asset('safario/img/home/service3.png') }}" alt="">
             </div>
@@ -73,7 +90,7 @@
           </div>
         </div>
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="service-card text-center">
+          <div class="service-card text-center wow slideInRight">
             <div class="service-card-img">
               <img class="img-fluid" src="{{ asset('safario/img/home/service3.png') }}" alt="">
             </div>
