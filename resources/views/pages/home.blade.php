@@ -11,14 +11,20 @@
       animation: mover 1s infinite  alternate;
     }
     @-webkit-keyframes mover {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-15px); }
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
     }
     @keyframes mover {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-15px); }
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
     }
 
+    .icon-gradient{
+      font-size: 50px;
+      background: -webkit-linear-gradient(#eee, #333);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   </style>
 @endsection
 
@@ -29,10 +35,9 @@
 
       <div class="row align-items-center text-center text-md-left">
         <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
-          <h1>Welcome to</h1>
+          <h1>Selamat Datang di</h1>
           <h2>Duacare Official Website</h2>
-          {{-- <p>Air seed winged lights saw kind whales in sixth dont seas dron image so fish all tree meat dont there is seed winged lights saw kind whales in sixth dont seas dron image so fish all tree meat dont there </p> --}}
-          <a class="button button-hero mt-4" href="#overview">Get Started</a>
+          <a class="button button-hero mt-4" href="#overview">Telusuri Sekarang!</a>
         </div>
         <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
           {{-- <img class="img-fluid" src="{{ asset('safario/img/home/hero-img.png') }}" alt=""> --}}
@@ -48,7 +53,8 @@
   <section class="section-margin generic-margin" id="overview">
     <div class="container">
       <div class="section-intro text-center pb-90px">
-        <img class="section-intro-img" src="{{ asset('safario/img/home/section-icon.png') }}" alt="">
+        {{-- <img class="section-intro-img" src="{{ asset('safario/img/home/section-icon.png') }}" alt=""> --}}
+        <i class="far fa-eye icon-gradient"></i>
         <h2>Overview</h2>
         <p>Duacare adalah Organisasi sosial alumni SMAN 2 Lumajang yang berpegang teguh pada semboyan “Dare to care!</p>
       </div>
@@ -234,14 +240,18 @@
           <div class="row">
             <div class="col-md-3 col-lg-2 align-self-center">
               <div class="testimonial__img">
-                <img class="card-img rounded-0" src="{{ asset('duacare-image/logo_small.png') }}" alt="">
+                @if($testimony->image)
+                <img class="card-img rounded-0" src="{{ asset('duacare-image/logo_small.png') }}" alt="Testimony">
+                @else
+                <img class="card-img rounded-0" src="{{ asset('duacare-image/logo_small.png') }}" alt="Duacare Image">
+                @endif
               </div>
             </div>
             <div class="col-md-9 col-lg-10">
               <div class="testimonial__content mt-3 mt-sm-0">
                 <h3>{{ $testimony->title }}</h3>
                 <p>{{ $testimony->detail }}</p>
-                <p class="testimonial__i">{{ $testimony->description }}</p>
+                <p class="testimonial__i" style="min-height: 100px">{{ $testimony->description }}</p>
                 <span class="testimonial__icon"><i class="ti-quote-right"></i></span>
               </div>
             </div>
@@ -324,7 +334,7 @@
   <section class="section-padding bg-gray">
     <div class="container">
       <div class="section-intro text-center pb-90px">
-        <img class="section-intro-img" src="{{ asset('safario/img/home/section-icon.png') }}" alt="">
+        <i class="far fa-newspaper icon-gradient"></i>
         <h2>From our Blog</h2>
         <p>Fowl have fruit moveth male they are that place you will lesser</p>
       </div>
@@ -387,5 +397,18 @@
 @section('script')
   <script>
     $("#nav-home").addClass("active");
+    $("a").on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top - $('nav').height()
+        }, 800, function(){
+     
+        window.location.hash = hash;
+        });
+      }
+    });
   </script>
 @endsection

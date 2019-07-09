@@ -2,6 +2,12 @@
 
 @section('style')
   <style>
+    .icon-gradient{
+      font-size: 50px;
+      background: -webkit-linear-gradient(#eee, #333);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   </style>
 @endsection
 
@@ -10,8 +16,8 @@
   <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
     <div class="container">
       <div class="hero-banner-sm-content">
-        <h1>About Us</h1>
-        <p>Air seed winged lights saw kind whales in sixth best a dont seas dron image so fish all tree on</p>
+        <h1>Tentang Duacare</h1>
+        <p>Duacare adalah Organisasi sosial alumni SMAN 2 Lumajang yang berpegang teguh pada semboyan “Dare to care!</p>
       </div>
     </div>
   </section>
@@ -28,9 +34,9 @@
           </div>
         </div>
         <div class="col-lg-5 col-md-6 align-self-center about-content">
-          <h2>Exploration is <br class="d-none d-xl-block"> really the essence <br class="d-none d-xl-block"> of the human spirit</h2>
-          <p>Make she'd moved divided air. Whose tree that replenish tone hath own upon them it multiply was blessed is lights make gathering so day dominion so creeping air was made.</p>
-          <a class="button" href="#">Learn More</a>
+          <h2 style="color: grey; margin-bottom: 0; font-size: 42px">Duacare</h2>
+          <p class="text-justify">adalah Organisasi sosial alumni SMA Negeri 2 Lumajang yang berpegang teguh pada semboyan "Dare to care!". Duacare adalah <em>charity organization</em> yang dibentuk pada 26 Juli 2008 oleh alumni SMA Negeri 2 Lumajang yang mana kegiatan dari duacare erat kaitannya dengan kegiatan sosial dan kemanusiaan. Duacare telah menjadi organisasi yang legal berdasarkan Akta Pendirian yang ditandatangani oleh Notaris Irwan Rosman, S.H, M.Kn. No 49 tanggal 10 Juni 2009.</p>
+          <a class="button" href="#more">Pelajari lebih lanjut</a>
         </div>
       </div>
     </div>
@@ -39,10 +45,10 @@
 
 
   <!--================Testimonial section Start =================-->
-  <section class="bg-gray section-padding magic-ball magic-ball-testimonial pb-xl-5">
+  <section class="bg-gray section-padding magic-ball magic-ball-testimonial pb-xl-5" id="more">
     <div class="container">
       <div class="section-intro text-center pb-90px">
-        <img class="section-intro-img" src="{{ asset('safario/img/home/section-icon.png')}}" alt="">
+        <i class="far fa-question-circle icon-gradient"></i>
         <h2>Our client says</h2>
         <p>Fowl have fruit moveth male they are that place you will lesser</p>
       </div>
@@ -175,5 +181,18 @@
 @section('script')
   <script>
     $("#nav-about").addClass("active");
+    $("a").on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top - $('nav').height()
+        }, 800, function(){
+     
+        window.location.hash = hash;
+        });
+      }
+    });
   </script>
 @endsection

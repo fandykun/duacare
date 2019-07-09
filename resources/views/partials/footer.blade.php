@@ -18,10 +18,10 @@
           <div class="row">
             <div class="col">
               <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Feature</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{ url('about') }}">Tentang Duacare</a></li>
+                <li><a href="{{ url('/organizer') }}">Organizer</a></li>
+                <li><a href="{{ url('/news') }}">Berita</a></li>
               </ul>
             </div>
             <div class="col">
