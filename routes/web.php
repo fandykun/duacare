@@ -17,14 +17,20 @@ Route::get('/about', 'PagesController@getAboutPage');
 Route::get('/duacare-loyal-donature', 'PagesController@getDLDPage');
 Route::get('/organizer', 'PagesController@getOrganizerPage');
 Route::get('/news', 'PagesController@getNewsPage');
-Route::get('/news/id', 'PagesController@getNewsDetailPage'); //temporary
+Route::get('/news/{id}', 'PagesController@getNewsDetailPage');
 Route::get('/contact', 'PagesController@getContactPage');
 
 // Authentication Routes...
 
 //Admin
-Route::group(['prefix' => 'admin'], function() {
-	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-	Route::post('login', 'Auth\LoginController@login');
-	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::prefix('/admin')->group(function () {
+	Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+	Route::post('/login', 'Auth\LoginController@login');
+	Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+	//jangan di auth dulu
+
+	//News
+	Route::get('/news', 'NewsController@getCreatePage');
+	Route::post('/news', 'NewsController@addNews')->name('news.add');
 });

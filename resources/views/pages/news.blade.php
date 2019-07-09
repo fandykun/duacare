@@ -26,9 +26,11 @@
         <div class="row">
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
+                @if(count($news) > 0)
+                    @foreach($news as $berita)
                     <article class="blog_item">
                     <div class="blog_item_img">
-                        <img class="card-img rounded-0" src="{{ asset('safario/img/blog/main-blog/m-blog-1.jpg') }}" alt="">
+                        <img class="card-img rounded-0" src="{{ asset('storage/news/'. $berita->image ) }}" alt="">
                         <a href="#" class="blog_item_date">
                         <h3>15</h3>
                         <p>Jan</p>
@@ -36,103 +38,18 @@
                     </div>
                     
                     <div class="blog_details">
-                        <a class="d-inline-block" href="{{ url('news/id') }}">
-                            <h2>Google inks pact for new 35-storey office</h2>
+                        <a class="d-inline-block" href="{{ url('news/'.$berita->id) }}">
+                            <h2>{{ $berita->title }}</h2>
                         </a>
-                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.</p>
+                        <p>{{ $berita->description }}</p>
                         <ul class="blog-info-link">
-                            <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
-                            <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
+                            <li><a href="#"><i class="far fa-user"></i> {{ $berita->events->title }} </a></li>
+                            {{-- <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li> --}}
                         </ul>
                     </div>
                     </article>
-                    
-                    <article class="blog_item">
-                    <div class="blog_item_img">
-                        <img class="card-img rounded-0" src="{{ asset('safario/img/blog/main-blog/m-blog-2.jpg') }}" alt="">
-                        <a href="#" class="blog_item_date">
-                        <h3>15</h3>
-                        <p>Jan</p>
-                        </a>
-                    </div>
-                    
-                    <div class="blog_details">
-                        <a class="d-inline-block" href="{{ url('/news/id') }}">
-                            <h2>Google inks pact for new 35-storey office</h2>
-                        </a>
-                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.</p>
-                        <ul class="blog-info-link">
-                            <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
-                            <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                        </ul>
-                    </div>
-                    </article>
-
-                    <article class="blog_item">
-                    <div class="blog_item_img">
-                        <img class="card-img rounded-0" src="{{ asset('safario/img/blog/main-blog/m-blog-3.jpg') }}" alt="">
-                        <a href="#" class="blog_item_date">
-                        <h3>15</h3>
-                        <p>Jan</p>
-                        </a>
-                    </div>
-                    
-                    <div class="blog_details">
-                        <a class="d-inline-block" href="{{ url('/news/id') }}">
-                            <h2>Google inks pact for new 35-storey office</h2>
-                        </a>
-                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.</p>
-                        <ul class="blog-info-link">
-                            <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
-                            <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                        </ul>
-                    </div>
-                    </article>
-
-                    <article class="blog_item">
-                    <div class="blog_item_img">
-                        <img class="card-img rounded-0" src="{{ asset('safario/img/blog/main-blog/m-blog-4.jpg') }}" alt="">
-                        <a href="#" class="blog_item_date">
-                        <h3>15</h3>
-                        <p>Jan</p>
-                        </a>
-                    </div>
-                    
-                    <div class="blog_details">
-                        <a class="d-inline-block" href="{{ url('/news/id') }}">
-                            <h2>Google inks pact for new 35-storey office</h2>
-                        </a>
-                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.</p>
-                        <ul class="blog-info-link">
-                            <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
-                            <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                        </ul>
-                    </div>
-                    </article>
-
-                    <article class="blog_item">
-                    <div class="blog_item_img">
-                        <img class="card-img rounded-0" src="{{ asset('safario/img/blog/main-blog/m-blog-5.jpg') }}" alt="">
-                        <a href="#" class="blog_item_date">
-                        <h3>15</h3>
-                        <p>Jan</p>
-                        </a>
-                    </div>
-                    
-                    <div class="blog_details">
-                        <a class="d-inline-block" href="{{ url('/news/id') }}">
-                            <h2>Google inks pact for new 35-storey office</h2>
-                        </a>
-                        <p>That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.</p>
-                        <ul class="blog-info-link">
-                            <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
-                            <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                        </ul>
-                    </div>
-                    </article>
-                    
-
-
+                    @endforeach
+                @endif
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
                             <li class="page-item">
@@ -292,32 +209,32 @@
                     <ul class="instagram_row flex-wrap">
                         <li>
                             <a href="#">
-                                <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i1.png" al') }}t="">
+                                <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i1.png') }}" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i2.png" al') }}t="">
+                                <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i2.png') }}" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i3.png" al') }}t="">
+                                <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i3.png') }}" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i4.png" al') }}t="">
+                                <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i4.png') }}" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i5.png" al') }}t="">
+                                <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i5.png') }}" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i6.png" al') }}t="">
+                                <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i6.png') }}" alt="">
                             </a>
                         </li>
                     </ul>
