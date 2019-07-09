@@ -18,15 +18,26 @@
 
   <link rel="stylesheet" href="{{ asset('safario/css/style.css') }}">
   <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
+  <link rel="stylesheet" href="{{asset('css/style.css')}}">
   @yield('style')
 </head>
-<body class="bg-shape">
+<body class="bg-shape" onload="loadOn()">
+  <div id="loader">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
 
-  @include('partials.header')
+  <div id="body" style="display:none;" class="animate-bottom">
+    @include('partials.header')
 
-  @yield('content')
+    @yield('content')
 
-  @include('partials.footer')
+    @include('partials.footer')
+  </div>
 
   <script src="{{ asset('safario/vendors/jquery/jquery-3.2.1.min.js') }}"></script>
   <script src="{{ asset('safario/vendors/bootstrap/bootstrap.bundle.min.js') }}"></script>
@@ -39,6 +50,14 @@
   <script src="{{asset('wow/dist/wow.min.js')}}"></script>
   <script>
     new WOW().init();
+    function loadOn() {
+        myVar = setTimeout(showPage, 1000);
+    }
+
+    function showPage(){
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("body").style.display = "block";
+    }
   </script>  
   @yield('script')
 </body>
