@@ -51,7 +51,7 @@
                     @endforeach
                 @endif
                 <div class="row justify-content-center">
-                    {{ $news->links( "pagination::bootstrap-4") }}
+                    {{ $news->appends(request()->query())->links("pagination::bootstrap-4") }}
                 </div>
                     {{-- <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
@@ -82,16 +82,16 @@
             <div class="col-lg-4">
                 <div class="blog_right_sidebar">
                     <aside class="single_sidebar_widget search_widget">
-                        <form action="#">
+                    <form action="{{route('search.news')}}">
                         <div class="form-group">
                             <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Search Keyword">
-                            <div class="input-group-append">
-                                <button class="btn" type="button"><i class="ti-search"></i></button>
-                            </div>
+                                <input type="text" class="form-control" autocomplete="off" name="q" placeholder="Kata kunci pencarian">
+                                <div class="input-group-append">
+                                    <button class="btn" type="button"><i class="ti-search"></i></button>
+                                </div>
                             </div>
                         </div>
-                        <button class="button rounded-0 primary-bg text-white w-100" type="submit">Search</button>
+                        <button class="button rounded-0 primary-bg text-white w-100" type="submit">Cari</button>
                         </form>
                     </aside>
 

@@ -49,6 +49,15 @@ class PagesController extends Controller
         return view('pages.newsDetail', compact('news', 'latest_items', 'events'));
     }
 
+    public function getNewsBySearch(Request $r)
+    {
+        $latest_items = News::orderBy('created_at', 'desc')->take(5)->get();
+        $events = Event::all();
+        $news = News::Where('title', 'like', '%' . $r->q . '%')->paginate(5)->appends(request()->query());
+        return view('pages.news', compact('news', 'latest_items', 'events'));
+        
+    }
+
     public function getContactPage()
     {
         return view('pages.contact');

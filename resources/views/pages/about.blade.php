@@ -17,7 +17,7 @@
     <div class="container">
       <div class="hero-banner-sm-content">
         <h1>Tentang Duacare</h1>
-        <p>Duacare adalah Organisasi sosial alumni SMAN 2 Lumajang yang berpegang teguh pada semboyan “Dare to care!</p>
+        <p>Duacare adalah organisasi sosial alumni SMAN 2 Lumajang yang berpegang teguh pada semboyan “Dare to care!</p>
       </div>
     </div>
   </section>
@@ -35,7 +35,7 @@
         </div>
         <div class="col-lg-5 col-md-6 align-self-center about-content">
           <h2 style="color: grey; margin-bottom: 0; font-size: 42px">Duacare</h2>
-          <p class="text-justify">adalah Organisasi sosial alumni SMA Negeri 2 Lumajang yang berpegang teguh pada semboyan "Dare to care!". Duacare adalah <em>charity organization</em> yang dibentuk pada 26 Juli 2008 oleh alumni SMA Negeri 2 Lumajang yang mana kegiatan dari duacare erat kaitannya dengan kegiatan sosial dan kemanusiaan. Duacare telah menjadi organisasi yang legal berdasarkan Akta Pendirian yang ditandatangani oleh Notaris Irwan Rosman, S.H, M.Kn. No 49 tanggal 10 Juni 2009.</p>
+          <p class="text-justify">adalah organisasi sosial alumni SMA Negeri 2 Lumajang yang berpegang teguh pada semboyan "Dare to care!". Duacare adalah <em>charity organization</em> yang dibentuk pada 26 Juli 2008 oleh alumni SMA Negeri 2 Lumajang yang mana kegiatan dari duacare erat kaitannya dengan kegiatan sosial dan kemanusiaan. Duacare telah menjadi organisasi yang legal berdasarkan Akta Pendirian yang ditandatangani oleh Notaris Irwan Rosman, S.H, M.Kn. No 49 tanggal 10 Juni 2009.</p>
           <a class="button" href="#more">Pelajari lebih lanjut</a>
         </div>
       </div>

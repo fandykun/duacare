@@ -17,6 +17,7 @@ Route::get('/about', 'PagesController@getAboutPage');
 Route::get('/duacare-loyal-donature', 'PagesController@getDLDPage');
 Route::get('/organizer', 'PagesController@getOrganizerPage');
 Route::get('/news', 'PagesController@getNewsPage');
+Route::get('/news/search', 'PagesController@getNewsBySearch')->name('search.news');
 Route::get('/news/{id}/{title}', 'PagesController@getNewsDetailPage');
 Route::get('/contact', 'PagesController@getContactPage');
 
