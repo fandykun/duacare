@@ -34,15 +34,19 @@ class PagesController extends Controller
 
     public function getNewsPage()
     {
-        $news = News::orderBy('created_at', 'desc')->get();
-        // $news = News::orderBy('created_at', 'desc')->paginate(5);
-        return view('pages.news', compact('news'));
+        // $news = News::orderBy('created_at', 'desc')->get();
+        $latest_items = News::orderBy('created_at', 'desc')->take(5)->get();
+        $news = News::orderBy('created_at', 'desc')->paginate(5);
+        $events = Event::all();
+        return view('pages.news', compact('news', 'latest_items', 'events'));
     }
 
-    public function getNewsDetailPage($id)
+    public function getNewsDetailPage($id, $title)
     {
+        $latest_items = News::orderBy('created_at', 'desc')->take(5)->get();
         $news = News::findOrFail($id);
-        return view('pages.newsDetail', compact('news'));
+        $events = Event::all();
+        return view('pages.newsDetail', compact('news', 'latest_items', 'events'));
     }
 
     public function getContactPage()

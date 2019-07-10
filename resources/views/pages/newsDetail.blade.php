@@ -286,43 +286,35 @@
 
                 <aside class="single_sidebar_widget popular_post_widget">
                     <h3 class="widget_title">Recent Post</h3>
+                    @foreach($latest_items as $latest_item)
                     <div class="media post_item">
+                        {{-- <img src="{{ asset('storage/news/'. $latest_item->image ) }}" alt="{{$latest_item->title}}"> --}}
                         <img src="{{ asset('safario/img/blog/popular-post/post1.jpg') }}" alt="post">
                         <div class="media-body">
-                            <a href="single-blog.html">
-                                <h3>From life was you fish...</h3>
+                        <a href="{{ url('news/'.$latest_item->id.'/'.urlencode($latest_item->title)) }}">
+                                <h3>
+                                    @if(strlen($latest_item)>20)
+                                        {{substr($latest_item->title, 0, 20)}} ...
+                                    @else
+                                        {{$latest_item->title}}
+                                    @endif
+                                </h3>
                             </a>
-                            <p>January 12, 2019</p>
+                            <p>
+                                {{ \Carbon\Carbon::parse($latest_item->created_at)->format('F d, Y')}}
+                            </p>
                         </div>
                     </div>
+                    @endforeach
                 </aside>
                 <aside class="single_sidebar_widget tag_cloud_widget">
-                    <h4 class="widget_title">Tag Clouds</h4>
+                    <h4 class="widget_title">Event Duacare</h4>
                     <ul class="list">
-                        <li>
-                            <a href="#">project</a>
-                        </li>
-                        <li>
-                            <a href="#">love</a>
-                        </li>
-                        <li>
-                            <a href="#">technology</a>
-                        </li>
-                        <li>
-                            <a href="#">travel</a>
-                        </li>
-                        <li>
-                            <a href="#">restaurant</a>
-                        </li>
-                        <li>
-                            <a href="#">life style</a>
-                        </li>
-                        <li>
-                            <a href="#">design</a>
-                        </li>
-                        <li>
-                            <a href="#">illustration</a>
-                        </li>
+                        @foreach ($events as $event)
+                            <li>
+                                <a href="#">{{$event->title}}</a>
+                            </li>                                
+                        @endforeach
                     </ul>
                 </aside>
 

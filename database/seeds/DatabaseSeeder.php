@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 use App\User;
+use App\News;
+use App\Event;
 use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
@@ -72,13 +74,15 @@ class DatabaseSeeder extends Seeder
         $newsImage = 'dummy-news.jpg';
         $newsEventID = [2, 1, 4];
 
-        for ($i = 0; $i < count($newsTitle); $i++) {
-            DB::table('news')->insert([
-                'title' => $newsTitle[$i],
-                'description' => $newsDescription[$i],
-                'image' => $newsImage,
-                'event_id' => $newsEventID[$i]
-            ]);
+        for ($j=0; $j < 10 ; $j++) { 
+            for ($i = 0; $i < count($newsTitle); $i++) {
+                News::create([
+                    'title' => $newsTitle[$i].'-'.$j,
+                    'description' => $newsDescription[$i],
+                    'image' => $newsImage,
+                    'event_id' => $newsEventID[$i]
+                ]);
+            }
         }
     }
 }
