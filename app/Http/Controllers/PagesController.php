@@ -14,7 +14,8 @@ class PagesController extends Controller
     {
         $testimonies = Testimony::all();
         $events = Event::all();
-        return view('pages.home', compact('testimonies', 'events'));
+        $latest_items = News::orderBy('created_at', 'desc')->take(3)->get();
+        return view('pages.home', compact('testimonies', 'events', 'latest_items'));
     }
 
     public function getAboutPage()
@@ -55,7 +56,6 @@ class PagesController extends Controller
         $events = Event::all();
         $news = News::Where('title', 'like', '%' . $r->q . '%')->paginate(5)->appends(request()->query());
         return view('pages.news', compact('news', 'latest_items', 'events'));
-        
     }
 
     public function getContactPage()
