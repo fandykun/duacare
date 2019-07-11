@@ -66,33 +66,9 @@
                     </article>
                     @endforeach
                 @endif
-                <div class="row justify-content-center">
-                    {{ $news->appends(request()->query())->links("pagination::bootstrap-4") }}
-                </div>
-                    {{-- <nav class="blog-pagination justify-content-center d-flex">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Previous">
-                                    <span aria-hidden="true">
-                                        <span class="lnr lnr-chevron-left"></span>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link">1</a>
-                            </li>
-                            <li class="page-item active">
-                                <a href="#" class="page-link">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Next">
-                                    <span aria-hidden="true">
-                                        <span class="lnr lnr-chevron-right"></span>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav> --}}
+                    <div class="row justify-content-center">
+                        {{ $news->appends(request()->query())->links('partials.pagination') }}
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4">
