@@ -32,8 +32,8 @@
                     <div class="blog_item_img">
                         <img class="card-img rounded-0" src="{{ asset('storage/news/'. $berita->image ) }}" alt="{{$berita->title}}">
                         <a href="#" class="blog_item_date">
-                        <h3>{{ \Carbon\Carbon::parse($berita->created_at)->format('d')}}</h3>
-                        <p>{{ \Carbon\Carbon::parse($berita->created_at)->format('F')}}</p>
+                        <h3>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%d')}}</h3>
+                        <p>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%b')}}</p>
                         </a>
                     </div>
                     

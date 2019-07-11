@@ -301,7 +301,7 @@
                                 </h3>
                             </a>
                             <p>
-                                {{ \Carbon\Carbon::parse($latest_item->created_at)->format('F d, Y')}}
+                                {{ \Carbon\Carbon::parse($latest_item->created_at)->formatLocalized('%d %B %Y')}}
                             </p>
                         </div>
                     </div>

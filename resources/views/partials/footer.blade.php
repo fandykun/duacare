@@ -72,11 +72,12 @@
     <div class="footer-bottom">
       <div class="row align-items-center">
         <p class="col-lg-8 col-sm-12 footer-text m-0 text-center text-lg-left">
-          Copyright 2019 Duacare - All RIghts Reserved
+          Copyright 2019 Duacare - All Rights Reserved
         </p>
         <div class="col-lg-4 col-sm-12 footer-social text-center text-lg-right">
           <a href="https://www.facebook.com/duacare/"><i class="fab fa-facebook-f"></i></a>
           <a href="https://twitter.com/duacare"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/duacare"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
