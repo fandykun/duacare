@@ -75,6 +75,7 @@
           Copyright 2019 Duacare - All RIghts Reserved
         </p>
         <div class="col-lg-4 col-sm-12 footer-social text-center text-lg-right">
+          <a href="https://www.instagram.com/duacare/?hl=en"><i class="fab fa-instagram"></i></a>
           <a href="https://www.facebook.com/duacare/"><i class="fab fa-facebook-f"></i></a>
           <a href="https://twitter.com/duacare"><i class="fab fa-twitter"></i></a>
         </div>

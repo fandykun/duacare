@@ -31,6 +31,7 @@
     </div>
   </div>
 
+  {{-- <div id="body" style="display:none;" class=""> --}}
   <div id="body" style="display:none;" class="animate-bottom">
     @include('partials.header')
 

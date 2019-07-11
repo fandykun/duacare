@@ -14,7 +14,8 @@ class PagesController extends Controller
     {
         $testimonies = Testimony::all();
         $events = Event::all();
-        return view('pages.home', compact('testimonies', 'events'));
+        $news = News::orderBy('created_at', 'desc')->take(3)->get();
+        return view('pages.home', compact('testimonies', 'events', 'news'));
     }
 
     public function getAboutPage()

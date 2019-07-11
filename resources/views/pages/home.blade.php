@@ -113,7 +113,7 @@
 
 
   <!--================About Area Start =================-->
-  <section class="bg-gray section-padding magic-ball magic-ball-about">
+{{--   <section class="bg-gray section-padding magic-ball magic-ball-about">
     <div class="container">
       <div class="row">
         <div class="col-lg-7 col-md-6 mb-4 mb-md-0">
@@ -128,8 +128,115 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
   <!--================About Area End =================-->
+
+  <!--================Search Package section Start =================-->
+{{--   <section class="section-margin">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-xl-5 align-self-center mb-5 mb-lg-0">
+          <div class="search-content">
+            <h2>Search suitable <br class="d-none d-xl-block"> and affordable plan <br class="d-none d-xl-block"> for your tour</h2>
+            <p>Make she'd moved divided air. Whose tree that replenish tone hath own upon them it multiply was blessed is lights make gathering so day dominion so creeping</p>
+            <a class="button" href="#">Learn More</a>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-6 offset-xl-1">
+          <div class="search-wrapper">
+            <h3>Search Package</h3>
+
+            <form class="search-form" action="#">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Recipient's username">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="ti-search"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <select name="category" id="category">
+                  <option value="disabled" disabled selected>Category</option>
+                  <option value="8 AM">8 AM</option>
+                  <option value="12 PM">12 PM</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select name="tourDucation" id="tourDuration">
+                  <option value="disabled" disabled selected>Tour duration</option>
+                  <option value="8 AM">8 AM</option>
+                  <option value="12 PM">12 PM</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="date" class="form-control">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="ti-notepad"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <select name="priceRange" id="priceRange">
+                  <option value="disabled" disabled selected>Price range</option>
+                  <option value="8 AM">8 AM</option>
+                  <option value="12 PM">12 PM</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <button class="button border-0 mt-3" type="submit">Search Package</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section> --}}
+  <!--================Search Package section End =================-->
+
+
+  <!--================Testimonial section Start =================-->
+  <section class="bg-gray section-padding magic-ball magic-ball-testimonial pb-xl-5">
+    <div class="container">
+      <div class="section-intro text-center pb-90px">
+        <img class="section-intro-img" src="{{ asset('safario/img/home/section-icon.png') }}" alt="">
+
+        <!-- paddingnya perlu diedit nanti -->
+        <h2>Duacare Kata Mereka</h2>
+        {{-- <p>Fowl have fruit moveth male they are that place you will lesser</p> --}}
+      </div>
+
+
+      <div class="owl-carousel owl-theme testimonial pb-xl-5">
+        @foreach($testimonies as $testimony)
+        <div class="testimonial__item">
+          <div class="row">
+            <div class="col-md-3 col-lg-2 align-self-center">
+              <div class="testimonial__img">
+                @if($testimony->image)
+                <img class="card-img rounded-0" src="{{ asset('duacare-image/logo_small.png') }}" alt="Testimony">
+                @else
+                <img class="card-img rounded-0" src="{{ asset('duacare-image/logo_small.png') }}" alt="Duacare Image">
+                @endif
+              </div>
+            </div>
+            <div class="col-md-9 col-lg-10">
+              <div class="testimonial__content mt-3 mt-sm-0">
+                <h3>{{ $testimony->title }}</h3>
+                <p>{{ $testimony->detail }}</p>
+                <p class="testimonial__i" style="min-height: 100px">{{ $testimony->description }}</p>
+                <span class="testimonial__icon"><i class="ti-quote-right"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        @endforeach
+      </div>
+    </div>
+  </section>
+  <!--================Testimonial section End =================-->
 
   <!--================Tour section Start =================-->
   <section class="section-margin pb-xl-5">
@@ -222,171 +329,40 @@
   <!--================Tour section End =================-->
 
 
-  <!--================Testimonial section Start =================-->
-  <section class="bg-gray section-padding magic-ball magic-ball-testimonial pb-xl-5">
-    <div class="container">
-      <div class="section-intro text-center pb-90px">
-        <img class="section-intro-img" src="{{ asset('safario/img/home/section-icon.png') }}" alt="">
-
-        <!-- paddingnya perlu diedit nanti -->
-        <h2>Duacare Kata Mereka</h2>
-        {{-- <p>Fowl have fruit moveth male they are that place you will lesser</p> --}}
-      </div>
-
-
-      <div class="owl-carousel owl-theme testimonial pb-xl-5">
-        @foreach($testimonies as $testimony)
-        <div class="testimonial__item">
-          <div class="row">
-            <div class="col-md-3 col-lg-2 align-self-center">
-              <div class="testimonial__img">
-                @if($testimony->image)
-                <img class="card-img rounded-0" src="{{ asset('duacare-image/logo_small.png') }}" alt="Testimony">
-                @else
-                <img class="card-img rounded-0" src="{{ asset('duacare-image/logo_small.png') }}" alt="Duacare Image">
-                @endif
-              </div>
-            </div>
-            <div class="col-md-9 col-lg-10">
-              <div class="testimonial__content mt-3 mt-sm-0">
-                <h3>{{ $testimony->title }}</h3>
-                <p>{{ $testimony->detail }}</p>
-                <p class="testimonial__i" style="min-height: 100px">{{ $testimony->description }}</p>
-                <span class="testimonial__icon"><i class="ti-quote-right"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
-  <!--================Testimonial section End =================-->
-
-
-  <!--================Search Package section Start =================-->
-  <section class="section-margin">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-xl-5 align-self-center mb-5 mb-lg-0">
-          <div class="search-content">
-            <h2>Search suitable <br class="d-none d-xl-block"> and affordable plan <br class="d-none d-xl-block"> for your tour</h2>
-            <p>Make she'd moved divided air. Whose tree that replenish tone hath own upon them it multiply was blessed is lights make gathering so day dominion so creeping</p>
-            <a class="button" href="#">Learn More</a>
-          </div>
-        </div>
-        <div class="col-lg-6 col-xl-6 offset-xl-1">
-          <div class="search-wrapper">
-            <h3>Search Package</h3>
-
-            <form class="search-form" action="#">
-              <div class="form-group">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Recipient's username">
-                  <div class="input-group-append">
-                    <span class="input-group-text"><i class="ti-search"></i></span>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <select name="category" id="category">
-                  <option value="disabled" disabled selected>Category</option>
-                  <option value="8 AM">8 AM</option>
-                  <option value="12 PM">12 PM</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <select name="tourDucation" id="tourDuration">
-                  <option value="disabled" disabled selected>Tour duration</option>
-                  <option value="8 AM">8 AM</option>
-                  <option value="12 PM">12 PM</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <input type="date" class="form-control">
-                  <div class="input-group-append">
-                    <span class="input-group-text"><i class="ti-notepad"></i></span>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <select name="priceRange" id="priceRange">
-                  <option value="disabled" disabled selected>Price range</option>
-                  <option value="8 AM">8 AM</option>
-                  <option value="12 PM">12 PM</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <button class="button border-0 mt-3" type="submit">Search Package</button>
-              </div>
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--================Search Package section End =================-->
-
-
   <!--================Blog section Start =================-->
   <section class="section-padding bg-gray">
     <div class="container">
       <div class="section-intro text-center pb-90px">
         <i class="far fa-newspaper icon-gradient"></i>
-        <h2>From our Blog</h2>
-        <p>Fowl have fruit moveth male they are that place you will lesser</p>
+        <h2>Apa kabar Duacare</h2>
+        {{-- <p>Duacare </p> --}}
       </div>
 
       <div class="row">
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="card-blog">
-            <img class="card-img rounded-0" src="{{ asset('safario/img/blog/blog-1.png') }}" alt="">
-            <div class="card-blog-body">
-              <a href="#">
-                <h4>Forest responds to consultation smoking in al fresco.</h4>
-              </a>
-              <ul class="card-blog-info">
-                <li><a href="#"><span class="align-middle"><i class="ti-notepad"></i></span>Jan 03, 2018</a></li>
-                <li><a href="#"><span class="align-middle"><i class="ti-comments-smiley"></i></span>03 Comments</a></li>
-              </ul>
-              <p>Varius metus morbi ferme libero vehic on porta malesuada ut interdu estmales torquent vehicula parturient </p>
+        @foreach ($news as $berita)
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="card-blog">
+              <div style="widht:100%" class="mx-auto">
+                  <img class="card-img rounded-0 img-fluid" style="width:auto; height:275px; overflow: hidden" src="{{ asset('storage/news/'. $berita->image ) }}" alt="">
+              </div>
+              <div class="card-blog-body">
+                <a href="{{ url('news/'.$berita->id.'/'.urlencode($berita->title)) }}">
+                <h4>
+                  @if(strlen($berita)>50)
+                      {{substr($berita->title, 0, 50)}} ...
+                  @else
+                      {{$berita->title}}
+                  @endif
+                </h4>
+                </a>
+                <ul class="card-blog-info">
+                  <li><a href="{{ url('news/'.$berita->id.'/'.urlencode($berita->title)) }}"><span class="align-middle"><i class="ti-notepad"></i></span>{{ \Carbon\Carbon::parse($berita->created_at)->format('F d, Y')}}</a></li>
+                </ul>
+                <p>{{substr($berita->description, 0, 100)}} ... </p>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="card-blog">
-            <img class="card-img rounded-0" src="{{ asset('safario/img/blog/blog-2.png') }}" alt="">
-            <div class="card-blog-body">
-              <a href="#">
-                <h4>Forest responds to consultation smoking in al fresco.</h4>
-              </a>
-              <ul class="card-blog-info">
-                <li><a href="#"><span class="align-middle"><i class="ti-notepad"></i></span>Jan 03, 2018</a></li>
-                <li><a href="#"><span class="align-middle"><i class="ti-comments-smiley"></i></span>03 Comments</a></li>
-              </ul>
-              <p>Varius metus morbi ferme libero vehic on porta malesuada ut interdu estmales torquent vehicula parturient </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="card-blog">
-            <img class="card-img rounded-0" src="{{ asset('safario/img/blog/blog-3.png') }}" alt="">
-            <div class="card-blog-body">
-              <a href="#">
-                <h4>Forest responds to consultation smoking in al fresco.</h4>
-              </a>
-              <ul class="card-blog-info">
-                <li><a href="#"><span class="align-middle"><i class="ti-notepad"></i></span>Jan 03, 2018</a></li>
-                <li><a href="#"><span class="align-middle"><i class="ti-comments-smiley"></i></span>03 Comments</a></li>
-              </ul>
-              <p>Varius metus morbi ferme libero vehic on porta malesuada ut interdu estmales torquent vehicula parturient </p>
-            </div>
-          </div>
-        </div>
+          </div>            
+        @endforeach
       </div>
     </div>
   </section>
