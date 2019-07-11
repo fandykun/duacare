@@ -2,6 +2,22 @@
 
 @section('style')
   <style>
+.thumb-80 {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+.thumb-80 img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
   </style>
 @endsection
 
@@ -32,8 +48,8 @@
                     <div class="blog_item_img">
                         <img class="card-img rounded-0" src="{{ asset('storage/news/'. $berita->image ) }}" alt="{{$berita->title}}">
                         <a href="#" class="blog_item_date">
-                        <h3>{{ \Carbon\Carbon::parse($berita->created_at)->format('d')}}</h3>
-                        <p>{{ \Carbon\Carbon::parse($berita->created_at)->format('F')}}</p>
+                        <h3>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%d')}}</h3>
+                        <p>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%b')}}</p>
                         </a>
                     </div>
                     
@@ -141,20 +157,16 @@
                         <h3 class="widget_title">Recent Post</h3>
                         @foreach($latest_items as $latest_item)
                             <div class="media post_item">
-                                {{-- <img src="{{ asset('storage/news/'. $latest_item->image ) }}" alt="{{$latest_item->title}}"> --}}
-                                <img src="{{ asset('safario/img/blog/popular-post/post1.jpg') }}" alt="post">
+                                <div class="thumb-80">
+                                    <img src="{{ asset('storage/news/'. $latest_item->image ) }}" alt="{{$latest_item->title}}">
+                                </div>
+                                {{-- <img src="{{ asset('safario/img/blog/popular-post/post1.jpg') }}" alt="post"> --}}
                                 <div class="media-body">
-                                <a href="{{ url('news/'.$latest_item->id.'/'.urlencode($latest_item->title)) }}">
-                                        <h3>
-                                            @if(strlen($latest_item)>20)
-                                                {{substr($latest_item->title, 0, 20)}} ...
-                                            @else
-                                                {{$latest_item->title}}
-                                            @endif
-                                        </h3>
+                                    <a href="{{ url('news/'.$latest_item->id.'/'.urlencode($latest_item->title)) }}">
+                                        <h3 class="ellipsis-1"> {{ $latest_item->title }}</h3>
                                     </a>
                                     <p>
-                                        {{ \Carbon\Carbon::parse($latest_item->created_at)->format('F d, Y')}}
+                                        {{ \Carbon\Carbon::parse($latest_item->created_at)->formatLocalized('%d %B %Y') }}
                                     </p>
                                 </div>
                             </div>

@@ -122,9 +122,9 @@
           </div>
         </div>
         <div class="col-lg-5 col-md-6 align-self-center about-content">
-          <h2>Exploration is <br class="d-none d-xl-block"> really the essence <br class="d-none d-xl-block"> of the human spirit</h2>
-          <p>Make she'd moved divided air. Whose tree that replenish tone hath own upon them it multiply was blessed is lights make gathering so day dominion so creeping air was made.</p>
-          <a class="button" href="#">Learn More</a>
+          <h2>TENTANG DUACARE</h2>
+          <p>Duacare adalah organisasi sosial alumni SMAN 2 Lumajang yang berpegang teguh pada semboyan “Dare to care!</p>
+          <a class="button" href="{{ url('/about') }}">Pelajari Lebih Lanjut</a>
         </div>
       </div>
     </div>
@@ -356,7 +356,7 @@
                 </h4>
                 </a>
                 <ul class="card-blog-info">
-                  <li><a href="{{ url('news/'.$berita->id.'/'.urlencode($berita->title)) }}"><span class="align-middle"><i class="ti-notepad"></i></span>{{ \Carbon\Carbon::parse($berita->created_at)->format('F d, Y')}}</a></li>
+                  <li><a href="{{ url('news/'.$berita->id.'/'.urlencode($berita->title)) }}"><span class="align-middle"><i class="ti-notepad"></i></span>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%A, %d %B %Y') }}</a></li>
                 </ul>
                 <p>{{substr($berita->description, 0, 100)}} ... </p>
               </div>

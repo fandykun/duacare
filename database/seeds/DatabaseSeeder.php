@@ -4,8 +4,7 @@ use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 use App\User;
 use App\News;
-use App\Event;
-use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -71,16 +70,20 @@ class DatabaseSeeder extends Seeder
         ];
 
         $newsDescription = $testimoniesDescription;
-        $newsImage = 'dummy-news.jpg';
+        $newsImage = 'dummy-news.png';
         $newsEventID = [2, 1, 4];
 
-        for ($j=0; $j < 10 ; $j++) { 
+        for ($j = 0; $j < 10; $j++) {
             for ($i = 0; $i < count($newsTitle); $i++) {
+
+                $newsCreatedAt = Carbon::createFromTimeStamp($faker->dateTimeBetween('-30 days', '+30 days')->getTimestamp());
+
                 News::create([
-                    'title' => $newsTitle[$i].'-'.$j,
+                    'title' => $newsTitle[$i] . '-' . $j,
                     'description' => $newsDescription[$i],
                     'image' => $newsImage,
-                    'event_id' => $newsEventID[$i]
+                    'event_id' => $newsEventID[$i],
+                    'created_at' => $newsCreatedAt
                 ]);
             }
         }

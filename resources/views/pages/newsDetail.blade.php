@@ -2,6 +2,22 @@
 
 @section('style')
   <style>
+.thumb-80 {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+.thumb-80 img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
   </style>
 @endsection
 
@@ -56,10 +72,9 @@
             <div class="navigation-area">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+                        @if(!empty($previous_item))
                         <div class="thumb">
-                            <a href="#">
-                                <img class="img-fluid" src="{{ asset('safario/img/blog/prev.jpg') }}" alt="">
-                            </a>
+                            <img class="img-fluid" src="{{ asset('safario/img/blog/prev.jpg') }}" alt="">
                         </div>
                         <div class="arrow">
                             <a href="#">
@@ -67,17 +82,19 @@
                             </a>
                         </div>
                         <div class="detials">
-                            <p>Prev Post</p>
-                            <a href="#">
-                                <h4>Space The Final Frontier</h4>
+                            <p>Post Sebelumnya</p>
+                            <a href="{{ url('news/'.$previous_item->id.'/'.urlencode($previous_item->title)) }}">
+                                <h4 class="ellipsis-2" >{{ $previous_item->title }}</h4>
                             </a>
                         </div>
+                        @endif
                     </div>
                     <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+                        @if(!empty($next_item))
                         <div class="detials">
-                            <p>Next Post</p>
-                            <a href="#">
-                                <h4>Telescopes 101</h4>
+                            <p>Post Selanjutnya</p>
+                            <a href="{{ url('news/'.$next_item->id.'/'.urlencode($next_item->title)) }}">
+                                <h4> {{ $next_item->title }} </h4>
                             </a>
                         </div>
                         <div class="arrow">
@@ -90,6 +107,7 @@
                                 <img class="img-fluid" src="{{ asset('safario/img/blog/next.jpg') }}" alt="">
                             </a>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -288,20 +306,15 @@
                     <h3 class="widget_title">Recent Post</h3>
                     @foreach($latest_items as $latest_item)
                     <div class="media post_item">
-                        {{-- <img src="{{ asset('storage/news/'. $latest_item->image ) }}" alt="{{$latest_item->title}}"> --}}
-                        <img src="{{ asset('safario/img/blog/popular-post/post1.jpg') }}" alt="post">
+                        <div class="thumb-80">
+                            <img src="{{ asset('storage/news/'. $latest_item->image ) }}" alt="{{$latest_item->title}}">
+                        </div>
                         <div class="media-body">
-                        <a href="{{ url('news/'.$latest_item->id.'/'.urlencode($latest_item->title)) }}">
-                                <h3>
-                                    @if(strlen($latest_item)>20)
-                                        {{substr($latest_item->title, 0, 20)}} ...
-                                    @else
-                                        {{$latest_item->title}}
-                                    @endif
-                                </h3>
+                            <a href="{{ url('news/'.$latest_item->id.'/'.urlencode($latest_item->title)) }}">
+                                <h3 class="ellipsis-1"> {{ $latest_item->title }}</h3>
                             </a>
                             <p>
-                                {{ \Carbon\Carbon::parse($latest_item->created_at)->format('F d, Y')}}
+                                {{ \Carbon\Carbon::parse($latest_item->created_at)->formatLocalized('%d %B %Y') }}
                             </p>
                         </div>
                     </div>
