@@ -44,10 +44,22 @@ class PagesController extends Controller
 
     public function getNewsDetailPage($id, $title)
     {
-        $latest_items = News::orderBy('created_at', 'desc')->take(5)->get();
+
         $news = News::findOrFail($id);
         $events = Event::all();
-        return view('pages.newsDetail', compact('news', 'latest_items', 'events'));
+
+        $latest_items = News::orderBy('created_at', 'desc')->take(5)->get();
+        $previous_item = News::where('created_at', '<', $news->created_at)
+            ->orderBy('created_at', 'desc')
+            ->first();
+        $next_item = News::where('created_at', '>', $news->created_at)
+            ->orderBy('created_at', 'asc')
+            ->first();
+
+        return view(
+            'pages.newsDetail',
+            compact('news', 'latest_items', 'previous_item', 'next_item', 'events')
+        );
     }
 
     public function getNewsBySearch(Request $r)

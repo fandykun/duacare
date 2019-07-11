@@ -187,12 +187,12 @@
             <img class="card-img rounded-0" src="{{ asset('storage/news/'.$latest_item->image) }}" alt="">
             <div class="card-blog-body">
               <a href="#">
-                <h4 class="ellipsis">{{ $latest_item->title }}</h4>
+                <h4 class="ellipsis-2">{{ $latest_item->title }}</h4>
               </a>
               <ul class="card-blog-info">
                 <li><a href="#"><span class="align-middle"><i class="ti-notepad"></i></span>{{ \Carbon\Carbon::parse($latest_item->created_at)->formatLocalized('%A, %d %B %Y') }}</a></li>
               </ul>
-              <p class="ellipsis"> {{ $latest_item->description }} </p>
+              <p class="ellipsis-2"> {{ $latest_item->description }} </p>
             </div>
           </div>
         </div>
