@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
         for ($j = 0; $j < 10; $j++) {
             for ($i = 0; $i < count($newsTitle); $i++) {
 
-                $newsCreatedAt = Carbon::createFromTimeStamp($faker->dateTimeBetween('-30 days', '+30 days')->getTimestamp());
+                $newsCreatedAt = Carbon::createFromTimeStamp($faker->dateTimeBetween('-30 days', '-2 days')->getTimestamp());
 
                 News::create([
                     'title' => $newsTitle[$i] . '-' . $j,

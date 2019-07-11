@@ -340,28 +340,20 @@
 
       <div class="row">
         @foreach ($news as $berita)
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="card-blog">
-              <div style="widht:100%" class="mx-auto">
-                  <img class="card-img rounded-0 img-fluid" style="width:auto; height:275px; overflow: hidden" src="{{ asset('storage/news/'. $berita->image ) }}" alt="">
-              </div>
-              <div class="card-blog-body">
-                <a href="{{ url('news/'.$berita->id.'/'.urlencode($berita->title)) }}">
-                <h4>
-                  @if(strlen($berita)>50)
-                      {{substr($berita->title, 0, 50)}} ...
-                  @else
-                      {{$berita->title}}
-                  @endif
-                </h4>
-                </a>
-                <ul class="card-blog-info">
-                  <li><a href="{{ url('news/'.$berita->id.'/'.urlencode($berita->title)) }}"><span class="align-middle"><i class="ti-notepad"></i></span>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%A, %d %B %Y') }}</a></li>
-                </ul>
-                <p>{{substr($berita->description, 0, 100)}} ... </p>
-              </div>
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="card-blog">
+            <img class="card-img rounded-0" src="{{ asset('storage/news/'.$berita->image) }}" alt="">
+            <div class="card-blog-body">
+              <a href="#">
+                <h4 class="ellipsis-2">{{ $berita->title }}</h4>
+              </a>
+              <ul class="card-blog-info">
+                <li><a href="#"><span class="align-middle"><i class="ti-notepad"></i></span>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%A, %d %B %Y') }}</a></li>
+              </ul>
+              <p class="ellipsis-2"> {{ $berita->description }} </p>
             </div>
-          </div>            
+          </div>
+        </div>
         @endforeach
       </div>
     </div>
