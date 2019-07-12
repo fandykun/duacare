@@ -8,12 +8,19 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    public function getCreatePage() {
+    public function index()
+    {
+        return view('admin.news.index');
+    }
+
+    public function create()
+    {
         $events = Event::all();
         return view('admin.news.create', compact('events'));
     }
-    
-    public function addNews(Request $request) {
+
+    public function store(Request $request)
+    {
         $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -25,20 +32,15 @@ class NewsController extends Controller
         try {
             $filenameWithExt = $request->file('image')->getClientOriginalName();
             $storeFile = $request->file('image')->storeAs('public/news', $filenameWithExt);
-            
+
             $news = new News();
             $news->title = $request->title;
             $news->description = $request->description;
             $news->image = $filenameWithExt;
             $news->event_id = $request->event_id;
             $news->save();
-        }
-        catch(\Exception $e) {
-
-        }
+        } catch (\Exception $e) { }
 
         return redirect('/news');
     }
-
-
 }

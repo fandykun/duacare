@@ -17,8 +17,31 @@
   @yield('style')
 </head>
 <body id="page-top">
-    
-    @yield('content')
+  <div id="wrapper">
+    @include('admin.sidebar')
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        @include('admin.navbar')
+        @yield('content')
+      </div>
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Duacare 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+  </div>
+  
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
     <script src="{{ asset('sb-admin/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('sb-admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

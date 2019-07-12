@@ -29,9 +29,32 @@ Route::prefix('/admin')->group(function () {
 	Route::post('/login', 'Auth\LoginController@login');
 	Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
-	//jangan di auth dulu
+	Route::group(['middleware' => ['auth']], function () {
+		Route::get('/', 'AdminController@getDashboardPage');
 
-	//News
-	Route::get('/news', 'NewsController@getCreatePage');
-	Route::post('/news', 'NewsController@addNews')->name('news.add');
+		//Event
+		Route::get('/event', 'EventController@index');
+		Route::get('/event/create', 'EventController@create');
+		Route::post('/event/create', 'EventController@store')->name('event.store');
+
+		//News
+		Route::get('/news', 'NewsController@index');
+		Route::get('/news/create', 'NewsController@create');
+		Route::post('/news/create', 'NewsController@store')->name('news.store');
+
+		//Organizer
+		Route::get('/organizer', 'OrganizerController@index');
+
+		//DLD
+		Route::get('/dld', 'DldController@index');
+
+		//Testimony
+		Route::get('/testimony', 'TestimonyController@index');
+
+		//Financial report
+		Route::get('/financial-report', 'FinancialReportController@index');
+
+		//Slider
+		Route::get('/slider', 'SliderController@index');
+	});
 });
