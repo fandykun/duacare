@@ -14,7 +14,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        return view('admin.event.index');
+        $events = Event::all();
+        return view('admin.event.index', compact('events'));
     }
 
     /**

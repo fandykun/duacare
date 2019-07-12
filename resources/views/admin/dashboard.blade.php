@@ -12,5 +12,6 @@
 
 @section('script')
 <script>
+    $("#nav-dashboard").addClass("active");
 </script>
 @endsection

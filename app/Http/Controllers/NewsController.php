@@ -10,7 +10,8 @@ class NewsController extends Controller
 {
     public function index()
     {
-        return view('admin.news.index');
+        $news = News::all();
+        return view('admin.news.index', compact('news'));
     }
 
     public function create()
@@ -41,6 +42,6 @@ class NewsController extends Controller
             $news->save();
         } catch (\Exception $e) { }
 
-        return redirect('/news');
+        return redirect('/admin/news');
     }
 }

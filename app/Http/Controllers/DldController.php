@@ -14,7 +14,8 @@ class DldController extends Controller
      */
     public function index()
     {
-        return view('admin.dld.index');
+        $dlds = Dld::all();
+        return view('admin.dld.index', compact('dlds'));
     }
 
     /**

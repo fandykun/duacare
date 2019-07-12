@@ -13,7 +13,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li id="nav-dashboard" class="nav-item">
     <a class="nav-link" href="{{ url('/admin') }}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
@@ -28,49 +28,49 @@
     </div>
 
     <!-- Nav Item - News -->
-    <li class="nav-item">
+    <li id="nav-news" class="nav-item">
     <a class="nav-link" href="{{ url('/admin/news') }}">
         <i class="fas fa-fw fa-table"></i>
         <span>Berita</span></a>
     </li>
 
     <!-- Nav Item - Organizer -->
-    <li class="nav-item">
+    <li id="nav-organizer" class="nav-item">
     <a class="nav-link" href="{{ url('/admin/organizer') }}">
         <i class="fas fa-fw fa-table"></i>
         <span>Organizer</span></a>
     </li>
 
-    <!-- Nav Item - Testimony -->
-    <li class="nav-item">
+    <!-- Nav Item - Event -->
+    <li id="nav-event" class="nav-item">
     <a class="nav-link" href="{{ url('/admin/event') }}">
         <i class="fas fa-fw fa-table"></i>
         <span>Acara</span></a>
     </li>
 
     <!-- Nav Item - Testimony -->
-    <li class="nav-item">
+    <li id="nav-testimony" class="nav-item">
     <a class="nav-link" href="{{ url('/admin/testimony') }}">
         <i class="fas fa-fw fa-table"></i>
         <span>Testimoni</span></a>
     </li>
 
-    <!-- Nav Item - Testimony -->
-    <li class="nav-item">
+    <!-- Nav Item - Slider -->
+    <li id="nav-slider" class="nav-item">
     <a class="nav-link" href="{{ url('/admin/slider') }}">
         <i class="fas fa-fw fa-table"></i>
         <span>Slider</span></a>
     </li>
 
-    <!-- Nav Item - Testimony -->
-    <li class="nav-item">
+    <!-- Nav Item - DLD -->
+    <li id="nav-dld" class="nav-item">
     <a class="nav-link" href="{{ url('/admin/dld') }}">
         <i class="fas fa-fw fa-table"></i>
         <span>DLD</span></a>
     </li>
 
-    <!-- Nav Item - Testimony -->
-    <li class="nav-item">
+    <!-- Nav Item - financial report -->
+    <li id="nav-financialReport" class="nav-item">
     <a class="nav-link" href="{{ url('/admin/financial-report') }}">
         <i class="fas fa-fw fa-table"></i>
         <span>Laporan Keuangan</span></a>

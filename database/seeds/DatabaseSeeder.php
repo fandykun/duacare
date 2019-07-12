@@ -5,6 +5,10 @@ use Faker\Factory as Faker;
 use App\User;
 use App\News;
 use Carbon\Carbon;
+use App\FinancialReport;
+use App\Organizer;
+use App\Slider;
+use App\Dld;
 
 class DatabaseSeeder extends Seeder
 {
@@ -86,6 +90,69 @@ class DatabaseSeeder extends Seeder
                     'created_at' => $newsCreatedAt
                 ]);
             }
+        }
+
+        //Financial Report
+        for ($i = 0; $i < 10; $i++) {
+            $date = Carbon::createFromTimeStamp($faker->dateTimeBetween('now', '+1 year')->getTimestamp());
+            $month = \Carbon\Carbon::parse($date)->formatLocalized('%B');
+            $year = rand(2015, 2019);
+            $link_url = 'intip.in/linknya-' . $i . '-disini';
+            FinancialReport::create([
+                'month' => $month,
+                'year' => $year,
+                'link_url' => $link_url
+            ]);
+        }
+
+        $OrganizerPosition = [
+            'Founder',
+            'Branding & Communication',
+            'Human Resource & Development',
+            'Finance',
+            'Enterpreneur'
+        ];
+
+        for ($i = 0; $i < 20; $i++) {
+            Organizer::create([
+                'name' => $faker->name,
+                'position' => $OrganizerPosition[rand(0, 4)],
+                'phone_number' => $faker->phoneNumber,
+                'image' => 'dummy.png'
+            ]);
+        }
+
+        //Slider
+        for ($i = 0; $i < 10; $i++) {
+            Slider::create([
+                'name' => $eventsTitle[rand(0, 3)],
+                'image' => 'dummy.png'
+            ]);
+        }
+
+        //DLD
+        $listBank = [
+            'BRI', 'BNI', 'Mandiri', 'BCA', 'Bank Jatim'
+        ];
+
+        $donationType = [
+            'Bulanan', 'Insidental'
+        ];
+
+        for ($i = 1; $i <= 15; $i++) {
+            Dld::create([
+                'name' => $faker->name,
+                'graduation_year' => rand(2005, 2018),
+                'origin_address' => $faker->streetAddress,
+                'current_address' => $faker->address,
+                'email' => $faker->email,
+                'phone_number' => $faker->phoneNumber,
+                'line' => '@' . $faker->userName,
+                'instagram' => '@' . $faker->userName,
+                'bank' => $listBank[rand(0, 4)],
+                'donation_type' => $donationType[$i % 2],
+                'amount' => $i * 100000
+            ]);
         }
     }
 }

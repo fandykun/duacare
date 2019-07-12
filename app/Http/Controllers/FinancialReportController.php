@@ -14,7 +14,8 @@ class FinancialReportController extends Controller
      */
     public function index()
     {
-        return view('admin.financialReport.index');
+        $financialReports = FinancialReport::all();
+        return view('admin.financialReport.index', compact('financialReports'));
     }
 
     /**

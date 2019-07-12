@@ -14,7 +14,8 @@ class OrganizerController extends Controller
      */
     public function index()
     {
-        return view('admin.organizer.index');
+        $organizers = Organizer::all();
+        return view('admin.organizer.index', compact('organizers'));
     }
 
     /**
