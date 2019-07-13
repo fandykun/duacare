@@ -11,7 +11,8 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::all();
-        return view('admin.news.index', compact('news'));
+        $events = Event::all();
+        return view('admin.news.index', compact('news', 'events'));
     }
 
     public function create()
@@ -43,5 +44,45 @@ class NewsController extends Controller
         } catch (\Exception $e) { }
 
         return redirect('/admin/news');
+    }
+
+    public function getNews($id){
+        try {
+            $news = News::find($id);
+        } catch (Exception $e) {
+            return response()->json(['message' => $e->getMessage()], $e->getCode());
+        }
+
+        return response()->json($news);
+    }
+
+    public function updateNews(Request $request)
+    {
+        try {
+            News::find($request->id)->update([
+                'title' => $request->title,
+                'description'  =>  $request->description,
+                'event_id' =>  $request->event_id,
+                'created_at'    =>  $request->created_at,
+                'updated_at'    =>  $request->created_at,
+        ]);
+        } catch (\Exception $e) {
+            $eMessage = 'update news - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!'); 
+        }
+        return redirect()->back()->with('message', 'success'); 
+    }
+
+    public function deleteNews(Request $request)
+    {
+        try {
+            News::where('id',$request->id)->delete();
+        } catch (\Exception $e) {
+            $eMessage = 'delete news - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!'); 
+        }
+        return redirect()->back()->with('message', 'success'); 
     }
 }

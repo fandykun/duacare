@@ -39,8 +39,11 @@ Route::prefix('/admin')->group(function () {
 
 		//News
 		Route::get('/news', 'NewsController@index');
+		Route::get('/news/v1/{id}', 'NewsController@getNews');
 		Route::get('/news/create', 'NewsController@create');
 		Route::post('/news/create', 'NewsController@store')->name('news.store');
+		Route::put('/news', 'NewsController@updateNews')->name('news.update');
+		Route::delete('/news', 'NewsController@deleteNews')->name('news.delete');
 
 		//Organizer
 		Route::get('/organizer', 'OrganizerController@index');

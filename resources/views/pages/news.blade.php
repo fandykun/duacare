@@ -46,7 +46,9 @@
                     @foreach($news as $berita)
                     <article class="blog_item">
                     <div class="blog_item_img">
-                        <img class="card-img rounded-0" src="{{ asset('storage/news/'. $berita->image ) }}" alt="{{$berita->title}}">
+                        <div>
+                            <img class="card-img img-fluid rounded-0" src="{{ asset('storage/news/'. $berita->image ) }}" alt="{{$berita->title}}">
+                        </div>
                         <a href="#" class="blog_item_date">
                         <h3>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%d')}}</h3>
                         <p>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%b')}}</p>
@@ -54,7 +56,7 @@
                     </div>
                     
                     <div class="blog_details">
-                        <a class="d-inline-block" href="{{ url('news/'.$berita->id.'/'.urlencode($berita->title)) }}">
+                        <a class="d-inline-block" href="{{ url('news/'.$berita->id.'/'.rawurlencode($berita->title)) }}">
                             <h2>{{ $berita->title }}</h2>
                         </a>
                         <p>{{ $berita->description }}</p>
@@ -87,7 +89,7 @@
                         </form>
                     </aside>
 
-                    <aside class="single_sidebar_widget post_category_widget">
+{{--                     <aside class="single_sidebar_widget post_category_widget">
                     <h4 class="widget_title">Category</h4>
                     <ul class="list cat-list">
                         <li>
@@ -127,7 +129,7 @@
                             </a>
                         </li>
                     </ul>
-                    </aside>
+                    </aside> --}}
 
                     <aside class="single_sidebar_widget popular_post_widget">
                         <h3 class="widget_title">Recent Post</h3>
@@ -138,7 +140,7 @@
                                 </div>
                                 {{-- <img src="{{ asset('safario/img/blog/popular-post/post1.jpg') }}" alt="post"> --}}
                                 <div class="media-body">
-                                    <a href="{{ url('news/'.$latest_item->id.'/'.urlencode($latest_item->title)) }}">
+                                    <a href="{{ url('news/'.$latest_item->id.'/'.rawurlencode($latest_item->title)) }}">
                                         <h3 class="ellipsis-1"> {{ $latest_item->title }}</h3>
                                     </a>
                                     <p>
@@ -197,7 +199,7 @@
                     </aside>
 
 
-                    <aside class="single_sidebar_widget newsletter_widget">
+{{--                     <aside class="single_sidebar_widget newsletter_widget">
                     <h4 class="widget_title">Newsletter</h4>
 
                     <form action="#">
@@ -206,7 +208,7 @@
                         </div>
                         <button class="button rounded-0 primary-bg text-white w-100" type="submit">Subscribe</button>
                     </form>
-                    </aside>
+                    </aside> --}}
                 </div>
             </div>
         </div>

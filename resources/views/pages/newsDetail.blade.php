@@ -83,7 +83,7 @@
                         </div>
                         <div class="detials">
                             <p>Post Sebelumnya</p>
-                            <a href="{{ url('news/'.$previous_item->id.'/'.urlencode($previous_item->title)) }}">
+                            <a href="{{ url('news/'.$previous_item->id.'/'.rawurlencode($previous_item->title)) }}">
                                 <h4 class="ellipsis-2" >{{ $previous_item->title }}</h4>
                             </a>
                         </div>
@@ -93,7 +93,7 @@
                         @if(!empty($next_item))
                         <div class="detials">
                             <p>Post Selanjutnya</p>
-                            <a href="{{ url('news/'.$next_item->id.'/'.urlencode($next_item->title)) }}">
+                            <a href="{{ url('news/'.$next_item->id.'/'.rawurlencode($next_item->title)) }}">
                                 <h4> {{ $next_item->title }} </h4>
                             </a>
                         </div>
@@ -310,7 +310,7 @@
                             <img src="{{ asset('storage/news/'. $latest_item->image ) }}" alt="{{$latest_item->title}}">
                         </div>
                         <div class="media-body">
-                            <a href="{{ url('news/'.$latest_item->id.'/'.urlencode($latest_item->title)) }}">
+                            <a href="{{ url('news/'.$latest_item->id.'/'.rawurlencode($latest_item->title)) }}">
                                 <h3 class="ellipsis-1"> {{ $latest_item->title }}</h3>
                             </a>
                             <p>

@@ -154,3 +154,17 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+.ellipsis-5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.card-img-style {
+  height: 250px; 
+  width: auto; 
+  overflow: hidden;
+}

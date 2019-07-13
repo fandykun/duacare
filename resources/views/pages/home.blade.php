@@ -342,13 +342,15 @@
         @foreach ($news as $berita)
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="card-blog">
-            <img class="card-img rounded-0" src="{{ asset('storage/news/'.$berita->image) }}" alt="">
+            <div class="card-img-style">
+              <img class="card-img rounded-0" src="{{ asset('storage/news/'.$berita->image) }}" alt="">            
+            </div>
             <div class="card-blog-body">
-              <a href="#">
+              <a href="{{ url('news/'.$berita->id.'/'.urlencode($berita->title)) }}">
                 <h4 class="ellipsis-2">{{ $berita->title }}</h4>
               </a>
               <ul class="card-blog-info">
-                <li><a href="#"><span class="align-middle"><i class="ti-notepad"></i></span>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%A, %d %B %Y') }}</a></li>
+                <li><a href="{{ url('news/'.$berita->id.'/'.urlencode($berita->title)) }}"><span class="align-middle"><i class="ti-notepad"></i></span>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%A, %d %B %Y') }}</a></li>
               </ul>
               <p class="ellipsis-2"> {{ $berita->description }} </p>
             </div>
