@@ -21,6 +21,7 @@ Route::get('/news/search', 'PagesController@getNewsBySearch')->name('search.news
 Route::get('/news/{id}/{title}', 'PagesController@getNewsDetailPage');
 Route::get('/contact', 'PagesController@getContactPage');
 
+Route::post('/dld/submit', 'DldController@submitDLD')->name('submit.dld');
 // Authentication Routes...
 
 //Admin

@@ -1,6 +1,7 @@
 @extends('layouts.landing')
 
 @section('style')
+
 @endsection
 
 @section('content')
@@ -16,6 +17,15 @@
   <!--================Hero Banner SM Area End =================-->
 
   <!--================Tour section Start =================-->
+@if (\Session::has('success'))
+  <div class="alert alert-primary text-center" role="alert">
+    Selamat, anda telah menjadi <em>Duacare Loyal Donature</em>, anda akan menerima email dalam kurun waktu tertentu sebagai laporan keuangan duacare. Terimakasih!
+  </div>
+@elseif (\Session::has('error'))
+  <div class="alert alert-danger text-center" role="alert">
+    Telah terjadi kesalahan, mohon cek kelengkapan data dan ulangi proses pendaftaran.
+  </div>
+@endif
   <section class="section-margin">
     <div class="container">
       <div class="row">
@@ -105,11 +115,139 @@
   </section>
   <!--================Tour section End =================-->
 
+  <section class="section-margin">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-xl-5 align-self-center mb-5 mb-lg-0">
+          <div class="search-content">
+            <h2>Bergabunglah menjadi salah satu <em>Duacare Loyal Donature</em></h2>
+            <p>Make she'd moved divided air. Whose tree that replenish tone hath own upon them it multiply was blessed is lights make gathering so day dominion so creeping</p>
+            <div class="text-center">
+              <img class="card-img rounded-0 img-fluid vert-move" style="height: 250px; width: auto; margin: auto;" src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-6 offset-xl-1">
+          <div class="search-wrapper">
+            <h3>Daftar Duacare Loyal Donature</h3>
+
+            <form class="search-form" id="daftar-dld" action="{{ route('submit.dld') }}" method="POST">
+              {{ csrf_field() }}
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="name" placeholder="Nama Lengkap" required autocomplete="off" max="124">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="number" min="1977" class="form-control" name="graduation_year" placeholder="Tahun lulus SMA" required autocomplete="off" max="<?php echo date("Y")+3; ?>">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="origin_address" placeholder="Alamat di Lumajang" required autocomplete="off" max="124">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-address-book"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="current_address" placeholder="Alamat domisili" required autocomplete="off" max="124">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-address-book"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="email" class="form-control" name="email" placeholder="Email" required>
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="phone_number" placeholder="No HP/Whatsapp" required autocomplete="off" max="100">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="line" placeholder="ID Line (Opsional)" max="100">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fab fa-line"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="instagram" placeholder="Instagram (Opsional)" max="100">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fab fa-instagram"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <select name="bank" id="bank" required>
+                  <option value="disabled" disabled selected>Bank yang digunakan</option>
+                  <option value="Bank Mandiri">Bank Mandiri</option>
+                  <option value="Bank Negara Indonesia (BNI)">Bank Negara Indonesia (BNI)</option>
+                  <option value="Bank Rakyat Indonesia (BRI)">Bank Rakyat Indonesia (BRI)</option>
+                  <option value="Bank Central Asia (BCA)">Bank Central Asia (BCA)</option>
+                  <option value="Bank Jatim">Bank Jatim</option>
+                  <option value="Bank BNI Syariah">Bank BNI Syariah</option>
+                  <option value="Bank Syariah Mandiri">Bank Syariah Mandiri</option>
+                  <option value="BCA Syariah">BCA Syariah</option>
+                  <option value="Bank BRI Syariah">Bank BRI Syariah</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select id="donation_type" name="donation_type" required>
+                  <option value="disabled" disabled selected>Jenis Donasi</option>
+                  <option value="Bulanan">Bulanan</option>
+                  <option value="Insidental">Insidental</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control amount" name="amount" placeholder="Jumlah donasi">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-coins"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <button class="button border-0 mt-3 save" type="submit">Jadikan saya DLD!</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 @endsection
 
 @section('script')
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
   <script>
     $("#nav-dld").addClass("active");
+    $(document).ready(function(){
+        $('.amount').mask('0.000.000.000.000', {reverse: true});
+    });
+
   </script>
+
 @endsection

@@ -28,10 +28,10 @@ class DatabaseSeeder extends Seeder
 
         $eventsTitle = ['Beasiswa Duacare', 'Duacare Goes To School', 'Duacare For Ramadhan', 'Duacare Camp'];
         $eventsDescription = [
-            'Beasiswa berupa dana pendidikan bagi siswa/siswi SMAN Negeri 2 Lumajang',
-            'Kegiatan Campus Expo dan Talkshow mengenai seputar perkuliahan',
-            'Kegiatan bakti sosial pada bulan Ramadhan ke desa-desa yang membutuhkan',
-            'Internal day untuk meningkatkan kejasama antar organizer'
+            'Beasiswa berupa dana pendidikan bagi siswa/siswi SMAN Negeri 2 Lumajang.',
+            'Kegiatan Campus Expo dan Talkshow mengenai seputar perkuliahan.',
+            'Kegiatan bakti sosial pada bulan Ramadhan ke desa-desa,',
+            'Internal day untuk meningkatkan kejasama antar organizer.'
         ];
 
         for ($i = 0; $i < count($eventsTitle); $i++) {

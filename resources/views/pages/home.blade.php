@@ -2,23 +2,6 @@
 
 @section('style')
   <style>
-    img.vert-move {
-      -webkit-animation: mover 1s infinite  alternate;
-      animation: mover 1s infinite  alternate;
-    }
-    img.vert-move {
-      -webkit-animation: mover 1s infinite  alternate;
-      animation: mover 1s infinite  alternate;
-    }
-    @-webkit-keyframes mover {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-15px); }
-    }
-    @keyframes mover {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-15px); }
-    }
-
     .icon-gradient{
       font-size: 50px;
       background: -webkit-linear-gradient(#eee, #333);
@@ -62,8 +45,8 @@
       <div class="row justify-content-center mb-3">
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="service-card text-center wow slideInLeft">
-            <div class="service-card-img">
-              <img class="img-fluid" src="{{ asset('safario/img/home/service1.png') }}" alt="">
+            <div class="service-card-img mb-5">
+              <img class="img-fluid" src="{{ asset('safario/img/home/beasiswa.png') }}" alt="">
             </div>
             <div class="service-card-body">
               <h3>{{ $events[0]->title }}</h3>
@@ -73,8 +56,8 @@
         </div>
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="service-card text-center wow slideInRight">
-            <div class="service-card-img">
-              <img class="img-fluid" src="{{ asset('safario/img/home/service2.png') }}" alt="">
+            <div class="service-card-img mb-5">
+              <img class="img-fluid" src="{{ asset('safario/img/home/dgts.png') }}" alt="">
             </div>
             <div class="service-card-body">
               <h3>{{ $events[1]->title }}</h3>
@@ -86,8 +69,8 @@
       <div class="row justify-content-center">
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="service-card text-center wow slideInLeft">
-            <div class="service-card-img">
-              <img class="img-fluid" src="{{ asset('safario/img/home/service3.png') }}" alt="">
+            <div class="service-card-img mb-5">
+              <img class="img-fluid" src="{{ asset('safario/img/home/dfr.png') }}" alt="">
             </div>
             <div class="service-card-body">
               <h3>{{ $events[2]->title }}</h3>
@@ -97,8 +80,8 @@
         </div>
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="service-card text-center wow slideInRight">
-            <div class="service-card-img">
-              <img class="img-fluid" src="{{ asset('safario/img/home/service3.png') }}" alt="">
+            <div class="service-card-img mb-5">ma
+              <img class="img-fluid" src="{{ asset('safario/img/home/camp.png') }}" alt="">
             </div>
             <div class="service-card-body">
               <h3>{{ $events[3]->title }}</h3>
@@ -201,7 +184,7 @@
   <section class="bg-gray section-padding magic-ball magic-ball-testimonial pb-xl-5">
     <div class="container">
       <div class="section-intro text-center pb-90px">
-        <img class="section-intro-img" src="{{ asset('safario/img/home/section-icon.png') }}" alt="">
+        <i class="fas fa-users icon-gradient"></i>
 
         <!-- paddingnya perlu diedit nanti -->
         <h2>Duacare Kata Mereka</h2>

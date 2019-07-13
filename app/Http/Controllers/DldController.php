@@ -83,4 +83,27 @@ class DldController extends Controller
     {
         //
     }
+
+    public function submitDLD(Request $request){
+        try {
+            Dld::create([
+                'name'  => $request->name,
+                'graduation_year'  => $request->graduation_year,
+                'origin_address'  => $request->origin_address,
+                'current_address'  => $request->current_address,
+                'email'  => $request->email,
+                'phone_number'  => $request->phone_number,
+                'line'  => $request->line,
+                'instagram'  => $request->instagram,
+                'bank'  => $request->bank,
+                'donation_type'  => $request->donation_type,
+                'amount'  => str_replace('.','',$request->amount)
+            ]);
+        } catch (Exception $e) {
+            $eMessage = 'add dld, error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!'); 
+        }
+        return redirect()->back()->with('success', 'success'); 
+    }
 }
