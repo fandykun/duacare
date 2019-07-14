@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Testimony;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class TestimonyController extends Controller
 {
@@ -54,5 +55,37 @@ class TestimonyController extends Controller
             return redirect()->back()->with('error', 'Whoops, something error!');
         }
         return redirect()->back()->with('message', 'success');
+    }
+
+    public function exportTestimony()
+    {
+        try {
+            $headers = [
+                'Cache-Control'       => 'must-revalidate, post-check=0, pre-check=0',
+                'Content-type'        => 'text/csv',
+                'Content-Disposition' => 'attachment; filename=Duacare-Testimoni.csv',
+                'Expires'             => '0',
+                'Pragma'              => 'public'
+            ];
+
+            $list = Testimony::all()->toArray();
+
+            # add headers for each column in the CSV download
+            array_unshift($list, array_keys($list[0]));
+
+            $callback = function () use ($list) {
+                $FH = fopen('php://output', 'w');
+                foreach ($list as $row) {
+                    fputcsv($FH, $row);
+                }
+                fclose($FH);
+            };
+
+            return new StreamedResponse($callback, 200, $headers);
+        } catch (\Exception $e) {
+            $eMessage = 'delete Testimony - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
     }
 }

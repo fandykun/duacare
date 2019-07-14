@@ -6,6 +6,7 @@ use App\Dld;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class DldController extends Controller
 {
@@ -84,5 +85,37 @@ class DldController extends Controller
             return redirect()->back()->with('error', 'Whoops, something error!');
         }
         return redirect()->back()->with('message', 'success');
+    }
+
+    public function exportDLD()
+    {
+        try {
+            $headers = [
+                'Cache-Control'       => 'must-revalidate, post-check=0, pre-check=0',
+                'Content-type'        => 'text/csv',
+                'Content-Disposition' => 'attachment; filename=Duacare-DLD.csv',
+                'Expires'             => '0',
+                'Pragma'              => 'public'
+            ];
+
+            $list = Dld::all()->toArray();
+
+            # add headers for each column in the CSV download
+            array_unshift($list, array_keys($list[0]));
+
+            $callback = function () use ($list) {
+                $FH = fopen('php://output', 'w');
+                foreach ($list as $row) {
+                    fputcsv($FH, $row);
+                }
+                fclose($FH);
+            };
+
+            return new StreamedResponse($callback, 200, $headers);
+        } catch (\Exception $e) {
+            $eMessage = 'Export DLD - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
     }
 }

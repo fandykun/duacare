@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\News;
 use App\Event;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class NewsController extends Controller
 {
@@ -81,5 +82,37 @@ class NewsController extends Controller
             return redirect()->back()->with('error', 'Whoops, something error!');
         }
         return redirect()->back()->with('message', 'success');
+    }
+
+    public function exportNews()
+    {
+        try {
+            $headers = [
+                'Cache-Control'       => 'must-revalidate, post-check=0, pre-check=0',
+                'Content-type'        => 'text/csv',
+                'Content-Disposition' => 'attachment; filename=Duacare-Berita.csv',
+                'Expires'             => '0',
+                'Pragma'              => 'public'
+            ];
+
+            $list = News::all()->toArray();
+
+            # add headers for each column in the CSV download
+            array_unshift($list, array_keys($list[0]));
+
+            $callback = function () use ($list) {
+                $FH = fopen('php://output', 'w');
+                foreach ($list as $row) {
+                    fputcsv($FH, $row);
+                }
+                fclose($FH);
+            };
+
+            return new StreamedResponse($callback, 200, $headers);
+        } catch (\Exception $e) {
+            $eMessage = 'delete news - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
     }
 }

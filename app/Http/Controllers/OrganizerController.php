@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Organizer;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class OrganizerController extends Controller
 {
@@ -61,5 +62,37 @@ class OrganizerController extends Controller
             return redirect()->back()->with('error', 'Whoops, something error!');
         }
         return redirect()->back()->with('message', 'success');
+    }
+
+    public function exportOrganizer()
+    {
+        try {
+            $headers = [
+                'Cache-Control'       => 'must-revalidate, post-check=0, pre-check=0',
+                'Content-type'        => 'text/csv',
+                'Content-Disposition' => 'attachment; filename=Duacare-Organizer.csv',
+                'Expires'             => '0',
+                'Pragma'              => 'public'
+            ];
+
+            $list = Organizer::all()->toArray();
+
+            # add headers for each column in the CSV download
+            array_unshift($list, array_keys($list[0]));
+
+            $callback = function () use ($list) {
+                $FH = fopen('php://output', 'w');
+                foreach ($list as $row) {
+                    fputcsv($FH, $row);
+                }
+                fclose($FH);
+            };
+
+            return new StreamedResponse($callback, 200, $headers);
+        } catch (\Exception $e) {
+            $eMessage = 'Export Organizer - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
     }
 }
