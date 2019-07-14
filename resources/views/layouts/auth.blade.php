@@ -13,6 +13,7 @@
 
   {{-- Custom Styles --}}
   <link rel="stylesheet" href="{{ asset('sb-admin/css/sb-admin-2.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
   @yield('style')
 </head>

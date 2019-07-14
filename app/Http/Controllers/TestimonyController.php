@@ -18,69 +18,41 @@ class TestimonyController extends Controller
         return view('admin.testimony.index', compact('testimonies'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function getTestimony($id)
     {
-        //
+        try {
+            $testimony = Testimony::find($id);
+        } catch (Exception $e) {
+            return response()->json(['message' => $e->getMessage()], $e->getCode());
+        }
+
+        return response()->json($testimony);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function updateTestimony(Request $request)
     {
-        //
+        try {
+            Testimony::find($request->id)->update([
+                'title' => $request->title,
+                'description'  =>  $request->description
+            ]);
+        } catch (\Exception $e) {
+            $eMessage = 'update Testimony - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
+        return redirect()->back()->with('message', 'success');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Testimony  $testimony
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Testimony $testimony)
+    public function deleteTestimony(Request $request)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Testimony  $testimony
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Testimony $testimony)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Testimony  $testimony
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Testimony $testimony)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Testimony  $testimony
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Testimony $testimony)
-    {
-        //
+        try {
+            Testimony::where('id', $request->id)->delete();
+        } catch (\Exception $e) {
+            $eMessage = 'delete Testimony - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
+        return redirect()->back()->with('message', 'success');
     }
 }

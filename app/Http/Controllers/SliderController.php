@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class SliderController extends Controller
 {
@@ -28,59 +30,40 @@ class SliderController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function getSlider($id)
     {
-        //
+        try {
+            $slider = Slider::find($id);
+        } catch (Exception $e) {
+            return response()->json(['message' => $e->getMessage()], $e->getCode());
+        }
+
+        return response()->json($slider);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Slider  $slider
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Slider $slider)
+    public function updateSlider(Request $request)
     {
-        //
+        try {
+            Slider::find($request->id)->update([
+                'name' => $request->name
+            ]);
+        } catch (\Exception $e) {
+            $eMessage = 'update Slider - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
+        return redirect()->back()->with('message', 'success');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Slider  $slider
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Slider $slider)
+    public function deleteSlider(Request $request)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Slider  $slider
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Slider $slider)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Slider  $slider
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Slider $slider)
-    {
-        //
+        try {
+            Slider::where('id', $request->id)->delete();
+        } catch (\Exception $e) {
+            $eMessage = 'delete Slider - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
+        return redirect()->back()->with('message', 'success');
     }
 }

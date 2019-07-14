@@ -2,6 +2,10 @@
 
 @section('style')
 <style>
+img {
+    max-width: 120px;
+    height: auto;
+}
 </style>    
 @endsection
 
@@ -10,13 +14,15 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Slider</h1>
-    <p class="mb-4">Gatau ini nanti dipake dimana, disediain aja</p>
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Slider</h1>
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Export Database</a>
+    </div>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Database Slider</h6>
+        <div class="card-header py-3 border-bottom-primary">
+            <h6 class="m-0 font-weight-bold text-primary">Tabel Slider</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -25,14 +31,14 @@
                         <tr class="text-center">
                             <th>Nama</th>
                             <th>Gambar</th>
-                            <th>Manage</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr class="text-center">
                             <th>Nama</th>
                             <th>Gambar</th>
-                            <th>Manage</th>
+                            <th>Action</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -41,18 +47,18 @@
                         <td>{{ $slider->name }}</td>
                         <td><img src="{{ asset('storage/slider/'.$slider->image) }}"></td>
                         <td class="align-middle text-center">
-                            <a href="#" class="btn btn-warning btn-icon-split btn-sm">
+                            <button class="btn btn-warning btn-icon-split btn-sm edit" style="margin-bottom: 6px;" data-id="{{ $slider->id }}">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-info-circle"></i>
                                 </span>
                                 <span class="text">Edit</span>
-                            </a>
-                            <a href="#" class="btn btn-danger btn-icon-split btn-sm">
+                            </button> <br>
+                            <button class="btn btn-danger btn-icon-split btn-sm delete" data-id="{{ $slider->id }}">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
                                 <span class="text">Delete</span>
-                            </a>
+                            </button>
                         </td>
                     </tr>
                     @endforeach
@@ -65,12 +71,83 @@
 </div>
 <!-- /.container-fluid -->
 
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modalEdit">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Edit Slider</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{{ route('slider.update') }}" enctype="multipart/form-data" id="edit-form">
+                    {{ csrf_field() }}
+                    <input name="_method" type="hidden" value="PUT">
+                    <input type="hidden" name="id" id="id">
+                    <div class="form-group">
+                        <label for="">Nama</label>
+                        <input type="text" class="form-control" id="name" placeholder="Masukkan Nama" required name="name">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<form method="post" id="deleteSlider" action="{{route('slider.delete')}}">
+    {{ csrf_field() }}
+    <input name="_method" type="hidden" value="DELETE">
+    <input type="hidden" name="id" id="idSlider" name="id">
+</form> 
 
 @endsection
 
 
 @section('script')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     $("#nav-slider").addClass("active");
+
+    $(document).on('click', ".edit", async function() {
+        const dataId = $(this).attr('data-id');
+        let newsData;
+        try {
+            newsData = await $.ajax({
+                url: '{{url('admin/slider/show')}}/' + dataId,
+                dataType: 'json'
+            });
+        } catch (error) {
+            alert('error');
+            console.log(error);
+            return;
+        }
+        $("#id").val(dataId)
+        $("#name").val(newsData.name)
+        $("#modalEdit").modal('show');
+    });
+
+    $(document).on('click', ".delete", async function() {
+        const dataId = $(this).attr('data-id');
+        console.log(dataId)
+        swal({
+          title: "Are you sure?",
+          text: "Data yang telah dihapus tidak dapat dikembalikan!",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            $('#idSlider').val(dataId);
+            $('#deleteSlider').submit();
+          } else {
+            return false;
+          }
+        });
+    });
 </script>
 @endsection

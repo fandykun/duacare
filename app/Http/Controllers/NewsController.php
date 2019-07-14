@@ -8,45 +8,42 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    public function index()
+    public function readNewsPage()
     {
         $news = News::all();
         $events = Event::all();
         return view('admin.news.index', compact('news', 'events'));
     }
 
-    public function create()
+    public function createNewsPage()
     {
         $events = Event::all();
         return view('admin.news.create', compact('events'));
     }
 
-    public function store(Request $request)
+    public function storeNews(Request $request)
     {
-        $validatedData = $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'image' => 'required|max:1999',
-            'event_id' => 'required'
-        ]);
-        // dd($validatedData);
-
         try {
-            $filenameWithExt = $request->file('image')->getClientOriginalName();
-            $storeFile = $request->file('image')->storeAs('public/news', $filenameWithExt);
+            $imageName = $request->file('image')->getClientOriginalName();
+            $request->file('image')->storeAs('public/news', $imageName);
 
-            $news = new News();
-            $news->title = $request->title;
-            $news->description = $request->description;
-            $news->image = $filenameWithExt;
-            $news->event_id = $request->event_id;
-            $news->save();
-        } catch (\Exception $e) { }
+            News::create([
+                'title' => $request->name,
+                'description' => $request->description,
+                'image' => $imageName,
+                'event_id' => $request->event_id
+            ]);
+        } catch (\Exception $e) {
+            $eMessage = 'add news, error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
 
-        return redirect('/admin/news');
+        return redirect()->back()->with('success', 'success');
     }
 
-    public function getNews($id){
+    public function getNews($id)
+    {
         try {
             $news = News::find($id);
         } catch (Exception $e) {
@@ -65,24 +62,24 @@ class NewsController extends Controller
                 'event_id' =>  $request->event_id,
                 'created_at'    =>  $request->created_at,
                 'updated_at'    =>  $request->created_at,
-        ]);
+            ]);
         } catch (\Exception $e) {
             $eMessage = 'update news - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
             Log::emergency($eMessage);
-            return redirect()->back()->with('error', 'Whoops, something error!'); 
+            return redirect()->back()->with('error', 'Whoops, something error!');
         }
-        return redirect()->back()->with('message', 'success'); 
+        return redirect()->back()->with('message', 'success');
     }
 
     public function deleteNews(Request $request)
     {
         try {
-            News::where('id',$request->id)->delete();
+            News::where('id', $request->id)->delete();
         } catch (\Exception $e) {
             $eMessage = 'delete news - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
             Log::emergency($eMessage);
-            return redirect()->back()->with('error', 'Whoops, something error!'); 
+            return redirect()->back()->with('error', 'Whoops, something error!');
         }
-        return redirect()->back()->with('message', 'success'); 
+        return redirect()->back()->with('message', 'success');
     }
 }

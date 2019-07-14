@@ -7,80 +7,59 @@ use Illuminate\Http\Request;
 
 class OrganizerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $organizers = Organizer::all();
         return view('admin.organizer.index', compact('organizers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Organizer  $organizer
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Organizer $organizer)
+    public function getOrganizer($id)
     {
-        //
+        try {
+            $organizer = Organizer::find($id);
+        } catch (Exception $e) {
+            return response()->json(['message' => $e->getMessage()], $e->getCode());
+        }
+
+        return response()->json($organizer);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Organizer  $organizer
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Organizer $organizer)
+    public function updateOrganizer(Request $request)
     {
-        //
+        try {
+            Organizer::find($request->id)->update([
+                'name' => $request->name,
+                'position'  =>  $request->position,
+                'phone_number' =>  $request->phone_number
+            ]);
+        } catch (\Exception $e) {
+            $eMessage = 'update Organizer - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
+        return redirect()->back()->with('message', 'success');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Organizer  $organizer
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Organizer $organizer)
+    public function deleteOrganizer(Request $request)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Organizer  $organizer
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Organizer $organizer)
-    {
-        //
+        try {
+            Organizer::where('id', $request->id)->delete();
+        } catch (\Exception $e) {
+            $eMessage = 'delete Organizer - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
+        return redirect()->back()->with('message', 'success');
     }
 }

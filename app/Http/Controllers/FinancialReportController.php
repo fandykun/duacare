@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\FinancialReport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class FinancialReportController extends Controller
 {
@@ -18,69 +20,42 @@ class FinancialReportController extends Controller
         return view('admin.financialReport.index', compact('financialReports'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function getFinancialReport($id)
     {
-        //
+        try {
+            $financialReport = FinancialReport::find($id);
+        } catch (Exception $e) {
+            return response()->json(['message' => $e->getMessage()], $e->getCode());
+        }
+
+        return response()->json($financialReport);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function updateFinancialReport(Request $request)
     {
-        //
+        try {
+            FinancialReport::find($request->id)->update([
+                'month' => $request->month,
+                'year'  =>  $request->year,
+                'link_url' => $request->link_url
+            ]);
+        } catch (\Exception $e) {
+            $eMessage = 'update Financial Report - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
+        return redirect()->back()->with('message', 'success');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\FinancialReport  $financialReport
-     * @return \Illuminate\Http\Response
-     */
-    public function show(FinancialReport $financialReport)
+    public function deleteFinancialReport(Request $request)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\FinancialReport  $financialReport
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(FinancialReport $financialReport)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\FinancialReport  $financialReport
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, FinancialReport $financialReport)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\FinancialReport  $financialReport
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(FinancialReport $financialReport)
-    {
-        //
+        try {
+            FinancialReport::where('id', $request->id)->delete();
+        } catch (\Exception $e) {
+            $eMessage = 'delete Financial Report - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
+        return redirect()->back()->with('message', 'success');
     }
 }

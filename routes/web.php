@@ -37,9 +37,12 @@ Route::prefix('/admin')->group(function () {
 		Route::get('/event', 'EventController@index');
 		Route::get('/event/create', 'EventController@create');
 		Route::post('/event/create', 'EventController@store')->name('event.store');
+		Route::get('/event/show/{id}', 'EventController@getEvent');
+		Route::put('/event', 'EventController@updateEvent')->name('event.update');
+		Route::delete('/event', 'EventController@deleteEvent')->name('event.delete');
 
 		//News
-		Route::get('/news', 'NewsController@index');
+		Route::get('/news', 'NewsController@readNewsPage');
 		Route::get('/news/v1/{id}', 'NewsController@getNews');
 		Route::get('/news/create', 'NewsController@create');
 		Route::post('/news/create', 'NewsController@store')->name('news.store');
@@ -48,17 +51,32 @@ Route::prefix('/admin')->group(function () {
 
 		//Organizer
 		Route::get('/organizer', 'OrganizerController@index');
+		Route::get('/organizer/show/{id}', 'OrganizerController@getOrganizer');
+		Route::put('/organizer', 'OrganizerController@updateOrganizer')->name('organizer.update');
+		Route::delete('/organizer', 'OrganizerController@deleteOrganizer')->name('organizer.delete');
 
 		//DLD
 		Route::get('/dld', 'DldController@index');
+		Route::get('/dld/show/{id}', 'DldController@getDLD');
+		Route::put('/dld', 'DldController@updateDLD')->name('dld.update');
+		Route::delete('/dld', 'DldController@deleteDLD')->name('dld.delete');
 
 		//Testimony
 		Route::get('/testimony', 'TestimonyController@index');
+		Route::get('/testimony/show/{id}', 'TestimonyController@getTestimony');
+		Route::put('/testimony', 'TestimonyController@updateTestimony')->name('testimony.update');
+		Route::delete('/testimony', 'TestimonyController@deleteTestimony')->name('testimony.delete');
 
 		//Financial report
 		Route::get('/financial-report', 'FinancialReportController@index');
+		Route::get('/financial-report/show/{id}', 'FinancialReportController@getFinancialReport');
+		Route::put('/financial-report', 'FinancialReportController@updateFinancialReport')->name('financialReport.update');
+		Route::delete('/financial-report', 'FinancialReportController@deleteFinancialReport')->name('financialReport.delete');
 
 		//Slider
 		Route::get('/slider', 'SliderController@index');
+		Route::get('/slider/show/{id}', 'SliderController@getSlider');
+		Route::put('/slider', 'SliderController@updateSlider')->name('slider.update');
+		Route::delete('/slider', 'SliderController@deleteSlider')->name('slider.delete');
 	});
 });

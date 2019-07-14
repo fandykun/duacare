@@ -24,7 +24,7 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-    Databases
+    Database
     </div>
 
     <!-- Nav Item - News -->

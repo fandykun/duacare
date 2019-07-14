@@ -15,13 +15,15 @@ img {
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Berita</h1>
-    <p class="mb-4">Konten berita yang berhubungan dengan acara duacare ada disini.</p>
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Berita Duacare</h1>
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Export Database</a>
+    </div>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Database Berita</h6>
+        <div class="card-header py-3 border-bottom-primary">
+            <h6 class="m-0 font-weight-bold text-primary">Tabel Berita</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -33,7 +35,7 @@ img {
                             <th>Kategori</th>
                             <th>Gambar</th>
                             <th>Tanggal</th>
-                            <th>Manage</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -43,7 +45,7 @@ img {
                             <th>Kategori</th>
                             <th>Gambar</th>
                             <th>Tanggal</th>
-                            <th>Manage</th>
+                            <th>Action</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -64,7 +66,7 @@ img {
                                 </span>
                                 <span class="text">Edit</span>
                             </button>
-                            <button class="btn btn-danger btn-icon-split btn-sm delete" style="margin-bottom: 6px;" data-id="{{ $berita->id }}">
+                            <button class="btn btn-danger btn-icon-split btn-sm delete" data-id="{{ $berita->id }}">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
