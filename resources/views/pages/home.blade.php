@@ -39,56 +39,49 @@
         {{-- <img class="section-intro-img" src="{{ asset('safario/img/home/section-icon.png') }}" alt=""> --}}
         <i class="far fa-eye icon-gradient"></i>
         <h2>Overview</h2>
-        <p>Duacare adalah Organisasi sosial alumni SMAN 2 Lumajang yang berpegang teguh pada semboyan “Dare to care!</p>
+        <hr>
+        <p>Duacare adalah Organisasi sosial alumni SMAN 2 Lumajang yang berpegang teguh pada semboyan “Dare to care!, berikut adalah event yang rutin dilaksanakan oleh Duacare</p>
       </div>
-
-      <div class="row justify-content-center mb-3">
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="service-card text-center wow slideInLeft">
-            <div class="service-card-img mb-5">
-              <img class="img-fluid" src="{{ asset('safario/img/home/beasiswa.png') }}" alt="">
-            </div>
-            <div class="service-card-body">
-              <h3>{{ $events[0]->title }}</h3>
-              <p>{{ $events[0]->description }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="service-card text-center wow slideInRight">
-            <div class="service-card-img mb-5">
-              <img class="img-fluid" src="{{ asset('safario/img/home/dgts.png') }}" alt="">
-            </div>
-            <div class="service-card-body">
-              <h3>{{ $events[1]->title }}</h3>
-              <p>{{ $events[1]->description }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="service-card text-center wow slideInLeft">
-            <div class="service-card-img mb-5">
-              <img class="img-fluid" src="{{ asset('safario/img/home/dfr.png') }}" alt="">
-            </div>
-            <div class="service-card-body">
-              <h3>{{ $events[2]->title }}</h3>
-              <p>{{ $events[2]->description }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="service-card text-center wow slideInRight">
-            <div class="service-card-img mb-5">ma
-              <img class="img-fluid" src="{{ asset('safario/img/home/camp.png') }}" alt="">
-            </div>
-            <div class="service-card-body">
-              <h3>{{ $events[3]->title }}</h3>
-              <p>{{ $events[3]->description }}</p>
+      @php
+        $image_list = [
+          "beasiswa.png",
+          "dgts.png",
+          "dfr.png",
+          "camp.png"
+        ]
+      @endphp
+      <div class="owl-carousel owl-theme events pb-xl-5">
+        @for($i = 0 ; $i < count($events) ; $i++)
+          <div class="events__item">
+            <div class="row">
+              <div class="col-md-6 col-lg-6 mb-4 mb-lg-0 d-flex align-items-stretch">
+                <div class="service-card text-center">
+                  <div class="card-img-top">
+                    <img class="img-fluid" src="{{ asset('safario/img/home/'.$image_list[$i].'') }}" alt="">
+                  </div>
+                  <div class="service-card-body">
+                    <div class="d-md-none">
+                      <h3>{{ $events[$i]->title }}</h3>
+                      <p>{{ $events[$i]->description }}</p>    
+                      <a class="button button-hero btn-sm" href="#overview">Baca Selengkapnya&emsp;<i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 mb-4 mb-lg-0 d-none d-md-block">
+                <div class="service-card text-center">
+                  <div class="service-card-body">
+                    <div class="my-auto">
+                      <h2>{{ $events[$i]->title }}</h2>
+                      <p>{{ $events[$i]->description }}</p>
+                      <a class="button button-hero mt-4" href="#overview">Baca Selengkapnya&emsp;<i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        @endfor
       </div>
     </div>
   </section>
@@ -188,6 +181,7 @@
 
         <!-- paddingnya perlu diedit nanti -->
         <h2>Duacare Kata Mereka</h2>
+        <hr>
         {{-- <p>Fowl have fruit moveth male they are that place you will lesser</p> --}}
       </div>
 
@@ -318,6 +312,7 @@
       <div class="section-intro text-center pb-90px">
         <i class="far fa-newspaper icon-gradient"></i>
         <h2>Apa kabar Duacare</h2>
+        <hr>
         {{-- <p>Duacare </p> --}}
       </div>
 
@@ -329,17 +324,20 @@
               <img class="card-img rounded-0" src="{{ asset('storage/news/'.$berita->image) }}" alt="">            
             </div>
             <div class="card-blog-body">
-              <a href="{{ url('news/'.$berita->id.'/'.urlencode($berita->title)) }}">
+              <a href="{{ url('news/'.$berita->id.'/'.rawurlencode(strtolower($berita->title))) }}">
                 <h4 class="ellipsis-2">{{ $berita->title }}</h4>
               </a>
               <ul class="card-blog-info">
-                <li><a href="{{ url('news/'.$berita->id.'/'.urlencode($berita->title)) }}"><span class="align-middle"><i class="ti-notepad"></i></span>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%A, %d %B %Y') }}</a></li>
+                <li><a href="{{ url('news/'.$berita->id.'/'.rawurlencode(strtolower($berita->title))) }}"><span class="align-middle"><i class="ti-notepad"></i></span>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%A, %d %B %Y') }}</a></li>
               </ul>
               <p class="ellipsis-2"> {{ $berita->description }} </p>
             </div>
           </div>
         </div>
         @endforeach
+      </div>
+      <div class="text-center mt-4">
+        <a class="button button-hero" href="{{url('/news')}}">Lihat Semua&emsp;<i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
   </section>

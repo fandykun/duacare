@@ -13,12 +13,21 @@
 
 //Page
 Route::get('/', 'PagesController@getHomePage');
-Route::get('/about', 'PagesController@getAboutPage');
-Route::get('/duacare-loyal-donature', 'PagesController@getDLDPage');
+// tentang duacare
+Route::get('/visi-misi', 'PagesController@getVisiMisiPage');
 Route::get('/organizer', 'PagesController@getOrganizerPage');
+Route::get('/laporan-keuangan', 'PagesController@getFinanceReportPage');
+
+Route::get('/duacare-loyal-donature', 'PagesController@getDLDPage');
+
 Route::get('/news', 'PagesController@getNewsPage');
 Route::get('/news/search', 'PagesController@getNewsBySearch')->name('search.news');
 Route::get('/news/{id}/{title}', 'PagesController@getNewsDetailPage');
+
+Route::get('/articles', 'PagesController@getArticlesPage');
+Route::get('/articles/search', 'PagesController@getArticlesBySearch')->name('search.articles');
+Route::get('/articles/{id}/{title}', 'PagesController@getArticlesDetailPage');
+
 Route::get('/contact', 'PagesController@getContactPage');
 
 Route::post('/dld/submit', 'DldController@submitDLD')->name('submit.dld');

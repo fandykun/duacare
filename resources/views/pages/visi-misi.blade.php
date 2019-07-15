@@ -28,14 +28,14 @@
   <section class="section-padding magic-ball magic-ball-sm magic-ball-about">
     <div class="container">
       <div class="row">
-        <div class="col-lg-7 col-md-6 mb-4 mb-md-0">
-          <div class="about-img">
-            <img class="img-fluid" src="{{ asset('safario/img/home/about-img.png')}}" alt="">
+        <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+          <div class="about-img text-center">
+            <img class="img-fluid" src="{{ asset('duacare-image/logo-icon.png') }}" alt="Duacare Image" style="max-height: 350px; width: auto;">
           </div>
         </div>
-        <div class="col-lg-5 col-md-6 align-self-center about-content">
+        <div class="col-lg-7 col-md-6 align-self-center about-content">
           <h2 style="color: grey; margin-bottom: 0; font-size: 42px">Duacare</h2>
-          <p class="text-justify">adalah organisasi sosial alumni SMA Negeri 2 Lumajang yang berpegang teguh pada semboyan "Dare to care!". Duacare adalah <em>charity organization</em> yang dibentuk pada 26 Juli 2008 oleh alumni SMA Negeri 2 Lumajang yang mana kegiatan dari duacare erat kaitannya dengan kegiatan sosial dan kemanusiaan. Duacare telah menjadi organisasi yang legal berdasarkan Akta Pendirian yang ditandatangani oleh Notaris Irwan Rosman, S.H, M.Kn. No 49 tanggal 10 Juni 2009.</p>
+          <p class="text-justify" style="line-height: 2.0">adalah organisasi sosial alumni SMA Negeri 2 Lumajang yang berpegang teguh pada semboyan "Dare to care!". Duacare adalah <em>charity organization</em> yang dibentuk pada 26 Juli 2008 oleh alumni SMA Negeri 2 Lumajang yang mana kegiatan dari duacare erat kaitannya dengan kegiatan sosial dan kemanusiaan. Duacare telah menjadi organisasi yang legal berdasarkan Akta Pendirian yang ditandatangani oleh Notaris Irwan Rosman, S.H, M.Kn. No 49 tanggal 10 Juni 2009.</p>
           <a class="button" href="#more">Pelajari lebih lanjut</a>
         </div>
       </div>
@@ -115,15 +115,11 @@
   <!--================Search Package section Start =================-->
   <section class="section-margin">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-xl-5 align-self-center mb-5 mb-lg-0">
-          <div class="search-content">
-            <h2>Tujuan Duacare</h2>
-              - Sebagai sarana komunikasi antar alumni. <br>
-              - Mengembangkan dan memberdayakan sumber daya insani sehingga terwujud kepedulian antar sesama dalam ruang lingkup yang tidak terbatas dan melaksanakan kewajiban sebagai umat manusia yang saling membantu. <br>
-              - Membantu meningkatkan kesejahteraan masyarakat. <br>
-            <a class="button" href="#">Learn More</a>
-          </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/gflkIer2G3M"></iframe>
+          </div>          
         </div>
       </div>
     </div>

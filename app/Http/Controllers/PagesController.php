@@ -18,20 +18,26 @@ class PagesController extends Controller
         return view('pages.home', compact('testimonies', 'events', 'news'));
     }
 
-    public function getAboutPage()
+    public function getVisiMisiPage()
     {
-        return view('pages.about');
-    }
-
-    public function getDLDPage()
-    {
-        return view('pages.dld');
+        return view('pages.visi-misi');
     }
 
     public function getOrganizerPage()
     {
         return view('pages.organizer');
     }
+
+    public function getFinanceReportPage()
+    {
+        return view('pages.finance-report');
+    }
+    
+    public function getDLDPage()
+    {
+        return view('pages.dld');
+    }
+
 
     public function getNewsPage()
     {
@@ -48,7 +54,7 @@ class PagesController extends Controller
         $news = News::findOrFail($id);
         $events = Event::all();
 
-        $latest_items = News::orderBy('created_at', 'desc')->take(5)->get();
+        $latest_items = News::orderBy('created_at', 'desc')->take(6)->get();
         $previous_item = News::where('created_at', '<', $news->created_at)
             ->orderBy('created_at', 'desc')
             ->first();
@@ -68,6 +74,42 @@ class PagesController extends Controller
         $events = Event::all();
         $news = News::Where('title', 'like', '%' . $r->q . '%')->paginate(5)->appends(request()->query());
         return view('pages.news', compact('news', 'latest_items', 'events'));
+    }
+
+    // TODO: view article
+    public function getArticlesPage()
+    {
+        // $news = News::orderBy('created_at', 'desc')->get();
+        $latest_items = News::orderBy('created_at', 'desc')->take(5)->get();
+        $news = News::orderBy('created_at', 'desc')->paginate(5);
+        $events = Event::all();
+        return view('pages.articles', compact('news', 'latest_items', 'events'));
+    }
+
+    public function getArticlesDetailPage($id, $title)
+    {
+
+        $news = News::findOrFail($id);
+        $events = Event::all();
+
+        $latest_items = News::orderBy('created_at', 'desc')->take(5)->get();
+        $previous_item = News::where('created_at', '<', $news->created_at)
+            ->orderBy('created_at', 'desc')
+            ->first();
+        $next_item = News::where('created_at', '>', $news->created_at)
+            ->orderBy('created_at', 'asc')
+            ->first();
+
+        return view('pages.articlesDetail', compact('news', 'latest_items', 'previous_item', 'next_item', 'events')
+        );
+    }
+
+    public function getArticlesBySearch(Request $r)
+    {
+        $latest_items = News::orderBy('created_at', 'desc')->take(5)->get();
+        $events = Event::all();
+        $news = News::Where('title', 'like', '%' . $r->q . '%')->paginate(5)->appends(request()->query());
+        return view('pages.articles', compact('news', 'latest_items', 'events'));
     }
 
     public function getContactPage()

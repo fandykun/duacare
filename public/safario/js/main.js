@@ -61,6 +61,27 @@ $(function() {
         })
     }
 
+    if ($('.events').length) {
+        $('.events').owlCarousel({
+            loop: true,
+            margin: 30,
+            items: 5,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            responsiveClass: true,
+            slideSpeed: 300,
+            paginationSpeed: 500,
+            responsive: {
+                0: {
+                    items: 1
+                }
+            }
+        })
+    }
+
 
 
 

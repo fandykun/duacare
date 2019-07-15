@@ -958,7 +958,7 @@ h3, .h3 {
 	============================================================================================ */
 .service-card {
   /*background: #f8f8ff;*/
-  background: rgba(110,191,243, 0.075);
+  /*background: rgba(110,191,243, 0.075);*/
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;

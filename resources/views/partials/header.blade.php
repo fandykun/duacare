@@ -11,18 +11,23 @@
 			     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 			        <ul class="nav navbar-nav menu_nav justify-content-end">
 						<li class="nav-item" id="nav-home"><a class="nav-link" href="{{url('/')}}">Home</a></li>
-			          	{{-- <li class="nav-item submenu dropdown">
+			          	<li class="nav-item submenu dropdown" id="nav-about">
 				            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 				              aria-expanded="false">Tentang Duacare</a>
 				            <ul class="dropdown-menu">
 								<li class="nav-item"><a class="nav-link" href="{{url('/visi-misi')}}">Visi Misi</a>
 								<li class="nav-item"><a class="nav-link" href="{{url('/organizer')}}">Organizer</a>
-								<li class="nav-item"><a class="nav-link" href="{{url('/regional-manager')}}">Regional Manager</a>
+								<li class="nav-item"><a class="nav-link" href="{{url('/laporan-keuangan')}}">Laporan Keuangan</a>
 			            	</ul>
-						</li> --}}
-						<li class="nav-item" id="nav-about"><a class="nav-link" href="{{url('/about')}}" >Tentang Duacare</a></li>
-						<li class="nav-item" id="nav-organizer"><a class="nav-link" href="{{url('/organizer')}}">Organizer</a></li>
-						<li class="nav-item" id="nav-news"><a class="nav-link" href="{{url('/news')}}" >Berita</a></li>
+						</li>
+			          	<li class="nav-item submenu dropdown" id="nav-media">
+				            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+				              aria-expanded="false">Media</a>
+				            <ul class="dropdown-menu">
+								<li class="nav-item"><a class="nav-link" href="{{url('/articles')}}">Artikel</a>
+								<li class="nav-item"><a class="nav-link" href="{{url('/news')}}">Berita</a>
+			            	</ul>
+						</li>
 			          	<li class="nav-item" id="nav-dld"><a class="nav-link" href="{{url('/duacare-loyal-donature')}}" >Daftar DLD</a>
 			          	<li class="nav-item" id="nav-contact"><a class="nav-link" href="{{url('/contact')}}" >Contact Us</a></li>
 			        </ul>
