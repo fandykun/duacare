@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Testimony;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class TestimonyController extends Controller
 {
@@ -17,6 +19,33 @@ class TestimonyController extends Controller
     {
         $testimonies = Testimony::all();
         return view('admin.testimony.index', compact('testimonies'));
+    }
+
+    public function createTestimonyPage()
+    {
+        return view('admin.testimony.create');
+    }
+
+    public function storeTestimony(Request $request)
+    {
+        try {
+            if ($request->hasFile('image')) {
+                $imageName = $request->file('image')->getClientOriginalName();
+                $request->file('image')->storeAs('public/testimony', $imageName);
+            } else $imageName = NULL;
+            Testimony::create([
+                'title' => $request->title,
+                'detail' => $request->detail,
+                'description' => $request->description,
+                'image' => $imageName,
+            ]);
+        } catch (\Exception $e) {
+            $eMessage = 'Add Testimony - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
+
+        return redirect('/admin/testimony')->with('message', 'success');
     }
 
     public function getTestimony($id)

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Organizer;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class OrganizerController extends Controller
 {
@@ -15,14 +17,31 @@ class OrganizerController extends Controller
         return view('admin.organizer.index', compact('organizers'));
     }
 
-    public function create()
+    public function createOrganizerPage()
     {
-        //
+        return view('admin.organizer.create');
     }
 
-    public function store(Request $request)
+    public function storeOrganizer(Request $request)
     {
-        //
+        try {
+            if ($request->hasFile('image')) {
+                $imageName = $request->file('image')->getClientOriginalName();
+                $request->file('image')->storeAs('public/organizer', $imageName);
+            } else $imageName = 'dummy.png';
+            Organizer::create([
+                'name' => $request->name,
+                'position' => $request->position,
+                'phone_number' => $request->phone_number,
+                'image' => $imageName,
+            ]);
+        } catch (\Exception $e) {
+            $eMessage = 'Add Organizer - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
+
+        return redirect('/admin/organizer')->with('message', 'success');
     }
 
     public function getOrganizer($id)

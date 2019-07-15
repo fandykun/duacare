@@ -35,18 +35,18 @@ Route::prefix('/admin')->group(function () {
 
 		//Event
 		Route::get('/event', 'EventController@index');
-		Route::get('/event/create', 'EventController@create');
-		Route::post('/event/create', 'EventController@store')->name('event.store');
 		Route::get('/event/show/{id}', 'EventController@getEvent');
+		Route::get('/event/create', 'EventController@createEventPage')->name('event.create');
+		Route::post('/event/create', 'EventController@storeEvent')->name('event.store');
 		Route::put('/event', 'EventController@updateEvent')->name('event.update');
 		Route::delete('/event', 'EventController@deleteEvent')->name('event.delete');
 		Route::get('/event/export', 'EventController@exportEvent')->name('event.export');
 
 		//News
 		Route::get('/news', 'NewsController@readNewsPage');
-		Route::get('/news/v1/{id}', 'NewsController@getNews');
-		Route::get('/news/create', 'NewsController@create');
-		Route::post('/news/create', 'NewsController@store')->name('news.store');
+		Route::get('/news/show/{id}', 'NewsController@getNews');
+		Route::get('/news/create', 'NewsController@createNewsPage')->name('news.create');
+		Route::post('/news/create', 'NewsController@storeNews')->name('news.store');
 		Route::put('/news', 'NewsController@updateNews')->name('news.update');
 		Route::delete('/news', 'NewsController@deleteNews')->name('news.delete');
 		Route::get('/news/export', 'NewsController@exportNews')->name('news.export');
@@ -54,6 +54,8 @@ Route::prefix('/admin')->group(function () {
 		//Organizer
 		Route::get('/organizer', 'OrganizerController@index');
 		Route::get('/organizer/show/{id}', 'OrganizerController@getOrganizer');
+		Route::get('/organizer/create', 'OrganizerController@createOrganizerPage')->name('organizer.create');
+		Route::post('/organizer/create', 'OrganizerController@storeOrganizer')->name('organizer.store');
 		Route::put('/organizer', 'OrganizerController@updateOrganizer')->name('organizer.update');
 		Route::delete('/organizer', 'OrganizerController@deleteOrganizer')->name('organizer.delete');
 		Route::get('/organizer/export', 'OrganizerController@exportOrganizer')->name('organizer.export');
@@ -61,6 +63,8 @@ Route::prefix('/admin')->group(function () {
 		//DLD
 		Route::get('/dld', 'DldController@index');
 		Route::get('/dld/show/{id}', 'DldController@getDLD');
+		Route::get('/dld/create', 'DldController@createDLDPage')->name('dld.create');
+		Route::post('/dld/create', 'DldController@storeDLD')->name('dld.store');
 		Route::put('/dld', 'DldController@updateDLD')->name('dld.update');
 		Route::delete('/dld', 'DldController@deleteDLD')->name('dld.delete');
 		Route::get('/dld/export', 'DldController@exportDLD')->name('dld.export');
@@ -68,6 +72,8 @@ Route::prefix('/admin')->group(function () {
 		//Testimony
 		Route::get('/testimony', 'TestimonyController@index');
 		Route::get('/testimony/show/{id}', 'TestimonyController@getTestimony');
+		Route::get('/testimony/create', 'TestimonyController@createTestimonyPage')->name('testimony.create');
+		Route::post('/testimony/create', 'TestimonyController@storeTestimony')->name('testimony.store');
 		Route::put('/testimony', 'TestimonyController@updateTestimony')->name('testimony.update');
 		Route::delete('/testimony', 'TestimonyController@deleteTestimony')->name('testimony.delete');
 		Route::get('/testimony/export', 'TestimonyController@exportTestimony')->name('testimony.export');
@@ -75,6 +81,8 @@ Route::prefix('/admin')->group(function () {
 		//Financial report
 		Route::get('/financial-report', 'FinancialReportController@index');
 		Route::get('/financial-report/show/{id}', 'FinancialReportController@getFinancialReport');
+		Route::get('/financial-report/create', 'FinancialReportController@createFinancialReportPage')->name('financialReport.create');
+		Route::post('/financial-report/create', 'FinancialReportController@storeFinancialReport')->name('financialReport.store');
 		Route::put('/financial-report', 'FinancialReportController@updateFinancialReport')->name('financialReport.update');
 		Route::delete('/financial-report', 'FinancialReportController@deleteFinancialReport')->name('financialReport.delete');
 		Route::get('/financial-report/export', 'FinancialReportController@exportFinancialReport')->name('financialReport.export');
@@ -82,6 +90,8 @@ Route::prefix('/admin')->group(function () {
 		//Slider
 		Route::get('/slider', 'SliderController@index');
 		Route::get('/slider/show/{id}', 'SliderController@getSlider');
+		Route::get('/slider/create', 'SliderController@createSliderPage')->name('slider.create');
+		Route::post('/slider/create', 'SliderController@storeSlider')->name('slider.store');
 		Route::put('/slider', 'SliderController@updateSlider')->name('slider.update');
 		Route::delete('/slider', 'SliderController@deleteSlider')->name('slider.delete');
 		Route::get('/slider/export', 'SliderController@exportSlider')->name('slider.export');

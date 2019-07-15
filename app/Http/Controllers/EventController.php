@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Event;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class EventController extends Controller
 {
@@ -17,6 +19,27 @@ class EventController extends Controller
     {
         $events = Event::all();
         return view('admin.event.index', compact('events'));
+    }
+
+    public function createEventPage()
+    {
+        return view('admin.event.create');
+    }
+
+    public function storeEvent(Request $request)
+    {
+        try {
+            Event::create([
+                'title' => $request->title,
+                'description' => $request->description
+            ]);
+        } catch (\Exception $e) {
+            $eMessage = 'Add Event - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
+
+        return redirect('/admin/event')->with('message', 'success');
     }
 
     public function getEvent($id)

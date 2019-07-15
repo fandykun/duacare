@@ -7,7 +7,7 @@ img {
     max-width: 120px;
     height: auto;
 }
-</style>    
+</style>
 @endsection
 
 @section('content')
@@ -16,8 +16,9 @@ img {
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Berita Duacare</h1>
-        <a href="{{ route('news.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Export Database</a>
+        <a href="{{ route('news.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambahkan Berita</a>
+        <h1 class="h3 mb-0 text-gray-800"><strong>BERITA DUACARE</strong></h1>
+        <a href="{{ route('news.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Export Database</a>
     </div>
 
     <!-- DataTales Example -->
@@ -163,7 +164,7 @@ img {
         let newsData;
         try {
             newsData = await $.ajax({
-                url: '{{url('admin/news/v1')}}/' + dataId,
+                url: '{{url('admin/news/show')}}/' + dataId,
                 dataType: 'json'
             });
         } catch (error) {

@@ -6,6 +6,8 @@ use App\News;
 use App\Event;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class NewsController extends Controller
 {
@@ -25,22 +27,23 @@ class NewsController extends Controller
     public function storeNews(Request $request)
     {
         try {
-            $imageName = $request->file('image')->getClientOriginalName();
-            $request->file('image')->storeAs('public/news', $imageName);
-
+            if ($request->hasFile('image')) {
+                $imageName = $request->file('image')->getClientOriginalName();
+                $request->file('image')->storeAs('public/news', $imageName);
+            } else $imageName = 'dummy.png';
             News::create([
-                'title' => $request->name,
+                'title' => $request->title,
                 'description' => $request->description,
                 'image' => $imageName,
                 'event_id' => $request->event_id
             ]);
         } catch (\Exception $e) {
-            $eMessage = 'add news, error: ' . $e->getMessage();
+            $eMessage = 'Add news - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
             Log::emergency($eMessage);
             return redirect()->back()->with('error', 'Whoops, something error!');
         }
 
-        return redirect()->back()->with('success', 'success');
+        return redirect('/admin/news')->with('message', 'success');
     }
 
     public function getNews($id)

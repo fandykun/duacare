@@ -15,8 +15,9 @@ img {
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Slider</h1>
-        <a href="{{ route('slider.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Export Database</a>
+        <a href="{{ route('slider.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambahkan Slider</a>
+        <h1 class="h3 mb-0 text-gray-800"><strong>SLIDER</strong></h1>
+        <a href="{{ route('slider.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Export Database</a>
     </div>
 
     <!-- DataTales Example -->
@@ -45,7 +46,7 @@ img {
                     @foreach($sliders as $slider)
                     <tr>
                         <td>{{ $slider->name }}</td>
-                        <td><img src="{{ asset('storage/slider/'.$slider->image) }}"></td>
+                        <td><img class="text-center" src="{{ asset('storage/slider/'.$slider->image) }}"></td>
                         <td class="align-middle text-center">
                             <button class="btn btn-warning btn-icon-split btn-sm edit" style="margin-bottom: 6px;" data-id="{{ $slider->id }}">
                                 <span class="icon text-white-50">

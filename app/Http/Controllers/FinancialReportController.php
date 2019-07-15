@@ -21,6 +21,28 @@ class FinancialReportController extends Controller
         return view('admin.financialReport.index', compact('financialReports'));
     }
 
+    public function createFinancialReportPage()
+    {
+        return view('admin.financialReport.create');
+    }
+
+    public function storeFinancialReport(Request $request)
+    {
+        try {
+            FinancialReport::create([
+                'month' => $request->month,
+                'year' => $request->year,
+                'link_url' => $request->link_url
+            ]);
+        } catch (\Exception $e) {
+            $eMessage = 'Add Financial Report - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
+
+        return redirect('/admin/financial-report')->with('message', 'success');
+    }
+
     public function getFinancialReport($id)
     {
         try {

@@ -10,25 +10,15 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class SliderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $sliders = Slider::all();
         return view('admin.slider.index', compact('sliders'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function createSliderPage()
     {
-        //
+        return view('admin.slider.create');
     }
 
     public function getSlider($id)
@@ -40,6 +30,26 @@ class SliderController extends Controller
         }
 
         return response()->json($slider);
+    }
+
+    public function storeSlider(Request $request)
+    {
+        try {
+            if ($request->hasFile('image')) {
+                $imageName = $request->file('image')->getClientOriginalName();
+                $request->file('image')->storeAs('public/slider', $imageName);
+            } else $imageName = 'dummy.png';
+            Slider::create([
+                'name' => $request->name,
+                'image' => $imageName,
+            ]);
+        } catch (\Exception $e) {
+            $eMessage = 'Add Slider - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        }
+
+        return redirect('/admin/slider')->with('message', 'success');
     }
 
     public function updateSlider(Request $request)

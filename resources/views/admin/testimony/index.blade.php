@@ -3,6 +3,10 @@
 @section('style')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css" />
 <style>
+img {
+    max-width: 120px;
+    height: auto;
+}
 </style>    
 @endsection
 
@@ -12,8 +16,9 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Testimoni</h1>
-            <a href="{{ route('testimony.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Export Database</a>
+            <a href="{{ route('testimony.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambahkan Testimoni</a>    
+            <h1 class="h3 mb-0 text-gray-800"><strong>TESTIMONI</strong></h1>
+            <a href="{{ route('testimony.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Export Database</a>
         </div>
 
     <!-- DataTales Example -->

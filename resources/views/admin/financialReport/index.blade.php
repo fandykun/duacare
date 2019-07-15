@@ -11,8 +11,9 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Laporan Keuangan</h1>
-        <a href="{{ route('financialReport.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Export Database</a>
+        <a href="{{ route('financialReport.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambahkan Laporan Keuangan</a>
+        <h1 class="h3 mb-0 text-gray-800"><strong>LAPORAN KEUANGAN</strong></h1>
+        <a href="{{ route('financialReport.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Export Database</a>
     </div>
 
     <!-- DataTales Example -->
@@ -50,7 +51,7 @@
                         <td class="text-center">{{ $nomor++ }}</td>
                         <td>{{ $fr->month }}</td>
                         <td>{{ $fr->year }} </td>
-                        <td><a href="{{ 'http://'.$fr->link_url }}">{{ $fr->link_url }}</a></td>
+                        <td><a href="{{ 'http://'.$fr->link_url }}" target="_blank">{{ $fr->link_url }}</a></td>
 
                         <td class="align-middle text-center">
                             <button class="btn btn-warning btn-icon-split btn-sm edit" data-id="{{ $fr->id }}">
