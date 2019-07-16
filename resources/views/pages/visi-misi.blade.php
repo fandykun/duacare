@@ -17,7 +17,7 @@
     <div class="container">
       <div class="hero-banner-sm-content">
         <h1>Tentang Duacare</h1>
-        <p>Duacare adalah organisasi sosial alumni SMAN 2 Lumajang yang berpegang teguh pada semboyan “Dare to care!</p>
+        {{-- <p>Duacare adalah organisasi sosial alumni SMAN 2 Lumajang yang berpegang teguh pada semboyan “Dare to care!</p> --}}
       </div>
     </div>
   </section>
@@ -107,6 +107,30 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+  <!--================Testimonial section End =================-->
+
+
+  <!--================Search Package section Start =================-->
+  <section class="section-margin">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray section-padding magic-ball magic-ball-testimonial pb-xl-5">
+    <div class="container">
+      <div class="section-intro text-center pb-90px">
+        <i class="far fa-question-circle icon-gradient"></i>
+        <h2>Our client says</h2>
+        <p>Fowl have fruit moveth male they are that place you will lesser</p>
+      </div>
+
     </div>
   </section>
   <!--================Testimonial section End =================-->

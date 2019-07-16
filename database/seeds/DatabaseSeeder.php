@@ -9,6 +9,7 @@ use App\FinancialReport;
 use App\Organizer;
 use App\Slider;
 use App\Dld;
+use App\Article;
 
 class DatabaseSeeder extends Seeder
 {
@@ -89,6 +90,14 @@ class DatabaseSeeder extends Seeder
                     'event_id' => $newsEventID[$i],
                     'created_at' => $newsCreatedAt
                 ]);
+
+                Article::create([
+                    'title' => $newsTitle[$i] . '-' . $j,
+                    'description' => $newsDescription[$i],
+                    'image' => $newsImage,
+                    'created_at' => $newsCreatedAt
+                ]);
+
             }
         }
 

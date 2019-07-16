@@ -63,7 +63,7 @@
                     <div class="d-md-none">
                       <h3>{{ $events[$i]->title }}</h3>
                       <p>{{ $events[$i]->description }}</p>    
-                      <a class="button button-hero btn-sm" href="#overview">Baca Selengkapnya&emsp;<i class="fas fa-arrow-circle-right"></i></a>
+                      <a class="button button-hero btn-sm" href="{{ url('/event'.'/'.str_replace(" ", "-", strtolower($events[$i]->title))) }}">Baca Selengkapnya&emsp;<i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -74,7 +74,7 @@
                     <div class="my-auto">
                       <h2>{{ $events[$i]->title }}</h2>
                       <p>{{ $events[$i]->description }}</p>
-                      <a class="button button-hero mt-4" href="#overview">Baca Selengkapnya&emsp;<i class="fas fa-arrow-circle-right"></i></a>
+                      <a class="button button-hero mt-4" href="{{ url('/event'.'/'.str_replace(" ", "-", strtolower($events[$i]->title))) }}">Baca Selengkapnya&emsp;<i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -330,7 +330,7 @@
               <ul class="card-blog-info">
                 <li><a href="{{ url('news/'.$berita->id.'/'.rawurlencode(strtolower($berita->title))) }}"><span class="align-middle"><i class="ti-notepad"></i></span>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%A, %d %B %Y') }}</a></li>
               </ul>
-              <p class="ellipsis-2"> {{ $berita->description }} </p>
+              <p class="ellipsis-2 text-justify"> {{ $berita->description }} </p>
             </div>
           </div>
         </div>

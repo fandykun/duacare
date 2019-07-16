@@ -164,7 +164,15 @@
 }
 
 .card-img-style {
+  display: block;
   height: 250px; 
+  width: auto; 
+  overflow: hidden;
+}
+
+.card-img-style-2 {
+  display: block;
+  height: 300px; 
   width: auto; 
   overflow: hidden;
 }

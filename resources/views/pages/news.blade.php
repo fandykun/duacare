@@ -28,8 +28,8 @@
 <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
 <div class="container">
     <div class="hero-banner-sm-content">
-    <h1>Our Blog</h1>
-    <p>Air seed winged lights saw kind whales in sixth best a dont seas dron image so fish all tree on</p>
+    <h1>Duacare Story Books</h1>
+    <p>Ukiran aksi dan harmoni duacare yang tercatat dalam buku cerita</p>
     </div>
 </div>
 </section>
@@ -56,12 +56,12 @@
                     </div>
                     
                     <div class="blog_details">
-                        <a class="d-inline-block" href="{{ url('news/'.$berita->id.'/'.rawurlencode($berita->title)) }}">
+                        <a class="d-inline-block text-justify" href="{{ url('news/'.$berita->id.'/'.rawurlencode($berita->title)) }}">
                             <h2>{{ $berita->title }}</h2>
                         </a>
-                        <p>{{ $berita->description }}</p>
+                        <p class="text-justify">{{ $berita->description }}</p>
                         <ul class="blog-info-link">
-                            <li><a href="#"><i class="far fa-user"></i> {{ $berita->events->title }} </a></li>
+                            <li><a href="{{ url('/event'.'/'.str_replace(" ", "-", strtolower($berita->events->title))) }}"><i class="far fa-user"></i> {{ $berita->events->title }} </a></li>
                             {{-- <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li> --}}
                         </ul>
                     </div>
@@ -155,7 +155,7 @@
                         <ul class="list">
                             @foreach ($events as $event)
                                 <li>
-                                    <a href="#">{{$event->title}}</a>
+                                    <a href="{{ url('/event'.'/'.str_replace(" ", "-", strtolower($event->title))) }}">{{$event->title}}</a>
                                 </li>                                
                             @endforeach
                         </ul>
@@ -221,6 +221,6 @@
 
 @section('script')
   <script>
-    $("#nav-news").addClass("active");
+    $("#nav-media").addClass("active");
   </script>
 @endsection
