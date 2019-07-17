@@ -55,15 +55,7 @@
       <div class="col-lg-3  col-md-6 col-sm-6">
         <div class="single-footer-widget mail-chimp">
           <h6 class="mb-20">InstaFeed</h6>
-          <ul class="instafeed d-flex flex-wrap">
-            <li><img src="{{ asset('safario/img/instagram/i1.jpg') }}" alt=""></li>
-            <li><img src="{{ asset('safario/img/instagram/i2.jpg') }}" alt=""></li>
-            <li><img src="{{ asset('safario/img/instagram/i3.jpg') }}" alt=""></li>
-            <li><img src="{{ asset('safario/img/instagram/i4.jpg') }}" alt=""></li>
-            <li><img src="{{ asset('safario/img/instagram/i5.jpg') }}" alt=""></li>
-            <li><img src="{{ asset('safario/img/instagram/i6.jpg') }}" alt=""></li>
-            <li><img src="{{ asset('safario/img/instagram/i7.jpg') }}" alt=""></li>
-            <li><img src="{{ asset('safario/img/instagram/i8.jpg') }}" alt=""></li>
+          <ul class="instafeed d-flex flex-wrap" id="instafeed">
           </ul>
         </div>
       </div>						

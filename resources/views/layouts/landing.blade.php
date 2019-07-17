@@ -60,6 +60,22 @@
       document.getElementById("body").style.display = "block";
     }
   </script>  
+  <script>
+  const token = '1638143949.6d4d7e8.7e02f2bcea674fa09b89adc5c2c900e1';
+  var footerNumPhotos = 8;
+  var footerContainer = document.getElementById( 'instafeed' );
+  var footerScrElement = document.createElement( 'script' );
+  
+  window.footerResult = function( data ) {
+    for( x in data.data ){
+      footerContainer.innerHTML += '<li><a href="'+ data.data[x].link +'" target="_blank"><img src="' + data.data[x].images.low_resolution.url + '"></a></li>';
+    }
+  }
+  
+  footerScrElement.setAttribute( 'src', 'https://api.instagram.com/v1/users/self/media/recent?access_token=' + token + '&count=' + footerNumPhotos + '&callback=footerResult' );
+  document.body.appendChild( footerScrElement );
+  </script>
+
   @yield('script')
 </body>
 </html>

@@ -52,6 +52,7 @@
                         <ul class="blog-info-link mt-3 mb-4">
                             <li><a href="#"><i class="far fa-user"></i>{{ $news->events->title }}</a></li>
                         </ul>
+                        {!! $news->description !!}
                     </div>
                 </div>
                 <div class="navigation-top">
@@ -147,38 +148,7 @@
 
                     <aside class="single_sidebar_widget instagram_feeds">
                         <h4 class="widget_title">Instagram Feeds</h4>
-                        <ul class="instagram_row flex-wrap">
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i1.png') }}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i2.png') }}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i3.png') }}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i4.png') }}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i5.png') }}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i6.png') }}" alt="">
-                                </a>
-                            </li>
-                        </ul>
+                        <ul class="instagram_row flex-wrap" id="newsfeed"></ul>
                     </aside>
 {{--                     <aside class="single_sidebar_widget newsletter_widget">
                         <h4 class="widget_title">Newsletter</h4>
@@ -197,6 +167,24 @@
 </section>
 <!--================Blog Area =================-->
     
+@endsection
 
+@section('script')
+<script>
+    $("#nav-media").addClass("active");
+
+    var newsNumPhotos = 9;
+    var newsContainer = document.getElementById( 'newsfeed' );
+    var newsScrElement = document.createElement( 'script' );
+  
+    window.newsResult = function( data ) {
+        for( x in data.data ){
+            newsContainer.innerHTML += '<li><a href="' + data.data[x].link + '" target="_blank"><img class="img-fluid" src="' + data.data[x].images.low_resolution.url + '"></a></li>';
+        }
+    }
+  
+    newsScrElement.setAttribute( 'src', 'https://api.instagram.com/v1/users/self/media/recent?access_token=' + token + '&count=' + newsNumPhotos + '&callback=newsResult' );
+    document.body.appendChild( newsScrElement );
+</script>
 
 @endsection
