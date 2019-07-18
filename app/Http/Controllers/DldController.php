@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 class DldController extends Controller
 {
@@ -19,7 +20,7 @@ class DldController extends Controller
     public function submitDLD(Request $request)
     {
         try {
-            Dld::create([
+            $data = Dld::create([
                 'name'  => $request->name,
                 'graduation_year'  => $request->graduation_year,
                 'origin_address'  => $request->origin_address,
@@ -32,6 +33,16 @@ class DldController extends Controller
                 'donation_type'  => $request->donation_type,
                 'amount'  => str_replace('.', '', $request->amount)
             ]);
+
+            $message = "*[NEW DLD]*\n";
+            $message = $message."\n*Nama*\t\t :".$data->name."\n*Graduation Year*\t :".$data->graduation_year."\n*Origin Address*\t :".$data->origin_address."\n*Current Address*\t :".$data->current_address."\n*Email*\t\t :".$data->email."\n*Phone Number*\t :".$data->phone_number."\n*Line ID*\t\t :".$data->line."\n*Instagram*\t :".$data->instagram."\n*Bank Name*\t :".$data->bank."\n*Donation Type*\t :".$data->donation_type."\n*Amount*\t\t :".$data->amount;
+
+            Telegram::sendMessage([
+                'chat_id' => '-392376502',
+                'text' => $message,
+                'parse_mode' => 'Markdown'
+            ]);
+            
         } catch (Exception $e) {
             $eMessage = 'add dld, error: ' . $e->getMessage();
             Log::emergency($eMessage);

@@ -13,6 +13,8 @@
 
 //Page
 Route::get('/', 'PagesController@getHomePage');
+Route::get('/updated-activity', 'TelegramBotController@updatedActivity');
+Route::post('/send', 'TelegramBotController@sendMessage');
 // tentang duacare
 Route::get('/visi-misi', 'PagesController@getVisiMisiPage');
 Route::get('/organizer', 'PagesController@getOrganizerPage');
