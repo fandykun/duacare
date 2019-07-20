@@ -29,11 +29,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
-          <div class="about-img text-center">
+          <div class="about-img text-center wow bounceInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">
             <img class="img-fluid" src="{{ asset('duacare-image/logo-icon.png') }}" alt="Duacare Image" style="max-height: 350px; width: auto;">
           </div>
         </div>
-        <div class="col-lg-7 col-md-6 align-self-center about-content">
+        <div class="col-lg-7 col-md-6 align-self-center about-content wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="0.5s">
           <h2 style="color: grey; margin-bottom: 0; font-size: 42px">Duacare</h2>
           <p class="text-justify" style="line-height: 2.0">adalah organisasi sosial alumni SMA Negeri 2 Lumajang yang berpegang teguh pada semboyan "Dare to care!". Duacare adalah <em>charity organization</em> yang dibentuk pada 26 Juli 2008 oleh alumni SMA Negeri 2 Lumajang yang mana kegiatan dari duacare erat kaitannya dengan kegiatan sosial dan kemanusiaan. Duacare telah menjadi organisasi yang legal berdasarkan Akta Pendirian yang ditandatangani oleh Notaris Irwan Rosman, S.H, M.Kn. No 49 tanggal 10 Juni 2009.</p>
           <a class="button" href="#more">Pelajari lebih lanjut</a>
@@ -116,8 +116,39 @@
   <section class="section-margin">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 col-md-8">
-
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                </div>
+                <div class="team-content">
+                    <h3 class="title text-white">Williamson</h3>
+                    <span class="post">web developer</span>
+                    <ul class="social">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                </div>
+                <div class="team-content">
+                    <h3 class="title text-white">kristina</h3>
+                    <span class="post">Web Designer</span>
+                    <ul class="social">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
       </div>
     </div>

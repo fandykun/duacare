@@ -121,22 +121,22 @@ class PagesController extends Controller
 
     public function getDGTSPage()
     {
-        return "todo";
+        return view('pages.dgts');
     }
 
     public function getDFRPage()
     {
-        return "todo";
+        return view('pages.dfr');
     }
 
     public function getBeasiswaPage()
     {
-        return "todo";
+        return view('pages.scholarship');
     }
 
     public function getCampPage()
     {
-        return "todo";
+        return view('pages.duacare-camp');
     }
 
 }
