@@ -80,36 +80,38 @@ class PagesController extends Controller
     // TODO: view articles
     public function getArticlesPage()
     {
+        $news = News::orderBy('created_at', 'desc')->first();
         $latest_items = Article::orderBy('created_at', 'desc')->take(6)->get();
         $articles = Article::orderBy('created_at', 'desc')->paginate(6);
         $events = Event::all();
-        return view('pages.articles', compact('articles', 'latest_items', 'events'));
+        return view('pages.articles', compact('articles', 'latest_items', 'events', 'news'));
     }
 
     public function getArticlesDetailPage($id, $title)
     {
 
-        $articles = Article::findOrFail($id);
+        $article = Article::findOrFail($id);
         $events = Event::all();
 
         $latest_items = Article::orderBy('created_at', 'desc')->take(6)->get();
-        $previous_item = Article::where('created_at', '<', $articles->created_at)
+        $previous_item = Article::where('created_at', '<', $article->created_at)
             ->orderBy('created_at', 'desc')
             ->first();
-        $next_item = Article::where('created_at', '>', $articles->created_at)
+        $next_item = Article::where('created_at', '>', $article->created_at)
             ->orderBy('created_at', 'asc')
             ->first();
 
-        return view('pages.articlesDetail', compact('articles', 'latest_items', 'previous_item', 'next_item', 'events')
+        return view('pages.articlesDetail', compact('article', 'latest_items', 'previous_item', 'next_item', 'events')
         );
     }
 
     public function getArticlesBySearch(Request $r)
     {
+        $news = News::orderBy('created_at', 'desc')->first();
         $latest_items = Article::orderBy('created_at', 'desc')->take(6)->get();
         $events = Event::all();
         $articles = Article::Where('title', 'like', '%' . $r->q . '%')->paginate(6)->appends(request()->query());
-        return view('pages.articles', compact('articles', 'latest_items', 'events'));
+        return view('pages.articles', compact('articles', 'latest_items', 'events', 'news'));
     }
 
     public function getContactPage()

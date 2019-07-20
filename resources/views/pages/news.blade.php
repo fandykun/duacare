@@ -24,7 +24,6 @@
 @section('content')
 
 
-<!--================Hero Banner SM Area Start =================-->
 <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
 <div class="container">
     <div class="hero-banner-sm-content">
@@ -33,10 +32,9 @@
     </div>
 </div>
 </section>
-<!--================Hero Banner SM Area End =================-->
 
 
-<!--================Blog Area =================-->
+
 <section class="blog_area section-margin-large">
     <div class="container">
         <div class="row">
@@ -50,7 +48,7 @@
                             <img class="card-img img-fluid rounded-0" src="{{ asset('storage/news/'. $berita->image ) }}" alt="{{$berita->title}}">
                         </div>
                         <a href="#" class="blog_item_date">
-                        <h3>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%d')}}</h3>
+                        <h5>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%d')}}</h5>
                         <p>{{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%b')}}</p>
                         </a>
                     </div>
@@ -62,7 +60,6 @@
                         <p class="text-justify">{{ $berita->description }}</p>
                         <ul class="blog-info-link">
                             <li><a href="{{ url('/event'.'/'.str_replace(" ", "-", strtolower($berita->events->title))) }}"><i class="far fa-user"></i> {{ $berita->events->title }} </a></li>
-                            {{-- <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li> --}}
                         </ul>
                     </div>
                     </article>
@@ -89,56 +86,13 @@
                         </form>
                     </aside>
 
-{{--                     <aside class="single_sidebar_widget post_category_widget">
-                    <h4 class="widget_title">Category</h4>
-                    <ul class="list cat-list">
-                        <li>
-                            <a href="#" class="d-flex">
-                                <p>Resaurant food</p>
-                                <p>(37)</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="d-flex">
-                                <p>Travel news</p>
-                                <p>(10)</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="d-flex">
-                                <p>Modern technology</p>
-                                <p>(03)</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="d-flex">
-                                <p>Product</p>
-                                <p>(11)</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="d-flex">
-                                <p>Inspiration</p>
-                                <p>21</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="d-flex">
-                                <p>Health Care (21)</p>
-                                <p>09</p>
-                            </a>
-                        </li>
-                    </ul>
-                    </aside> --}}
-
                     <aside class="single_sidebar_widget popular_post_widget">
-                        <h3 class="widget_title">Recent Post</h3>
+                        <h3 class="widget_title">Berita Terbaru</h3>
                         @foreach($latest_items as $latest_item)
                             <div class="media post_item">
                                 <div class="thumb-80">
                                     <img src="{{ asset('storage/news/'. $latest_item->image ) }}" alt="{{$latest_item->title}}">
                                 </div>
-                                {{-- <img src="{{ asset('safario/img/blog/popular-post/post1.jpg') }}" alt="post"> --}}
                                 <div class="media-body">
                                     <a href="{{ url('news/'.$latest_item->id.'/'.rawurlencode($latest_item->title)) }}">
                                         <h3 class="ellipsis-1"> {{ $latest_item->title }}</h3>
@@ -167,25 +121,13 @@
                     <ul class="instagram_row flex-wrap" id="newsfeed">
                     </ul>
                     </aside>
-
-
-{{--                     <aside class="single_sidebar_widget newsletter_widget">
-                    <h4 class="widget_title">Newsletter</h4>
-
-                    <form action="#">
-                        <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Enter email" required>
-                        </div>
-                        <button class="button rounded-0 primary-bg text-white w-100" type="submit">Subscribe</button>
-                    </form>
-                    </aside> --}}
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!--================Blog Area =================-->
 
+@include('partials.contact')
 
 @endsection
 

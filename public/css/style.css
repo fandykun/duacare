@@ -133,34 +133,39 @@
 }
 .ellipsis-1 {
   overflow: hidden;
-  text-overflow: ellipsis;
+/*  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: vertical;*/
+    height: 2.4em;
 }
 
 .ellipsis-2 {
   overflow: hidden;
-  text-overflow: ellipsis;
+  /*tak ganti soale ndek firefox clamp ono issue*/
+/*  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: vertical;*/
+  height: 3.6em;
 }
 
 .ellipsis-3 {
   overflow: hidden;
-  text-overflow: ellipsis;
+/*  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: vertical;*/
+  height: 4.8em;
 }
 
 .ellipsis-5 {
   overflow: hidden;
-  text-overflow: ellipsis;
+/*  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: vertical;*/
+    height: 6,0em;
 }
 
 .card-img-style {
@@ -192,4 +197,11 @@ img.vert-move {
 @keyframes mover {
   0% { transform: translateY(0); }
   100% { transform: translateY(-15px); }
+}
+
+.icon-gradient{
+  font-size: 50px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

@@ -29,8 +29,8 @@
 <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
     <div class="container">
         <div class="hero-banner-sm-content">
-        <h1>Blog Single</h1>
-        <p>Air seed winged lights saw kind whales in sixth best a dont seas dron image so fish all tree on</p>
+        <h1>Duacare Brainstorming</h1>
+        <p>Sepatah duakata pemikiran dan sudut pandang duacare dengan keadaan sekitar</p>
         </div>
     </div>
 </section>
@@ -45,14 +45,12 @@
             <div class="col-lg-8 posts-list">
                 <div class="single-post">
                     <div class="feature-img">
-                        <img class="img-fluid" src="{{ asset('storage/news/'. $news->image) }}" alt="">
+                        <img class="img-fluid" src="{{ asset('storage/articles/'. $article->image) }}" alt="">
                     </div>
                     <div class="blog_details">
-                        <h2>{{ $news->title }}</h2>
-                        <ul class="blog-info-link mt-3 mb-4">
-                            <li><a href="#"><i class="far fa-user"></i>{{ $news->events->title }}</a></li>
-                        </ul>
+                        <h2>{{ $article->title }}</h2>
                     </div>
+                    {!! $article->description !!}
                 </div>
                 <div class="navigation-top">
                     <div class="navigation-area">
@@ -69,7 +67,7 @@
                                 </div>
                                 <div class="detials">
                                     <p>Post Sebelumnya</p>
-                                    <a href="{{ url('news/'.$previous_item->id.'/'.rawurlencode($previous_item->title)) }}">
+                                    <a href="{{ url('article/'.$previous_item->id.'/'.rawurlencode($previous_item->title)) }}">
                                         <h4 class="ellipsis-2" >{{ $previous_item->title }}</h4>
                                     </a>
                                 </div>
@@ -79,7 +77,7 @@
                                 @if(!empty($next_item))
                                 <div class="detials">
                                     <p>Post Selanjutnya</p>
-                                    <a href="{{ url('news/'.$next_item->id.'/'.rawurlencode($next_item->title)) }}">
+                                    <a href="{{ url('article/'.$next_item->id.'/'.rawurlencode($next_item->title)) }}">
                                         <h4> {{ $next_item->title }} </h4>
                                     </a>
                                 </div>
@@ -102,7 +100,7 @@
             <div class="col-lg-4">
                 <div class="blog_right_sidebar">
                     <aside class="single_sidebar_widget search_widget">
-                        <form action="{{route('search.news')}}">
+                        <form action="{{route('search.articles')}}">
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" autocomplete="off" name="q" placeholder="Kata kunci pencarian">
@@ -116,14 +114,14 @@
                     </aside>
 
                     <aside class="single_sidebar_widget popular_post_widget">
-                        <h3 class="widget_title">Recent Post</h3>
+                        <h3 class="widget_title">Artikel Terbaru</h3>
                         @foreach($latest_items as $latest_item)
                         <div class="media post_item">
                             <div class="thumb-80">
-                                <img src="{{ asset('storage/news/'. $latest_item->image ) }}" alt="{{$latest_item->title}}">
+                                <img src="{{ asset('storage/articles/'. $latest_item->image ) }}" alt="{{$latest_item->title}}">
                             </div>
                             <div class="media-body">
-                                <a href="{{ url('news/'.$latest_item->id.'/'.rawurlencode($latest_item->title)) }}">
+                                <a href="{{ url('article/'.$latest_item->id.'/'.rawurlencode($latest_item->title)) }}">
                                     <h3 class="ellipsis-1"> {{ $latest_item->title }}</h3>
                                 </a>
                                 <p>
@@ -138,65 +136,18 @@
                         <ul class="list">
                             @foreach ($events as $event)
                                 <li>
-                                    <a href="#">{{$event->title}}</a>
+                                    <a href="{{ url('/event'.'/'.str_replace(" ", "-", strtolower($event->title))) }}">{{$event->title}}</a>
                                 </li>                                
                             @endforeach
                         </ul>
                     </aside>
-
-
-                    <aside class="single_sidebar_widget instagram_feeds">
-                        <h4 class="widget_title">Instagram Feeds</h4>
-                        <ul class="instagram_row flex-wrap">
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i1.png') }}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i2.png') }}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i3.png') }}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i4.png') }}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i5.png') }}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="img-fluid" src="{{ asset('safario/img/instagram/widget-i6.png') }}" alt="">
-                                </a>
-                            </li>
-                        </ul>
-                    </aside>
-{{--                     <aside class="single_sidebar_widget newsletter_widget">
-                        <h4 class="widget_title">Newsletter</h4>
-
-                        <form action="#">
-                            <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Enter email" required>
-                            </div>
-                            <button class="button rounded-0 primary-bg text-white w-100" type="submit">Subscribe</button>
-                        </form>
-                    </aside> --}}
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!--================Blog Area =================-->
-    
 
+@include('partials.contact')
 
 @endsection

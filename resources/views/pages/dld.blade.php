@@ -121,7 +121,6 @@
         <div class="col-lg-6 col-xl-5 align-self-center mb-5 mb-lg-0">
           <div class="search-content">
             <h2>Bergabunglah menjadi salah satu <em>Duacare Loyal Donature</em></h2>
-            <p>Make she'd moved divided air. Whose tree that replenish tone hath own upon them it multiply was blessed is lights make gathering so day dominion so creeping</p>
             <div class="text-center">
               <img class="card-img rounded-0 img-fluid vert-move" style="height: 250px; width: auto; margin: auto;" src="{{ asset('duacare-image/dld.jpg') }}" alt="">
             </div>
@@ -237,6 +236,7 @@
     </div>
   </section>
 
+@include('partials.contact')
 
 @endsection
 

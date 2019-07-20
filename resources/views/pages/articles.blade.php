@@ -35,40 +35,40 @@
 </section>
 <!--================Hero Banner SM Area End =================-->
 
-
+<section class="bg-gray section-padding pb-xl-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-5">
+                <div class="">
+                  <div class="row">
+                    <div class="col">
+                        <i class="fas fa-clock"></i>
+                        <span class="text-muted font-weight-lighter">{{ \Carbon\Carbon::parse($news->created_at)->formatLocalized('%A, %d %B %Y') }}</span>
+                    </div>
+                    <div class="col">
+                      <i class="fas fa-tags"></i>
+                      <span class="text-muted font-weight-lighter">{{$news->events->title}}</span>
+                    </div>
+                  </div>
+                  <hr>
+                  <h2>{{ $news->title }}</h2>
+                  <a class="button button-hero btn-sm mt-5" href="{{ url('/news') }}">Baca Selengkapnya&emsp;<i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 text-center" style="background: white">
+                 <img class="img-fluid rounded-0" style="object-fit: contain; width:auto; max-height:400px" src="{{ asset('storage/articles/'. $news->image ) }}" alt="{{$news->title}}">
+            </div>
+        </div>
+    </div>
+</section>
 
 <!--================Blog Area =================-->
 <section class="blog_area magic-ball magic-ball-testimonial section-margin-large">
     <div class="container">
-{{--         <div class="row">
-            <div class="col-lg-8 mb-5 mb-lg-0">
-                <div class="blog_left_sidebar">
-
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="blog_right_sidebar">
-                    <aside class="single_sidebar_widget search_widget">
-                    <form action="{{route('search.articles')}}">
-                        <div class="form-group">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" autocomplete="off" name="q" placeholder="Kata kunci pencarian">
-                                <div class="input-group-append">
-                                    <button class="btn" type="button"><i class="ti-search"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="button rounded-0 primary-bg text-white w-100" type="submit">Cari</button>
-                        </form>
-                    </aside>
-                </div>
-            </div>
-        </div> --}}
-
-        <div class="row justify-content-center mb-5">
-            <div class="col-10 col-md-6">
-                {{ $articles->appends(request()->query())->links('partials.pagination') }}
-            </div>
+        <div class="section-intro text-center pb-90px">
+          <i class="fab fa-readme icon-gradient"></i>
+          <h2>Artikel</h2>
+          <hr>
         </div>
         <div class="row justify-content-center">
             @if(count($articles) > 0)
@@ -109,18 +109,7 @@
 </section>
 <!--================Blog Area =================-->
 
-<section class="bg-gray section-padding pb-xl-5">
-    <div class="container">
-      <div class="section-intro text-center pb-90px">
-        <i class="fas fa-users icon-gradient"></i>
-        <h2>Duacare Kata Mereka</h2>
-        <hr>
-      </div>
-      <div class="owl-carousel owl-theme testimonial pb-xl-5">
-
-      </div>
-    </div>
-</section>
+@include('partials.contact')
 
 
 @endsection

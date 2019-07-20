@@ -29,8 +29,8 @@
 <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
     <div class="container">
         <div class="hero-banner-sm-content">
-        <h1>Blog Single</h1>
-        <p>Air seed winged lights saw kind whales in sixth best a dont seas dron image so fish all tree on</p>
+        <h1>Duacare Story Books</h1>
+        <p>Ukiran aksi dan harmoni duacare yang tercatat dalam buku cerita</p>
         </div>
     </div>
 </section>
@@ -47,12 +47,13 @@
                     <div class="feature-img">
                         <img class="img-fluid" src="{{ asset('storage/news/'. $news->image) }}" alt="">
                     </div>
-                    <div class="blog_details">
+                    <div class="blog_details ml-4">
                         <h2>{{ $news->title }}</h2>
                         <ul class="blog-info-link mt-3 mb-4">
-                            <li><a href="#"><i class="far fa-user"></i>{{ $news->events->title }}</a></li>
+                            <li><a href="{{ url('/event'.'/'.str_replace(" ", "-", strtolower($news->events->title))) }}"><i class="far fa-user"></i>{{ $news->events->title }}</a></li>
                         </ul>
                         {!! $news->description !!}
+                        <br>
                     </div>
                 </div>
                 <div class="navigation-top">
@@ -117,7 +118,7 @@
                     </aside>
 
                     <aside class="single_sidebar_widget popular_post_widget">
-                        <h3 class="widget_title">Recent Post</h3>
+                        <h3 class="widget_title">Berita Terbaru</h3>
                         @foreach($latest_items as $latest_item)
                         <div class="media post_item">
                             <div class="thumb-80">
@@ -139,12 +140,11 @@
                         <ul class="list">
                             @foreach ($events as $event)
                                 <li>
-                                    <a href="#">{{$event->title}}</a>
+                                    <a href="{{ url('/event'.'/'.str_replace(" ", "-", strtolower($event->title))) }}">{{$event->title}}</a>
                                 </li>                                
                             @endforeach
                         </ul>
                     </aside>
-
 
                     <aside class="single_sidebar_widget instagram_feeds">
                         <h4 class="widget_title">Instagram Feeds</h4>
@@ -166,6 +166,8 @@
     </div>
 </section>
 <!--================Blog Area =================-->
+
+@include('partials.contact')
     
 @endsection
 

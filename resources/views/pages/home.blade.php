@@ -2,12 +2,6 @@
 
 @section('style')
   <style>
-    .icon-gradient{
-      font-size: 50px;
-      background: -webkit-linear-gradient(#eee, #333);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
   </style>
 @endsection
 
@@ -54,13 +48,13 @@
         @for($i = 0 ; $i < count($events) ; $i++)
           <div class="events__item">
             <div class="row">
-              <div class="col-md-6 col-lg-6 mb-4 mb-lg-0 d-flex align-items-stretch">
+              <div class="col-md-6 col-lg-6 mb-4 mb-lg-0 d-flex align-items-stretch align-self-center">
                 <div class="service-card text-center">
                   <div class="card-img-top">
                     <img class="img-fluid" src="{{ asset('safario/img/home/'.$image_list[$i].'') }}" alt="">
                   </div>
                   <div class="service-card-body">
-                    <div class="d-md-none">
+                    <div class="d-md-none align-middle" style="display: inline;">
                       <h3>{{ $events[$i]->title }}</h3>
                       <p>{{ $events[$i]->description }}</p>    
                       <a class="button button-hero btn-sm" href="{{ url('/event'.'/'.str_replace(" ", "-", strtolower($events[$i]->title))) }}">Baca Selengkapnya&emsp;<i class="fas fa-arrow-circle-right"></i></a>
@@ -68,7 +62,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 mb-4 mb-lg-0 d-none d-md-block">
+              <div class="col-lg-6 mb-4 mb-lg-0 d-none d-md-block align-self-center">
                 <div class="service-card text-center">
                   <div class="service-card-body">
                     <div class="my-auto">

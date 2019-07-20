@@ -35,7 +35,7 @@ class DldController extends Controller
             ]);
 
             $message = "*[NEW DLD]*\n";
-            $message = $message."\n*Nama*\t\t :".$data->name."\n*Graduation Year*\t :".$data->graduation_year."\n*Origin Address*\t :".$data->origin_address."\n*Current Address*\t :".$data->current_address."\n*Email*\t\t :".$data->email."\n*Phone Number*\t :".$data->phone_number."\n*Line ID*\t\t :".$data->line."\n*Instagram*\t :".$data->instagram."\n*Bank Name*\t :".$data->bank."\n*Donation Type*\t :".$data->donation_type."\n*Amount*\t\t :".$data->amount;
+            $message = $message."\n*Nama*\t : ".$data->name."\n*Graduation Year*\t : ".$data->graduation_year."\n*Origin Address*\t : ".$data->origin_address."\n*Current Address*\t : ".$data->current_address."\n*Email*\t : ".$data->email."\n*Phone Number*\t : ".$data->phone_number."\n*Line ID*\t : ".$data->line."\n*Instagram*\t : ".$data->instagram."\n*Bank Name*\t : ".$data->bank."\n*Donation Type*\t : ".$data->donation_type."\n*Amount*\t : ".$data->amount;
 
             Telegram::sendMessage([
                 'chat_id' => '-392376502',
@@ -43,6 +43,11 @@ class DldController extends Controller
                 'parse_mode' => 'Markdown'
             ]);
             
+            Telegram::sendSticker([
+                'chat_id' => '-392376502',
+                'sticker' => 'CAADAgADsggAAgi3GQITL8y1531UoQI',
+            ]);
+
         } catch (Exception $e) {
             $eMessage = 'add dld, error: ' . $e->getMessage();
             Log::emergency($eMessage);

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Duacare Official Website</title>
-	<link rel="icon" href="{{ asset('duacare-image/logo-icon.png') }}" type="image/png">
+  <link rel="icon" href="{{ asset('duacare-image/logo-icon.png') }}" type="image/png">
 
   <link rel="stylesheet" href="{{ asset('safario/vendors/bootstrap/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('safario/vendors/fontawesome/css/all.min.css') }}">
@@ -62,16 +62,23 @@
   </script>  
   <script>
   const token = '1638143949.6d4d7e8.7e02f2bcea674fa09b89adc5c2c900e1';
-  var footerNumPhotos = 8;
-  var footerContainer = document.getElementById( 'instafeed' );
+  var footerNumPhotos = 9;
   var footerScrElement = document.createElement( 'script' );
-  
   window.footerResult = function( data ) {
+    let ctx = ''
+    let c = 0;
     for( x in data.data ){
-      footerContainer.innerHTML += '<li><a href="'+ data.data[x].link +'" target="_blank"><img src="' + data.data[x].images.low_resolution.url + '"></a></li>';
+      if (c%3 == 0) {
+        ctx +=`<ul class="instafeed d-flex flex-wrap mb-1">`
+      }
+      ctx += `<li><a href="${data.data[x].link}" target="_blank"><img src="${data.data[x].images.low_resolution.url}"></a></li>`
+      if (c%3 == 2) {
+        ctx += `</ul>`
+      }
+      c+=1;
     }
+    $('#instafeed').html(ctx);
   }
-  
   footerScrElement.setAttribute( 'src', 'https://api.instagram.com/v1/users/self/media/recent?access_token=' + token + '&count=' + footerNumPhotos + '&callback=footerResult' );
   document.body.appendChild( footerScrElement );
   </script>
