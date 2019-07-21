@@ -27,7 +27,7 @@ Route::get('/news/{id}/{title}', 'PagesController@getNewsDetailPage');
 
 Route::get('/articles', 'PagesController@getArticlesPage');
 Route::get('/articles/search', 'PagesController@getArticlesBySearch')->name('search.articles');
-Route::get('/articles/{id}/{title}', 'PagesController@getArticlesDetailPage');
+Route::get('/article/{id}/{title}', 'PagesController@getArticlesDetailPage');
 
 Route::get('/contact', 'PagesController@getContactPage');
 

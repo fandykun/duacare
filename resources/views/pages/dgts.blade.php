@@ -15,10 +15,10 @@
 
 @section('content')
   <!--================Hero Banner SM Area Start =================-->
-  <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
+  <section class="hero-banner-sm dgts-banner magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
     <div class="container">
       <div class="hero-banner-sm-content">
-        <h1>Duacare Camp</h1>
+        <h1>Duacare Goes To school</h1>
       </div>
     </div>
   </section>

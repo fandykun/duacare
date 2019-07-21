@@ -12,9 +12,9 @@
 
       <div class="row align-items-center text-center text-md-left">
         <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
-          <h1>Selamat Datang di</h1>
-          <h2>Duacare Official Website</h2>
-          <a class="button button-hero mt-4" href="#overview">Telusuri Sekarang!</a>
+          <h1 class="wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">Selamat Datang di</h1>
+          <h2 class="wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">Duacare Official Website</h2>
+          <a class="button button-hero mt-4 wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="1.0s"  href="#overview">Telusuri Sekarang!</a>
         </div>
         <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
           {{-- <img class="img-fluid" src="{{ asset('safario/img/home/hero-img.png') }}" alt=""> --}}

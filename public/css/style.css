@@ -328,3 +328,11 @@ img.vert-move {
 @media only screen and (max-width: 990px){
     .our-team{ margin-bottom: 10px; }
 }
+
+.dgts-banner {
+  background: url('../duacare-image/dgts/dgts1.jpg') left center no-repeat;
+}
+
+.dfr-banner {
+  background: url('../duacare-image/dfr/dfr2.jpg') left center no-repeat;
+}

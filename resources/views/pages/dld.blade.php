@@ -51,23 +51,22 @@
           <div class="row">
             <div class="col-lg-10 offset-lg-1">
               <div class="tour-content">
-                <h2>Kami menyediakan beberapa pilihan paket</h2>
-                <p>Make she'd moved divided air. Whose tree that hath own upon them it multiply was blessed </p>
+                <h2>Duacare Loyal Donature</h2>
+                <p>DLD</p>
               </div>
             </div>
           </div>
 
           <div class="tour-card">
-            <img class="card-img rounded-0" src="{{ asset('safario/img/home/tour2.png') }}" alt="">
+            <img class="card-img rounded-0" src="{{ asset('duacare-image/dld/dld1.jpg') }}" alt="">
             <div class="tour-card-overlay">
               <div class="media">
                 <div class="media-body">
-                  <h4>Paket Gold</h4>
-                  {{-- <small>5 days offer</small> --}}
-                  <p>Antara Rp. 75.000,- hingga Rp. 100.000,-</p>
+                  <h4 class="text-primary">DGTS 2019</h4>
+                  <p>Pelaksanaan Talkshow di<br>di SMA 2 Lumajang</p>
                 </div>
                 <div class="media-price">
-                  <h4 class="text-primary">Rp. 75.000,-</h4>
+                  <h4 class="text-primary"></h4>
                 </div>
               </div>
             </div>
@@ -78,16 +77,15 @@
       <div class="row">
         <div class="col-md-6 col-lg-7">
           <div class="tour-card">
-            <img class="card-img rounded-0" src="{{ asset('safario/img/home/tour3.png') }}" alt="">
+            <img class="card-img rounded-0" src="{{ asset('duacare-image/dld/dld3.jpg') }}" alt="">
             <div class="tour-card-overlay">
               <div class="media">
                 <div class="media-body">
-                  <h4>Paket Silver</h4>
-                  {{-- <small>5 days offer</small> --}}
-                  <p>Antara Rp. 50.000,- hinga Rp. 75.000</p>
+                  <h4 class="text-primary">DFR 2018</h4>
+                  <p>Pemberian bantuan kepada<br>masyarakat desa senduro</p>
                 </div>
                 <div class="media-price">
-                  <h4 class="text-primary">Rp. 50.000,-</h4>
+                  <h4 class="text-primary"></h4>
                 </div>
               </div>
             </div>
@@ -95,16 +93,15 @@
         </div>
         <div class="col-md-6 col-lg-5">
           <div class="tour-card">
-            <img class="card-img rounded-0" src="{{ asset('safario/img/home/tour4.png') }}" alt="">
+            <img class="card-img rounded-0" src="{{ asset('duacare-image/dld/dld2.jpg') }}" alt="">
             <div class="tour-card-overlay">
               <div class="media">
                 <div class="media-body">
-                  <h4>Paket Bronze</h4>
-                  {{-- <small>5 days offer</small> --}}
-                  <p>Antara Rp. 25.000,- hingga Rp. 50.000,-</p>
+                  <h4 class="text-primary">DFR 2018</h4>
+                  <p>Pemeriksaan Kesehatan Gratis</p>
                 </div>
                 <div class="media-price">
-                  <h4 class="text-primary">Rp. 25.000,-</h4>
+                  <h4 class="text-primary"></h4>
                 </div>
               </div>
             </div>
@@ -134,7 +131,7 @@
               {{ csrf_field() }}
               <div class="form-group">
                 <div class="input-group">
-                  <input type="text" class="form-control" name="name" placeholder="Nama Lengkap" required autocomplete="off" max="124">
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Nama Lengkap" required autocomplete="off" max="124">
                   <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-id-card"></i></span>
                   </div>
@@ -142,7 +139,7 @@
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  <input type="number" min="1977" class="form-control" name="graduation_year" placeholder="Tahun lulus SMA" required autocomplete="off" max="<?php echo date("Y")+3; ?>">
+                  <input type="number" min="1977" class="form-control" name="graduation_year" id="graduation_year" placeholder="Tahun lulus SMA" required autocomplete="off" max="<?php echo date("Y")+3; ?>">
                   <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-id-card"></i></span>
                   </div>
@@ -150,7 +147,7 @@
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  <input type="text" class="form-control" name="origin_address" placeholder="Alamat di Lumajang" required autocomplete="off" max="124">
+                  <input type="text" class="form-control" name="origin_address" id="origin_address" placeholder="Alamat di Lumajang" required autocomplete="off" max="124">
                   <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-address-book"></i></span>
                   </div>
@@ -158,7 +155,7 @@
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  <input type="text" class="form-control" name="current_address" placeholder="Alamat domisili" required autocomplete="off" max="124">
+                  <input type="text" class="form-control" name="current_address" id="origin_address" placeholder="Alamat domisili" required autocomplete="off" max="124">
                   <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-address-book"></i></span>
                   </div>
@@ -166,7 +163,7 @@
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                   <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                   </div>
@@ -174,7 +171,7 @@
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  <input type="text" class="form-control" name="phone_number" placeholder="No HP/Whatsapp" required autocomplete="off" max="100">
+                  <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="No HP/Whatsapp" required autocomplete="off" max="100">
                   <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-phone"></i></span>
                   </div>
@@ -219,14 +216,14 @@
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  <input type="text" class="form-control amount" name="amount" placeholder="Jumlah donasi">
+                  <input type="text" class="form-control amount" name="amount" id="amount" placeholder="Jumlah donasi">
                   <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-coins"></i></span>
                   </div>
                 </div>
               </div>
               <div class="form-group">
-                <button class="button border-0 mt-3 save" type="submit">Jadikan saya DLD!</button>
+                <button class="button border-0 mt-3 save" type="button">Jadikan saya DLD!</button>
               </div>
             </form>
           </div>
@@ -241,11 +238,36 @@
 @endsection
 
 @section('script')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
   <script>
     $("#nav-dld").addClass("active");
     $(document).ready(function(){
         $('.amount').mask('0.000.000.000.000', {reverse: true});
+    });
+
+    $(document).on('click', '.save', function(){
+      swal({
+        title: "Apakah Anda Yakin?",
+        text: "Dengan ini anda menyetujui syarat-syarat yang berlaku",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((submitted) => {
+        if (submitted) {
+          if (($('#name').val() == '') || ($('#graduation_year').val() == '') || ($('#origin_address').val() == '') || ($('#origin_address').val() == '') || ($('#email').val() == '') || ($('#phone_number').val() == '') || ($('#bank').val() == '') || ($('#donation_type').val() == '') || ($('#amount').val() == '')) {
+            swal("Mohon cek kembali kelengkapan data anda, data tidak boleh kosong", {
+              icon: "warning",
+            });
+            return;
+          }
+
+          $('#daftar-dld').submit();
+        } else {
+          swal("Silahkan melengkapi kelengkapan data anda");
+        }
+      });
     });
 
   </script>

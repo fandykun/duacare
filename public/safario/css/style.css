@@ -844,16 +844,16 @@ h3,
 }
 
 .hero-banner-sm {
-  background: url(../img/banner/banner.png) left center no-repeat;
+  /*background: url(../img/banner/banner.png) left center no-repeat;*/
   background-size: cover;
-  padding-top: 140px;
-  padding-bottom: 90px;
+  padding-top: 240px;
+  padding-bottom: 190px;
 }
 
 @media (min-width: 992px) {
   .hero-banner-sm {
-    padding-top: 240px;
-    padding-bottom: 140px;
+    padding-top: 340px;
+    padding-bottom: 240px;
   }
 }
 

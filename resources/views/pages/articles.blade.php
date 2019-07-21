@@ -51,8 +51,8 @@
                     </div>
                   </div>
                   <hr>
-                  <h2>{{ $news->title }}</h2>
-                  <a class="button button-hero btn-sm mt-5" href="{{ url('/news') }}">Baca Selengkapnya&emsp;<i class="fas fa-arrow-circle-right"></i></a>
+                  <h2 class="wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">{{ $news->title }}</h2>
+                  <a class="button button-hero btn-sm mt-5 wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="1.0s" href="{{ url('/news') }}">Baca Selengkapnya&emsp;<i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-12 col-md-7 text-center" style="background: white">
@@ -79,7 +79,7 @@
                                 <div class="card-img-style-2">
                                     <img class="card-img img-fluid rounded-0" src="{{ asset('storage/articles/'. $article->image ) }}" alt="{{$article->title}}">
                                 </div>
-                                <a href="#" class="blog_item_date">
+                                <a href="{{ url('article/'.$article->id.'/'.rawurlencode($article->title)) }}" class="blog_item_date">
                                     <h5>{{ \Carbon\Carbon::parse($article->created_at)->formatLocalized('%d')}}</h5>
                                     <p>{{ \Carbon\Carbon::parse($article->created_at)->formatLocalized('%b')}}</p>
                                 </a>
@@ -87,7 +87,7 @@
                             
                             <div class="blog_details">
                                 <hr>
-                                <a class="d-inline-block text-justify" href="{{ url('articles/'.$article->id.'/'.rawurlencode($article->title)) }}">
+                                <a class="d-inline-block text-justify" href="{{ url('article/'.$article->id.'/'.rawurlencode($article->title)) }}">
                                     <h5>{{ $article->title }}</h5>
                                 </a>
                                 <p class="ellipsis-3 text-justify">{{ $article->description }}</p>

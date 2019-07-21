@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Telegram\Bot\Laravel\Facades\Telegram;
+use Validator;
 
 class DldController extends Controller
 {
@@ -19,6 +20,29 @@ class DldController extends Controller
 
     public function submitDLD(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'bail|required|max:126',
+            'name'  => 'bail|required|max:126',
+            'graduation_year'  => 'bail|required|max:126',
+            'origin_address'  => 'bail|required|max:126',
+            'current_address'  => 'bail|required|max:126',
+            'email'  => 'bail|required|email|max:126',
+            'phone_number'  => 'bail|required|max:24',
+            'line'  => 'bail|max:126',
+            'instagram'  => 'bail|max:126',
+            'bank'  => 'bail|required|max:126',
+            'donation_type'  => 'bail|required|max:126',
+            'amount'  => 'bail|max:16'
+        ]);
+
+        if (strlen(str_replace('.','',$request->amount))>=12) {
+          return redirect()->back();
+        }
+
+        if ($validator->fails()) {
+          return redirect()->back();
+        }
+
         try {
             $data = Dld::create([
                 'name'  => $request->name,
