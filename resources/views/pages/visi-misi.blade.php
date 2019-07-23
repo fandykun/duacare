@@ -235,6 +235,8 @@
     </div>
   </section>
 
+  @include('partials.contact')
+
 @endsection
 
 @section('script')

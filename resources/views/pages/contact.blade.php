@@ -73,7 +73,7 @@
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-email"></i></span>
             <div class="media-body">
-              <h2><a href="mailto:duacare2care@gmail.com">duacare2care@gmail.com</a></h2>
+              <h2><a href="mailto:duacare2care@gmail.com">dua2care@gmail.com</a></h2>
             </div>
           </div>
         </div>

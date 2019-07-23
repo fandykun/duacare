@@ -27,13 +27,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
-          <div class="about-img text-center wow bounceInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">
-            <img class="img-fluid" src="{{ asset('duacare-image/dgts/dgts1.jpg') }}" alt="Duacare Image" style="max-height: 350px; width: auto;">
+          <div class="about-img wow bounceInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">
+            <img class="img-fluid" src="{{ asset('duacare-image/dgts/dgts1.jpg') }}" alt="Duacare Image" style="width: 100%; height: auto;">
           </div>
         </div>
-        <div class="col-lg-7 col-md-6 align-self-center about-content wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="0.5s">
-          <h2 style="color: grey; margin-bottom: 0; font-size: 42px">Duacare Goes To School</h2>
-          <p class="text-justify" style="line-height: 2.0">adalah serangkaian kegiatan yang dilaksanakan di SMA 2 Lumajang yang diikuti oleh bermacam Perguruan tinggi maupun Akademi sebagai sarana penyaluran informasi tentang jenjang setelah sekolah menengah atas dan juga kegiatan talkshow yang dihadiri pembicara berasal dari alumni SMA 2 Lumajang..</p>
+        <div class="col-lg-7 col-md-6 about-content wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="0.5s">
+          <h2 class="mb-4" style="color: grey; margin-bottom: 0; font-size: 42px">Duacare Goes To School</h2>
+          <p class="text-justify" style="line-height: 2.0">adalah serangkaian kegiatan yang dilaksanakan di SMA 2 Lumajang yang diikuti oleh bermacam perguruan tinggi maupun akademi sebagai sarana penyaluran informasi tentang jenjang setelah sekolah menengah atas dan juga kegiatan talkshow yang dihadiri pembicara berasal dari alumni SMA 2 Lumajang, dan juga kegiatan bedah jurusan dimana para siswa siswi yang tertarik kepada jurusan tertentu akan bertanya langsung kepada mahasiswa/mahasiswi yang memiliki jurusan terkait.</p>
           <a class="button" href="#more">Lihat Keseruannya</a>
         </div>
       </div>
@@ -56,6 +56,7 @@
         <div class="item"><img src="{{ asset('duacare-image/dgts/dgts7.jpg') }}" alt=""></div>
         <div class="item"><img src="{{ asset('duacare-image/dgts/dgts8.jpg') }}" alt=""></div>
         <div class="item"><img src="{{ asset('duacare-image/dgts/dgts9.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts10.jpg') }}" alt=""></div>
       </div>
     </div>
   </section>

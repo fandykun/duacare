@@ -27,12 +27,12 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
-          <div class="about-img text-center wow bounceInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">
-            <img class="img-fluid" src="{{ asset('duacare-image/dgts/dgts1.jpg') }}" alt="Duacare Image" style="max-height: 350px; width: auto;">
+          <div class="about-img wow bounceInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">
+            <img class="img-fluid" src="{{ asset('duacare-image/dgts/dgts1.jpg') }}" alt="Duacare Image" style="width: 100%; height: auto;">
           </div>
         </div>
-        <div class="col-lg-7 col-md-6 align-self-center about-content wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="0.5s">
-          <h2 style="color: grey; margin-bottom: 0; font-size: 42px">Beasiswa Duacare</h2>
+        <div class="col-lg-7 col-md-6 about-content wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="0.5s">
+          <h2 class="mb-4" style="color: grey; margin-bottom: 0; font-size: 42px">Beasiswa Duacare</h2>
           <p class="text-justify" style="line-height: 2.0">adalah program beasiswa yang diberikan setiap semester kepada siswa/siswi SMA 2 Lumajang, setiap semester para penerima beasiswa akan menjalani proses seleksi, penerima beasiswa setiap semesternya berjumlah sebanyak 6 orang masing-masing mendapat uang beasiswa sebanyak Rp. 1.100.000,-</p>
           <a class="button" href="#more">Lihat Lebih Detail</a>
         </div>

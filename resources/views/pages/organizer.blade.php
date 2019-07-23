@@ -32,7 +32,7 @@
                     <li class="pull-left"><h3><strong>Divisi</strong></h3></li>
                     <li class="pull-right">
                         <ol class="type" id="filters">
-                            <li><a href="javascript:void(0)" id="all" data-filter="*">All</a></li>
+                            <li><a href="javascript:void(0)" id="all" class="active" data-filter="*">All</a></li>
                             <li><a href="javascript:void(0)" data-filter=".ceo">Managing Direction</a></li>
                             <li><a href="javascript:void(0)" data-filter=".finance_department">Finance Department</a></li>
                             <li><a href="javascript:void(0)" data-filter=".branding_communication">Branding & Communication Department</a></li>
@@ -259,18 +259,21 @@
 @section('script')
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
   <script>
-    var $grid = $('.grid').isotope({
-      itemSelector: '.element-item',
-      layoutMode: 'fitRows',
-    });
+    $(function(){
+        var $container = $('.grid')
 
-    $('#all').click();
-    $('.cat a').click(function() {
-        $('.cat .active').removeClass('active');
-        $(this).addClass('active');
-        var selector = $(this).attr('data-filter');
-        $grid.isotope({ filter: selector });
-    });
+        $container.isotope({ itemSelector: ".element-item"});
+
+        $container.isotope({ filter: '.ceo' });
+
+        $('.cat a').click(function() {
+            $('.cat .active').removeClass('active');
+            $(this).addClass('active');
+            var selector = $(this).attr('data-filter');
+            $container.isotope({ filter: selector });
+        });
+    })
+
 
   </script>
 @endsection

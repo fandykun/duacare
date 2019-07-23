@@ -1039,7 +1039,7 @@ h3,
 @media (min-width: 1200px) {
   .about-img {
     position: relative;
-    left: -100px;
+/*    left: -100px;*/
   }
 }
 

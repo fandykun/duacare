@@ -39,7 +39,7 @@
                   <p>Sosialisasi penanaman Kokedama<br>di panti asuhan-</p>
                 </div>
                 <div class="media-price">
-                  <h4 class="text-primary"> Rp.100.000,-</h4>
+                  <h4 class="text-primary"></h4>
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="col-lg-10 offset-lg-1">
               <div class="tour-content">
                 <h2>Duacare Loyal Donature</h2>
-                <p>DLD</p>
+                <p>Duacare loyal donature telah membantu mewujudkan mimpi-mimpi banyak orang bersama duacare melalui serangkaian kegiatan yang telah terlaksana</p>
               </div>
             </div>
           </div>
@@ -221,6 +221,7 @@
                   </div>
                 </div>
               </div>
+              <a href="javascript:void(0)" class="text-primary snk">syarat & ketentuan</a>
               <div class="form-group">
                 <button class="button border-0 mt-3 save" type="button">Jadikan saya DLD!</button>
               </div>
@@ -267,6 +268,10 @@
           swal("Silahkan melengkapi kelengkapan data anda");
         }
       });
+    });
+
+    $(document).on('click', '.snk', function(){
+      swal("Syarat & Ketentuan", "wuaa\nwuaa");
     });
 
   </script>

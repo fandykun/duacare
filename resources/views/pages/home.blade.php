@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
           {{-- <img class="img-fluid" src="{{ asset('safario/img/home/hero-img.png') }}" alt=""> --}}
-          <img class="img-fluid vert-move" src="{{ asset('duacare-image/logo-icon.png') }}" alt="Duacare Image">
+          <img style="max-width: 80%" class="img-fluid vert-move" src="{{ asset('duacare-image/logo-icon.png') }}" alt="Duacare Image">
         </div>
       </div>
     </div>
@@ -38,10 +38,10 @@
       </div>
       @php
         $image_list = [
-          "beasiswa.png",
-          "dgts.png",
-          "dfr.png",
-          "camp.png"
+          "beasiswa/beasiswa1.jpg",
+          "dgts/dgts1.jpg",
+          "dfr/dfr1.jpg",
+          "camp/camp1.jpg"
         ]
       @endphp
       <div class="owl-carousel owl-theme events pb-xl-5">
@@ -51,7 +51,7 @@
               <div class="col-md-6 col-lg-6 mb-4 mb-lg-0 d-flex align-items-stretch align-self-center">
                 <div class="service-card text-center">
                   <div class="card-img-top">
-                    <img class="img-fluid" src="{{ asset('safario/img/home/'.$image_list[$i].'') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('duacare-image/'.$image_list[$i].'') }}" alt="">
                   </div>
                   <div class="service-card-body">
                     <div class="d-md-none align-middle" style="display: inline;">
