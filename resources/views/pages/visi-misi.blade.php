@@ -115,6 +115,8 @@
   <!--================Search Package section Start =================-->
   <section class="section-margin">
     <div class="container">
+      <h2 class="text-center">Founder Duacare</h2>
+      <hr>
       <div class="row justify-content-center">
         <div class="col-md-3 col-sm-6">
             <div class="our-team">
@@ -122,8 +124,8 @@
                     <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
                 </div>
                 <div class="team-content">
-                    <h3 class="title text-white">Williamson</h3>
-                    <span class="post">web developer</span>
+                    <h3 class="title text-white">Asadah Sukmawati</h3>
+                    <span class="post">Founder</span>
                     <ul class="social">
                         <li><a href="#"><i class="fab fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -139,8 +141,61 @@
                     <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
                 </div>
                 <div class="team-content">
-                    <h3 class="title text-white">kristina</h3>
-                    <span class="post">Web Designer</span>
+                    <h3 class="title text-white">Benny Firmansyah</h3>
+                    <span class="post">Founder</span>
+                    <ul class="social">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                </div>
+                <div class="team-content">
+                    <h3 class="title text-white">Chrismalla abya</h3>
+                    <span class="post">Founder</span>
+                    <ul class="social">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                </div>
+                <div class="team-content">
+                    <h3 class="title text-white">Maeda Dicky Candra</h3>
+                    <span class="post">Founder</span>
+                    <ul class="social">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                </div>
+                <div class="team-content">
+                    <h3 class="title text-white">Metty Agustisari</h3>
+                    <span class="post">Founder</span>
                     <ul class="social">
                         <li><a href="#"><i class="fab fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>

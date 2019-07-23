@@ -30,7 +30,7 @@
     <div class="container">
         <div class="hero-banner-sm-content">
         <h1>Duacare Brainstorming</h1>
-        <p>Sepatah duakata pemikiran dan sudut pandang duacare dengan keadaan sekitar</p>
+        <p>Sepatah dua kata pemikiran dan sudut pandang duacare dengan keadaan sekitar</p>
         </div>
     </div>
 </section>

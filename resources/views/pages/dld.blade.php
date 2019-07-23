@@ -31,13 +31,12 @@
       <div class="row">
         <div class="col-md-6">
           <div class="tour-card">
-            <img class="card-img rounded-0" src="{{ asset('safario/img/home/tour1.png') }}" alt="">
+            <img class="card-img rounded-0" src="{{ asset('duacare-image/dld/dld4.jpg') }}" alt="">
             <div class="tour-card-overlay">
               <div class="media">
                 <div class="media-body">
-                  <h4>Paket Platinum</h4>
-                  {{-- <small>5 days offer</small> --}}
-                  <p>Berdonasi lebih dari Rp.100.000,-</p>
+                  <h4>DFR 2019</h4>
+                  <p>Sosialisasi penanaman Kokedama<br>di panti asuhan-</p>
                 </div>
                 <div class="media-price">
                   <h4 class="text-primary"> Rp.100.000,-</h4>
