@@ -7,6 +7,7 @@ use App\Testimony;
 use App\Event;
 use App\News;
 use App\Article;
+use App\FinancialReport;
 
 class PagesController extends Controller
 {
@@ -29,11 +30,32 @@ class PagesController extends Controller
         return view('pages.organizer');
     }
 
+    private function getNumberFromMonthName($month)
+    {
+        $monthName = [
+            'Januari', 'Februari', 'Maret', 'April',
+            'Mei', 'Juni', 'Juli', 'Agustus',
+            'September', 'Oktober', 'November', 'Desember'
+        ];
+        return $monthName[$month];
+    }
+
     public function getFinanceReportPage()
     {
-        return view('pages.finance-report');
+        // $financialReports = FinancialReport::all()->first();
+        // $monthName = [
+        //     'Januari', 'Februari', 'Maret', 'April',
+        //     'Mei', 'Juni', 'Juli', 'Agustus',
+        //     'September', 'Oktober', 'November', 'Desember'
+        // ];
+        // $test = array_search($financialReports->month, $monthName) + 1;
+
+        //sek gak wero carane nge-custom sort gawe karo bulan
+        $financialReports = FinancialReport::orderBy('year', 'ASC')->get();
+
+        return view('pages.finance-report', compact('financialReports'));
     }
-    
+
     public function getDLDPage()
     {
         return view('pages.dld');
@@ -101,7 +123,9 @@ class PagesController extends Controller
             ->orderBy('created_at', 'asc')
             ->first();
 
-        return view('pages.articlesDetail', compact('article', 'latest_items', 'previous_item', 'next_item', 'events')
+        return view(
+            'pages.articlesDetail',
+            compact('article', 'latest_items', 'previous_item', 'next_item', 'events')
         );
     }
 
@@ -138,5 +162,4 @@ class PagesController extends Controller
     {
         return view('pages.duacare-camp');
     }
-
 }
