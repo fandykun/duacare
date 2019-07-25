@@ -8,6 +8,13 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    #misi-ul {
+      list-style: none;
+    }
+
+    #accord-ul li:before {
+      content: '✓';
+    }
   </style>
 @endsection
 
@@ -48,75 +55,43 @@
   <section class="bg-gray section-padding magic-ball magic-ball-testimonial pb-xl-5" id="more">
     <div class="container">
       <div class="section-intro text-center pb-90px">
-        <i class="far fa-question-circle icon-gradient"></i>
-        <h2>Our client says</h2>
-        <p>Fowl have fruit moveth male they are that place you will lesser</p>
+        <i class="fas fa-bullseye icon-gradient"></i>
+        <h2>Visi Misi & Tujuan</h2>
+        <hr>
       </div>
-
-
-      <div class="owl-carousel owl-theme testimonial pb-xl-5">
-        <div class="testimonial__item">
-          <div class="row">
-            <div class="col-md-3 col-lg-2 align-self-center">
-              <div class="testimonial__img">
-                <img class="card-img rounded-0" src="{{ asset('safario/img/testimonial/t-slider1.png')}}" alt="">
-              </div>
-            </div>
-            <div class="col-md-9 col-lg-10">
-              <div class="testimonial__content mt-3 mt-sm-0">
-                <h3>Daniel heart</h3>
-                <p>Project manager, Nestle</p>
-                <p class="testimonial__i">Also made from. Give may saying meat there from heaven it lights face had is gathered god earth light for life may itself shall whales made they're blessed whales also made from give may saying meat. There from heaven it lights face had</p>
-                <span class="testimonial__icon"><i class="ti-quote-right"></i></span>
-              </div>
-            </div>
-          </div>
+      <div class="ziehharmonika">
+        <h3>Visi</h3>
+        <div>
+            Terwujudnya kepedulian segenap keluarga besar alumni SMA Negeri 2 Lumajang terhadap sesama
         </div>
-        <div class="testimonial__item">
-          <div class="row">
-            <div class="col-md-3 col-lg-2 align-self-center">
-              <div class="testimonial__img">
-                <img class="card-img rounded-0" src="{{ asset('safario/img/testimonial/t-slider1.png')}}" alt="">
-              </div>
-            </div>
-            <div class="col-md-9 col-lg-10">
-              <div class="testimonial__content mt-3 mt-sm-0">
-                <h3>Daniel heart</h3>
-                <p>Project manager, Nestle</p>
-                <p class="testimonial__i">Also made from. Give may saying meat there from heaven it lights face had is gathered god earth light for life may itself shall whales made they're blessed whales also made from give may saying meat. There from heaven it lights face had</p>
-                <span class="testimonial__icon"><i class="ti-quote-right"></i></span>
-              </div>
-            </div>
-          </div>
+        <h3>Misi</h3>
+        <div>
+          <ul id="accord-ul">
+            <li>Membangun silaturahmi antar alumni SMA Negeri 2 Lumajang</li>
+            <li>Menumbuhkan rasa saling peduli</li>
+            <li>Menumbuhkan jiwa kreatif</li>
+            <li>Meningkatkan kemampuan berorganisasi anggota.</li>
+          </ul>
         </div>
-        <div class="testimonial__item">
-          <div class="row">
-            <div class="col-md-3 col-lg-2 align-self-center">
-              <div class="testimonial__img">
-                <img class="card-img rounded-0" src="{{ asset('safario/img/testimonial/t-slider1.png')}}" alt="">
-              </div>
-            </div>
-            <div class="col-md-9 col-lg-10">
-              <div class="testimonial__content mt-3 mt-sm-0">
-                <h3>Daniel heart</h3>
-                <p>Project manager, Nestle</p>
-                <p class="testimonial__i">Also made from. Give may saying meat there from heaven it lights face had is gathered god earth light for life may itself shall whales made they're blessed whales also made from give may saying meat. There from heaven it lights face had</p>
-                <span class="testimonial__icon"><i class="ti-quote-right"></i></span>
-              </div>
-            </div>
-          </div>
+        <h3>Tujuan</h3>
+        <div>
+          <ul id="accord-ul">
+            <li>Meningkatkan komunikasi antar alumni</li>
+            <li>Mengembangkan dan memberdayakan sumber daya insani sehingga terwujud kepedulian antar sesama dalam ruang ligkup yang tidak terbatas dan dapat melaksanakan kewajiban sebagai umat manusia untuk saling membantu</li>
+            <li>Membantu meningkatkan kesejahteraan masyarakat</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
-  <!--================Testimonial section End =================-->
 
-
-  <!--================Search Package section Start =================-->
   <section class="section-margin">
     <div class="container">
-      <h2 class="text-center">Founder Duacare</h2>
-      <hr>
+      <div class="section-intro text-center pb-90px">
+        <i class="fas fa-medal icon-gradient"></i>
+        <h2>Founder Duacare</h2>
+        <hr>
+      </div>
       <div class="row justify-content-center">
         <div class="col-md-3 col-sm-6">
             <div class="our-team">
@@ -219,10 +194,8 @@
 
     </div>
   </section>
-  <!--================Testimonial section End =================-->
 
 
-  <!--================Search Package section Start =================-->
   <section class="section-margin">
     <div class="container">
       <div class="row justify-content-center">
@@ -255,5 +228,12 @@
         });
       }
     });
+    $('.ziehharmonika').ziehharmonika({
+      collapsible: true,
+      prefix: '★',
+    });
+
+    $('.ziehharmonika h3:eq(0)').ziehharmonika('open', true);
+
   </script>
 @endsection

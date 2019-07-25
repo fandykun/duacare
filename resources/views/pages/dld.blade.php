@@ -113,6 +113,11 @@
 
   <section class="section-margin">
     <div class="container">
+      <div class="section-intro text-center pb-90px">
+        <i class="fas fa-clipboard-list icon-gradient"></i>
+        <h2>Daftar DLD</h2>
+        <hr>
+      </div>
       <div class="row">
         <div class="col-lg-6 col-xl-5 align-self-center mb-5 mb-lg-0">
           <div class="search-content">

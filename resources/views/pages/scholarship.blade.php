@@ -45,6 +45,7 @@
       <div class="section-intro text-center pb-90px">
         <i class="far fa-question-circle icon-gradient"></i>
         <h2>Beasiswa Duacare</h2>
+        <hr>
       </div>
       <div class="owl-carousel owl-theme" id="owl-carousel-beasiswa">                
         <div class="item"><img src="{{ asset('duacare-image/dgts/dgts1.jpg') }}" alt=""></div>
