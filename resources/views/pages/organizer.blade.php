@@ -3,6 +3,18 @@
 @section('style')
   <link rel="stylesheet" href="{{asset('css/add/style.css')}}">
   <style>
+    .grid:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .element-item {
+      position: relative;
+      float: left;
+/*      width: 100%;
+      height: 100%;*/
+    }
 
   </style>
 @endsection
@@ -32,20 +44,20 @@
                     <li class="pull-left"><h3><strong>Divisi</strong></h3></li>
                     <li class="pull-right">
                         <ol class="type" id="filters">
-                            <li><a href="javascript:void(0)" id="all" class="active" data-filter="*">All</a></li>
+                            <li><a href="javascript:void(0)" data-filter="*">All</a></li>
                             <li><a href="javascript:void(0)" data-filter=".ceo">Managing Direction</a></li>
-                            <li><a href="javascript:void(0)" data-filter=".finance_department">Finance Department</a></li>
-                            <li><a href="javascript:void(0)" data-filter=".branding_communication">Branding & Communication Department</a></li>
-                            <li><a href="javascript:void(0)" data-filter=".human_resource">Human Resource Department</a></li>
-                            <li><a href="javascript:void(0)" data-filter=".entrepreneurship">Entrepreneurship Department</a></li>
+                            <li><a href="javascript:void(0)" data-filter=".finance_department">Finance</a></li>
+                            <li><a href="javascript:void(0)" data-filter=".branding_communication">Branding & Communication</a></li>
+                            <li><a href="javascript:void(0)" data-filter=".human_resource">Human Resource</a></li>
+                            <li><a href="javascript:void(0)" data-filter=".entrepreneurship">Entrepreneurship</a></li>
                         </ol>
                     </li>
                 </ul>
                 <div class="clearfix"></div>
             </div>
 
-            <div class="grid row justify-content-center">
-                <div class="col-md-3 col-sm-6 element-item mb-4 ceo" data-category="ceo">
+            <div class="row justify-content-center" id="lightbox">
+                <div class="col-md-3 col-sm-6 element-item mb-4 ceo" >
                     <div class="our-team">
                         <div class="pic">
                             <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
@@ -62,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 element-item mb-4 ceo" data-category="ceo">
+                <div class="col-md-3 col-sm-6 element-item mb-4 ceo" >
                     <div class="our-team">
                         <div class="pic">
                             <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
@@ -79,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 element-item mb-4 ceo" data-category="ceo">
+                <div class="col-md-3 col-sm-6 element-item mb-4 ceo" >
                     <div class="our-team">
                         <div class="pic">
                             <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
@@ -96,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 element-item mb-4 finance_department" data-category="finance_department">
+                <div class="col-md-3 col-sm-6 element-item mb-4 finance_department" >
                     <div class="our-team">
                         <div class="pic">
                             <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
@@ -113,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 element-item mb-4 finance_department" data-category="finance_department">
+                <div class="col-md-3 col-sm-6 element-item mb-4 finance_department" >
                     <div class="our-team">
                         <div class="pic">
                             <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
@@ -130,14 +142,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 element-item mb-4 branding_communication" data-category="branding_communication">
+                <div class="col-md-3 col-sm-6 element-item mb-4 branding_communication" >
                     <div class="our-team">
                         <div class="pic">
                             <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
                         </div>
                         <div class="team-content">
-                            <h3 class="title text-white">Maeda Dicky Candra</h3>
-                            <span class="post">Founder</span>
+                            <h3 class="title text-white">Andika Andra</h3>
+                            <span class="post">Branding & Communication</span>
                             <ul class="social">
                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -147,14 +159,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 element-item mb-4 branding_communication" data-category="branding_communication">
+                <div class="col-md-3 col-sm-6 element-item mb-4 branding_communication" >
                     <div class="our-team">
                         <div class="pic">
                             <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
                         </div>
                         <div class="team-content">
-                            <h3 class="title text-white">Maeda Dicky Candra</h3>
-                            <span class="post">Founder</span>
+                            <h3 class="title text-white">Maulani Syahrozad</h3>
+                            <span class="post">Branding & Communication</span>
                             <ul class="social">
                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -164,7 +176,75 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 element-item mb-4 human_resource" data-category="human_resource">
+                <div class="col-md-3 col-sm-6 element-item mb-4 branding_communication" >
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title text-white">Fandy Kuncoro</h3>
+                            <span class="post">Branding & Communication</span>
+                            <ul class="social">
+                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 element-item mb-4 branding_communication" >
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title text-white">Ahmad Zidan</h3>
+                            <span class="post">Branding & Communication</span>
+                            <ul class="social">
+                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 element-item mb-4 branding_communication" >
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title text-white">Zaenal Mahmudi I.</h3>
+                            <span class="post">Branding & Communication</span>
+                            <ul class="social">
+                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 element-item mb-4 branding_communication" >
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title text-white">Fety Vanda Y.</h3>
+                            <span class="post">Branding & Communication</span>
+                            <ul class="social">
+                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 element-item mb-4 human_resource" >
                     <div class="our-team">
                         <div class="pic">
                             <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
@@ -181,7 +261,7 @@
                         </div>
                     </div>
                 </div> 
-                <div class="col-md-3 col-sm-6 element-item mb-4 human_resource" data-category="human_resource">
+                <div class="col-md-3 col-sm-6 element-item mb-4 human_resource" >
                     <div class="our-team">
                         <div class="pic">
                             <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
@@ -198,7 +278,7 @@
                         </div>
                     </div>
                 </div> 
-                <div class="col-md-3 col-sm-6 element-item mb-4 entrepreneurship" data-category="entrepreneurship">
+                <div class="col-md-3 col-sm-6 element-item mb-4 entrepreneurship" >
                     <div class="our-team">
                         <div class="pic">
                             <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
@@ -215,7 +295,7 @@
                         </div>
                     </div>
                 </div> 
-                <div class="col-md-3 col-sm-6 element-item mb-4 entrepreneurship" data-category="entrepreneurship">
+                <div class="col-md-3 col-sm-6 element-item mb-4 entrepreneurship" >
                     <div class="our-team">
                         <div class="pic">
                             <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
@@ -232,7 +312,7 @@
                         </div>
                     </div>
                 </div> 
-                <div class="col-md-3 col-sm-6 element-item mb-4 entrepreneurship" data-category="entrepreneurship">
+                <div class="col-md-3 col-sm-6 element-item mb-4 entrepreneurship" >
                     <div class="our-team">
                         <div class="pic">
                             <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
@@ -257,14 +337,14 @@
 @endsection
 
 @section('script')
-  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
   <script>
-    $(function(){
-        var $container = $('.grid')
-
-        $container.isotope({ itemSelector: ".element-item"});
-
-        $container.isotope({ filter: '.ceo' });
+    $(window).on('load', function(){
+        $("#all-organizer").trigger('click'); 
+        var $container = $('#lightbox');
+        $container.isotope({
+            filter: '.none',
+            itemSelector: '.element-item',
+        });
 
         $('.cat a').click(function() {
             $('.cat .active').removeClass('active');
@@ -272,7 +352,7 @@
             var selector = $(this).attr('data-filter');
             $container.isotope({ filter: selector });
         });
-    })
+    });
 
 
   </script>

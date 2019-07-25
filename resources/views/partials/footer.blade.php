@@ -50,6 +50,7 @@
           Copyright 2019 Duacare
         </p>
         <div class="col-lg-4 col-sm-12 footer-social text-center text-lg-right">
+          <a href="https://www.linkedin.com/company/duacare/about/"><i class="fab fa-linkedin"></i></a>
           <a href="https://www.facebook.com/duacare/"><i class="fab fa-facebook-f"></i></a>
           <a href="https://twitter.com/duacare"><i class="fab fa-twitter"></i></a>
           <a href="https://instagram.com/duacare"><i class="fab fa-instagram"></i></a>

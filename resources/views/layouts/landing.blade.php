@@ -15,10 +15,11 @@
   <link rel="stylesheet" href="{{ asset('safario/vendors/owl-carousel/owl.carousel.min.css') }}">
   <link rel="stylesheet" href="{{ asset('safario/vendors/flat-icon/font/flaticon.css') }}">
   <link rel="stylesheet" href="{{ asset('safario/vendors/nice-select/nice-select.css') }}">
-
   <link rel="stylesheet" href="{{ asset('safario/css/style.css') }}">
-  <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
-  <link rel="stylesheet" href="{{asset('css/style.css')}}">
+  <link rel="stylesheet" href="{{ asset('wow/css/libs/animate.css')}}">
+  <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="stylesheet" href="{{ asset('horizontal-timeline/assets/css/style.css')}}">
   @yield('style')
 </head>
 <body class="bg-shape" onload="loadOn()">
@@ -48,7 +49,12 @@
   <script src="{{ asset('safario/js/mail-script.js') }}"></script>
   <script src="{{ asset('safario/js/skrollr.min.js') }}"></script>
   <script src="{{ asset('safario/js/main.js') }}"></script>
-  <script src="{{asset('wow/dist/wow.min.js')}}"></script>
+  <script src="{{ asset('js/jquery.isotope.js')}}"></script>
+  <script src="{{ asset('horizontal-timeline/assets/js/util.js') }}"></script>
+  <script src="{{ asset('horizontal-timeline/assets/js/swipe-content.js') }}"></script>
+  <script src="{{ asset('horizontal-timeline/assets/js/main.js') }}"></script>
+  <script src="{{ asset('js/main.js?v=1') }}"></script>
+  <script src="{{ asset('wow/dist/wow.min.js') }}"></script>
   <script>
     new WOW().init();
     function loadOn() {
