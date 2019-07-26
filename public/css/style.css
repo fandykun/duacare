@@ -329,12 +329,17 @@ img.vert-move {
     .our-team{ margin-bottom: 10px; }
 }
 
-.dgts-banner {
-  /*background: url('../duacare-image/dgts/dgts1.jpg') left center no-repeat;*/
+.article-banner {
+  background-image: url('../duacare-image/banner/article.jpg');
 }
 
-.dfr-banner {
-  /*background: url('../duacare-image/dfr/dfr2.jpg') left center no-repeat;*/
+
+.dld-banner {
+  background-image: url('../duacare-image/banner/dld.jpg');
+}
+
+.news-banner {
+  background-image: url('../duacare-image/banner/news.jpg');
 }
 
 .visimisi-banner {
@@ -343,4 +348,8 @@ img.vert-move {
 
 .organizer-banner {
   background-image: url('../duacare-image/banner/organizer.jpg');
+}
+
+.contact-banner {
+  background-image: url('../duacare-image/banner/contact.jpg');
 }

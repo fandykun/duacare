@@ -154,7 +154,7 @@ h3,
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 99;
+  z-index: 9999;
   transition: background 0.4s, all 0.3s linear;
 }
 
@@ -844,12 +844,11 @@ h3,
 }
 
 .hero-banner-sm {
+  background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom; 
   padding-top: 280px;
   padding-bottom: 220px;
 }
@@ -873,14 +872,14 @@ h3,
 }
 
 @media (max-width: 768px) {
-/*  .hero-banner-sm {
+  .hero-banner-sm {
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain;
     padding-top: 0px;
-    padding-bottom: 0px;
-  }*/
+    /*padding-bottom: 0px;*/
+  }
   .hero-banner-sm h1 {
     font-size: 28px;
   }

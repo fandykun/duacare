@@ -6,7 +6,7 @@
 
 @section('content')
   <!--================Hero Banner SM Area Start =================-->
-  <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
+  <section class="hero-banner-sm dld-banner magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
     <div class="container">
       <div class="hero-banner-sm-content">
         <h1>Duacare Loyal Donature (DLD)</h1>
@@ -121,7 +121,7 @@
       <div class="row">
         <div class="col-lg-6 col-xl-5 align-self-center mb-5 mb-lg-0">
           <div class="search-content">
-            <h2>Bergabunglah menjadi salah satu <em>Duacare Loyal Donature</em></h2>
+            <h2 class="text-center mb-5">Bergabunglah menjadi salah satu <em>Duacare Loyal Donature</em></h2>
             <div class="text-center">
               <img class="card-img rounded-0 img-fluid vert-move" style="height: 250px; width: auto; margin: auto;" src="{{ asset('duacare-image/dld.jpg') }}" alt="">
             </div>
