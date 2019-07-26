@@ -353,3 +353,15 @@ img.vert-move {
 .contact-banner {
   background-image: url('../duacare-image/banner/contact.jpg');
 }
+
+#map-region {
+/*  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;*/
+  /*box-shadow: 0px 10px 20px 0px rgba(14, 30, 112, 0.1);*/
+}
+
+#map-region:hover {
+  /*box-shadow: 0px 10px 20px 0px rgba(14, 50, 112, 0.4);*/
+}

@@ -44,7 +44,7 @@
     <div class="container">
       <div class="section-intro text-center pb-90px">
         <i class="far fa-question-circle icon-gradient"></i>
-        <h2>DGTS</h2>
+        <h2>Galeri DGTS</h2>
         <hr>
       </div>
       <div class="owl-carousel owl-theme" id="owl-carousel-dgts">                

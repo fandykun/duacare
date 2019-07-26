@@ -42,7 +42,7 @@
         </div>
         <div class="col-lg-7 col-md-6 align-self-center about-content wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="0.5s">
           <h2 style="color: grey; margin-bottom: 0; font-size: 42px">Duacare</h2>
-          <p class="text-justify" style="line-height: 2.0">adalah organisasi sosial alumni SMA Negeri 2 Lumajang yang berpegang teguh pada semboyan "Dare to care!". Duacare adalah <em>charity organization</em> yang dibentuk pada 26 Juli 2008 oleh alumni SMA Negeri 2 Lumajang yang mana kegiatan dari duacare erat kaitannya dengan kegiatan sosial dan kemanusiaan. Duacare telah menjadi organisasi yang legal berdasarkan Akta Pendirian yang ditandatangani oleh Notaris Irwan Rosman, S.H, M.Kn. No 49 tanggal 10 Juni 2009.</p>
+          <p class="text-justify" style="line-height: 2.0">adalah Organisasi sosial alumni SMA 2 lumajang yang berpegang teguh pada semboyan “Dare to care!” Duacare adalah charity organization yang dibentuk pada 26 Juli 2008 oleh alumni SMA Negeri 2 Lumajang. Yang mana kegiatan dari duacare sendiri dekat hubungannya dengan kegiatan sosial dan kemanusiaan. Duacare telah menjadi organisasi yang legal berdasarkan Akta Pendirian yang ditandatangani Notaris Irwan Rosman, S.H., M.Kn. No. 49 tanggal 10 Juni 2009.</p>
           <a class="button" href="#more">Pelajari lebih lanjut</a>
         </div>
       </div>
@@ -100,12 +100,8 @@
                 </div>
                 <div class="team-content">
                     <h3 class="title text-white">Asadah Sukmawati</h3>
-                    <span class="post">Founder</span>
+                    <small>asadah023@yahoo.co.id</small>
                     <ul class="social">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -113,16 +109,12 @@
         <div class="col-md-3 col-sm-6">
             <div class="our-team">
                 <div class="pic">
-                    <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                    <img src="{{ asset('duacare-image/founder/beny.jpeg') }}" alt="">
                 </div>
                 <div class="team-content">
                     <h3 class="title text-white">Benny Firmansyah</h3>
-                    <span class="post">Founder</span>
+                    <small>benny.firmansyah@bpk.go.id</small>
                     <ul class="social">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -134,12 +126,8 @@
                 </div>
                 <div class="team-content">
                     <h3 class="title text-white">Chrismalla abya</h3>
-                    <span class="post">Founder</span>
+                    <small>nyik_malla@yahoo.co.id</small>
                     <ul class="social">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -149,16 +137,12 @@
         <div class="col-md-3 col-sm-6">
             <div class="our-team">
                 <div class="pic">
-                    <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                    <img src="{{ asset('duacare-image/founder/maeda.jpeg') }}" alt="">
                 </div>
                 <div class="team-content">
                     <h3 class="title text-white">Maeda Dicky Candra</h3>
-                    <span class="post">Founder</span>
+                    <small>maedadcandra@gmail.com</small>
                     <ul class="social">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -170,12 +154,8 @@
                 </div>
                 <div class="team-content">
                     <h3 class="title text-white">Metty Agustisari</h3>
-                    <span class="post">Founder</span>
+                    <small>mety.agustisari@yahoo.com</small>
                     <ul class="social">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -188,10 +168,10 @@
     <div class="container">
       <div class="section-intro text-center pb-90px">
         <i class="far fa-question-circle icon-gradient"></i>
-        <h2>Our client says</h2>
-        <p>Fowl have fruit moveth male they are that place you will lesser</p>
+        <h2>Wilayah Operasional</h2>
+        <p>Di setiap region, terdapat regional manager yang bertanggung jawab terhadap kegiatan atau alumni pada region tersebut.</p>
       </div>
-
+      <img class="img-fluid" id="map-region" src="{{ asset('duacare-image/peta1.png') }}" alt="">
     </div>
   </section>
 

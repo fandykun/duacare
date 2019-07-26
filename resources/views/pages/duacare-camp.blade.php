@@ -44,7 +44,7 @@
     <div class="container">
       <div class="section-intro text-center pb-90px">
         <i class="far fa-question-circle icon-gradient"></i>
-        <h2>Duacare Camp</h2>
+        <h2>Galeri Camp</h2>
         <hr>
       </div>
       <div class="owl-carousel owl-theme" id="owl-carousel-camp">                
