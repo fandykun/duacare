@@ -336,3 +336,11 @@ img.vert-move {
 .dfr-banner {
   /*background: url('../duacare-image/dfr/dfr2.jpg') left center no-repeat;*/
 }
+
+.visimisi-banner {
+  background-image: url('../duacare-image/banner/visimisi.jpg');
+}
+
+.organizer-banner {
+  background-image: url('../duacare-image/banner/organizer.jpg');
+}

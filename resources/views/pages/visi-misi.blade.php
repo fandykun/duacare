@@ -20,7 +20,7 @@
 
 @section('content')
   <!--================Hero Banner SM Area Start =================-->
-  <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
+  <section class="hero-banner-sm visimisi-banner magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
     <div class="container">
       <div class="hero-banner-sm-content">
         <h1>Tentang Duacare</h1>
@@ -53,7 +53,7 @@
 
   <!--================Testimonial section Start =================-->
   <section class="bg-gray section-padding magic-ball magic-ball-testimonial pb-xl-5" id="more">
-    <div class="container">
+    <div class="container mb-4">
       <div class="section-intro text-center pb-90px">
         <i class="fas fa-bullseye icon-gradient"></i>
         <h2>Visi Misi & Tujuan</h2>

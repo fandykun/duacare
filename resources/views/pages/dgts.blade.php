@@ -71,12 +71,9 @@
       <div class="cd-h-timeline__dates">
         <div class="cd-h-timeline__line">
           <ol style="list-style: none;">
-            <li><a href="#0" data-date="16/01/2014" class="cd-h-timeline__date cd-h-timeline__date--selected">16 Jan</a></li>
-            <li><a href="#0" data-date="28/02/2014" class="cd-h-timeline__date">28 Feb</a></li>
-            <li><a href="#0" data-date="20/04/2014" class="cd-h-timeline__date">20 Mar</a></li>
-            <li><a href="#0" data-date="20/05/2014" class="cd-h-timeline__date">20 May</a></li>
-            <li><a href="#0" data-date="09/07/2014" class="cd-h-timeline__date">09 Jul</a></li>
-            <li><a href="#0" data-date="30/08/2014" class="cd-h-timeline__date">30 Aug</a></li>
+            <li><a href="#0" data-date="16/01/2014" class="cd-h-timeline__date cd-h-timeline__date--selected">Bedah Jurusan</a></li>
+            <li><a href="#0" data-date="28/02/2014" class="cd-h-timeline__date">Talkshow</a></li>
+            <li><a href="#0" data-date="20/04/2014" class="cd-h-timeline__date">Campus Expo</a></li>
           </ol>
 
           <span class="cd-h-timeline__filling-line" aria-hidden="true"></span>
@@ -93,60 +90,26 @@
       <ol style="list-style: none;">
         <li class="cd-h-timeline__event cd-h-timeline__event--selected text-component">
           <div class="cd-h-timeline__event-content containerss">
-            <h2 class="cd-h-timeline__event-title text-center ">Horizontal Timeline</h2>
-            <em class="cd-h-timeline__event-date">January 16th, 2014</em>
+            <h2 class="cd-h-timeline__event-title text-center ">Bedah Jurusan</h2>
             <p class="cd-h-timeline__event-description text--subtle"> 
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+              Acara yang dihadiri oleh para alumni dari berbagai jurusan dan universitas atau perguruan tinggi, membentuk kegiatan model FGD (Forum Group Discussion) dalam bermacam-macam rumpun ilmu, para siswa siswi akan berkumpul sesuai minat dan bakat dan akan tanya jawab dengan para alumni yang berada pada rumpun ilmu tersebut.
+            </p>
+          </div>
+        </li>
+        <li class="cd-h-timeline__event text-component">
+          <div class="cd-h-timeline__event-content containerss">
+            <h2 class="cd-h-timeline__event-title text-center">Talkshow</h2>
+            <p class="cd-h-timeline__event-description text--subtle"> 
+             Seluruh siswa siswi SMA 2 Lumajang kelas 12 akan berkumpul mengikuti kegiatan talkshow dengan alumni SMA 2 Lumajang yang telah dipilih dan mampu meningkatkan semangat serta ambisi para murid.
             </p>
           </div>
         </li>
 
         <li class="cd-h-timeline__event text-component">
           <div class="cd-h-timeline__event-content containerss">
-            <h2 class="cd-h-timeline__event-title text-center">Event title here</h2>
-            <em class="cd-h-timeline__event-date">February 28th, 2014</em>
+            <h2 class="cd-h-timeline__event-title text-center">Campus Expo</h2>
             <p class="cd-h-timeline__event-description text--subtle"> 
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-            </p>
-          </div>
-        </li>
-
-        <li class="cd-h-timeline__event text-component">
-          <div class="cd-h-timeline__event-content containerss">
-            <h2 class="cd-h-timeline__event-title text-center">Event title here</h2>
-            <em class="cd-h-timeline__event-date">March 20th, 2014</em>
-            <p class="cd-h-timeline__event-description text--subtle"> 
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-            </p>
-          </div>
-        </li>
-
-        <li class="cd-h-timeline__event text-component">
-          <div class="cd-h-timeline__event-content containerss">
-            <h2 class="cd-h-timeline__event-title text-center">Event title here</h2>
-            <em class="cd-h-timeline__event-date">May 20th, 2014</em>
-            <p class="cd-h-timeline__event-description text--subtle"> 
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-            </p>
-          </div>
-        </li>
-
-        <li class="cd-h-timeline__event text-component">
-          <div class="cd-h-timeline__event-content containerss">
-            <h2 class="cd-h-timeline__event-title text-center">Event title here</h2>
-            <em class="cd-h-timeline__event-date">July 9th, 2014</em>
-            <p class="cd-h-timeline__event-description text--subtle"> 
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-            </p>
-          </div>
-        </li>
-
-        <li class="cd-h-timeline__event text-component">
-          <div class="cd-h-timeline__event-content containerss">
-            <h2 class="cd-h-timeline__event-title text-center">Event title here</h2>
-            <em class="cd-h-timeline__event-date">August 30th, 2014</em>
-            <p class="cd-h-timeline__event-description text--subtle"> 
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+              Merupakan acara puncak yang dilaksanakan dalam 2 hari terdapat booth-booth dari berbacam universitas dari seluruh indonesia, di masing-masing booth akan terdapat sesi tanya jawab dan informasi mengenai kehidupan kampus dan perguruan tinggi.
             </p>
           </div>
         </li>
