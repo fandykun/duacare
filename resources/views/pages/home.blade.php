@@ -101,9 +101,9 @@
             <div class="col-md-3 col-lg-2 align-self-center">
               <div class="testimonial__img">
                 @if($testimony->image)
-                <img class="card-img rounded-0" src="{{ asset('duacare-image/logo_small.png') }}" alt="Testimony">
+                <img class="card-img rounded-0" src="{{ asset('storage/testimony/'.$testimony->image) }}" alt="Testimony">
                 @else
-                <img class="card-img rounded-0" src="{{ asset('duacare-image/logo_small.png') }}" alt="Duacare Image">
+                <img class="card-img rounded-0" src="{{ asset('storage/testimony/'.$testimony->image) }}" alt="Duacare Image">
                 @endif
               </div>
             </div>
@@ -138,7 +138,7 @@
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="card-blog">
             <div class="card-img-style">
-              <img class="card-img rounded-0" src="{{ asset('storage/news/'.$berita->image) }}" alt="">            
+              <img class="card-img rounded-0" src="{{ asset('storage/news/'.$berita->image) }}" alt="">
             </div>
             <div class="card-blog-body">
               <a href="{{ url('news/'.$berita->id.'/'.rawurlencode(strtolower($berita->title))) }}">

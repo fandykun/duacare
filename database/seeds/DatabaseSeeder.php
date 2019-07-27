@@ -43,21 +43,21 @@ class DatabaseSeeder extends Seeder
         }
 
         $testimoniesTitle = [
-            'Mahmud',
-            'Maulani Syahrozad',
-            'Azidan'
+            'Dhikma Yogi Senasta Aji',
+            'Ananda Tegar',
+            'Nur Indah Aminanti Putri'
         ];
 
         $testimoniesDetail = [
-            'Astronot - FTIK ITS',
-            'Mahasiswi - Sosiologi UNAR',
-            'Dokter - FK ITS'
+            'IPB - Fakultas Teknologi Pertanian',
+            'UNEJ - Farmasi',
+            'ITS - Teknik Industri'
         ];
 
         $testimoniesDescription = [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+            'DGTS tahun ini keren kak, mulai dari campus expo, talkshow, bedah jurusan. Semuanya keren. Manfaat yang bisa aku ambil banyak kak. Di campus expo aku bisa mengenal lebih tentang ptn favoritku. Aku dulu tanya2 tentang IPB dan Alhamdulillah aku sekarang masuk IPB. Waktu talkshow itu ada alumni smada, udah sukses. Jadi lebih termotivasi dengan kesuksesannya. Di bedah jurusan aku bisa tau jurusan mana yang cocok buat aku. Ya semoga aja emang jurusanku saat ini benar2 cocok buat aku kak hehe.',
+            'Dengan adanya DGTS, sangat membantu sekali buat anak anak SMA karena acara ini dibuka untuk umum dan konsultasi bukan hanya untuk kelas 12 tapi kelas 10 11 juga bisa konsul, jadi kita bisa tau jurusan apa yg cocok untuk kita sejak awal SMA, lalu DGTS juga dibuka untuk umum jadi siswa selain smada bisa ke dgts dan ikut konsul, jadi sangat membantu karena konsul disitu gratis gak seperti di bimbel yang kudu bayar mahal, best wes pokoknya.',
+            'Acara DGTS tahun ini sangat bagus dan bermanfaat sekali bagi siswa siswi terutama kelas 12. Dari bedah jurusan, talkshow, hingga campus expo. Dengan semua acara itu saya lebih termotivasi dan mengetahui jurusan yg saya inginkan. Namun, saat acara bedah jurusan,  kegiatan sedikit kurang tertata. Karena ada pemateri yg belum masuk kelas tepat waktu lalu teman2 juga kurang tau letak jurusan yg dituju di kelas mana.'
         ];
 
         for ($i = 0; $i < count($testimoniesTitle); $i++) {

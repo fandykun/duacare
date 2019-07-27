@@ -40,29 +40,7 @@
     </div>
   </section>
 
-  <section class="bg-gray section-padding magic-ball magic-ball-testimonial pb-xl-5" id="more">
-    <div class="container">
-      <div class="section-intro text-center pb-90px">
-        <i class="far fa-question-circle icon-gradient"></i>
-        <h2>Galeri DGTS</h2>
-        <hr>
-      </div>
-      <div class="owl-carousel owl-theme" id="owl-carousel-dgts">                
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts1.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts2.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts3.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts4.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts5.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts6.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts7.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts8.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts9.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts10.jpg') }}" alt=""></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-padding magic-ball magic-ball-testimonial cd-h-timeline js-cd-h-timeline margin-bottom--md" style="display: block;">
+  <section class="bg-gray section-padding magic-ball magic-ball-testimonial cd-h-timeline js-cd-h-timeline margin-bottom--md" style="display: block;" id="more">
     <div class="section-intro text-center pb-90px">
       <i class="far fa-question-circle icon-gradient"></i>
       <h2>Rangkaian Acara DGTS</h2>
@@ -114,6 +92,28 @@
           </div>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <section class="section-padding magic-ball magic-ball-testimonial pb-xl-5" id="more">
+    <div class="container">
+      <div class="section-intro text-center pb-90px">
+        <i class="far fa-question-circle icon-gradient"></i>
+        <h2>Galeri DGTS</h2>
+        <hr>
+      </div>
+      <div class="owl-carousel owl-theme" id="owl-carousel-dgts">                
+        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts1.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts2.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts3.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts4.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts5.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts6.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts7.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts8.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts9.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts10.jpg') }}" alt=""></div>
+      </div>
     </div>
   </section>
 
