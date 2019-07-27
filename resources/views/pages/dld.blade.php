@@ -36,7 +36,7 @@
               <div class="media">
                 <div class="media-body">
                   <h4>DFR 2019</h4>
-                  <p>Sosialisasi penanaman Kokedama<br>di panti asuhan-</p>
+                  <p>Sosialisasi penanaman Kokedama<br>di panti asuhan.</p>
                 </div>
                 <div class="media-price">
                   <h4 class="text-primary"></h4>
@@ -51,7 +51,7 @@
             <div class="col-lg-10 offset-lg-1">
               <div class="tour-content">
                 <h2>Duacare Loyal Donature</h2>
-                <p>Duacare loyal donature telah membantu mewujudkan mimpi-mimpi banyak orang bersama duacare melalui serangkaian kegiatan yang telah terlaksana</p>
+                <p>Duacare loyal donature telah membantu mewujudkan mimpi-mimpi banyak orang bersama duacare melalui serangkaian kegiatan yang telah terlaksana.</p>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
               <div class="media">
                 <div class="media-body">
                   <h4 class="text-primary">DGTS 2019</h4>
-                  <p>Pelaksanaan Talkshow di<br>di SMA 2 Lumajang</p>
+                  <p>Pelaksanaan Talkshow di<br>di SMA 2 Lumajang.</p>
                 </div>
                 <div class="media-price">
                   <h4 class="text-primary"></h4>
@@ -81,7 +81,7 @@
               <div class="media">
                 <div class="media-body">
                   <h4 class="text-primary">DFR 2018</h4>
-                  <p>Pemberian bantuan kepada<br>masyarakat desa senduro</p>
+                  <p>Pemberian bantuan kepada<br>masyarakat desa senduro.</p>
                 </div>
                 <div class="media-price">
                   <h4 class="text-primary"></h4>
@@ -97,7 +97,7 @@
               <div class="media">
                 <div class="media-body">
                   <h4 class="text-primary">DFR 2018</h4>
-                  <p>Pemeriksaan Kesehatan Gratis</p>
+                  <p>Pemeriksaan kesehatan gratis.</p>
                 </div>
                 <div class="media-price">
                   <h4 class="text-primary"></h4>
@@ -276,7 +276,7 @@
     });
 
     $(document).on('click', '.snk', function(){
-      swal("Syarat & Ketentuan", "wuaa\nwuaa");
+      swal("Syarat & Ketentuan", "- Menerima email rutin dari duacare perihal kegiatan dan hal-hal lain\n- Penggunaan 10% dari dana donasi untuk operasional Duacare");
     });
 
   </script>

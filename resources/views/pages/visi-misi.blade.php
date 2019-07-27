@@ -96,7 +96,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="our-team">
                 <div class="pic">
-                    <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                    <img src="{{ asset('duacare-image/founder/asadah.jpg') }}" alt="">
                 </div>
                 <div class="team-content">
                     <h3 class="title text-white">Asadah Sukmawati</h3>
@@ -122,7 +122,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="our-team">
                 <div class="pic">
-                    <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                    <img src="{{ asset('duacare-image/founder/crismalla.jpg') }}" alt="">
                 </div>
                 <div class="team-content">
                     <h3 class="title text-white">Chrismalla abya</h3>
@@ -150,7 +150,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="our-team">
                 <div class="pic">
-                    <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                    <img src="{{ asset('duacare-image/founder/mety.jpg') }}" alt="">
                 </div>
                 <div class="team-content">
                     <h3 class="title text-white">Metty Agustisari</h3>
@@ -172,6 +172,7 @@
         <p>Di setiap region, terdapat regional manager yang bertanggung jawab terhadap kegiatan atau alumni pada region tersebut.</p>
       </div>
       <img class="img-fluid" id="map-region" src="{{ asset('duacare-image/peta1.png') }}" alt="">
+      <p class="mt-4 text-center text-muted font-wight-lighter"><span class="regions mx-2">Lumajang</span><span class="regions mx-2">- <span class="mx-2"></span>Jember</span><span class="regions mx-2">- <span class="mx-2"></span>Surabaya</span><span class="regions mx-2">- <span class="mx-2"></span>Malang</span><span class="regions mx-2">- <span class="mx-2"></span>Jogja Jateng</span><span class="regions mx-2">- <span class="mx-2"></span>Jabodetabek Bandung</span></p>
     </div>
   </section>
 

@@ -14,11 +14,15 @@
 @endsection
 
 @section('content')
-  <!--================Hero Banner SM Area Start =================-->
-  <section class="hero-banner-sm dgts-banner magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
+  <section class="hero-banner magic-ball">
     <div class="container">
-      <div class="hero-banner-sm-content">
-        <h1 style="color: #6ebff3">Duacare Goes To school</h1>
+      <div class="row align-items-center text-center text-md-left">
+        <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
+          <h1 class="wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">Duacare Goes To School</h1>
+        </div>
+        <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
+          <img style="max-width: 80%" class="img-fluid vert-move" src="{{ asset('duacare-image/logo-icon.png') }}" alt="Duacare Image">
+        </div>
       </div>
     </div>
   </section>
@@ -55,21 +59,21 @@
           </ol>
 
           <span class="cd-h-timeline__filling-line" aria-hidden="true"></span>
-        </div> <!-- .cd-h-timeline__line -->
-      </div> <!-- .cd-h-timeline__dates -->
+        </div>
+      </div>
         
       <ul style="list-style: none;">
         <li><a href="#0" class="text--replace cd-h-timeline__navigation cd-h-timeline__navigation--prev cd-h-timeline__navigation--inactive">Prev</a></li>
         <li><a href="#0" class="text--replace cd-h-timeline__navigation cd-h-timeline__navigation--next">Next</a></li>
       </ul>
-    </div> <!-- .cd-h-timeline__containerss -->
+    </div>
 
     <div class="cd-h-timeline__events">
       <ol style="list-style: none;">
         <li class="cd-h-timeline__event cd-h-timeline__event--selected text-component">
           <div class="cd-h-timeline__event-content containerss">
             <h2 class="cd-h-timeline__event-title text-center ">Bedah Jurusan</h2>
-            <p class="cd-h-timeline__event-description text--subtle"> 
+            <p class="cd-h-timeline__event-description text--subtle text-justify" style="line-height: 2"> 
               Acara yang dihadiri oleh para alumni dari berbagai jurusan dan universitas atau perguruan tinggi, membentuk kegiatan model FGD (Forum Group Discussion) dalam bermacam-macam rumpun ilmu, para siswa siswi akan berkumpul sesuai minat dan bakat dan akan tanya jawab dengan para alumni yang berada pada rumpun ilmu tersebut.
             </p>
           </div>
@@ -77,7 +81,7 @@
         <li class="cd-h-timeline__event text-component">
           <div class="cd-h-timeline__event-content containerss">
             <h2 class="cd-h-timeline__event-title text-center">Talkshow</h2>
-            <p class="cd-h-timeline__event-description text--subtle"> 
+            <p class="cd-h-timeline__event-description text--subtle text-justify" style="line-height: 2"> 
              Seluruh siswa siswi SMA 2 Lumajang kelas 12 akan berkumpul mengikuti kegiatan talkshow dengan alumni SMA 2 Lumajang yang telah dipilih dan mampu meningkatkan semangat serta ambisi para murid.
             </p>
           </div>
@@ -86,7 +90,7 @@
         <li class="cd-h-timeline__event text-component">
           <div class="cd-h-timeline__event-content containerss">
             <h2 class="cd-h-timeline__event-title text-center">Campus Expo</h2>
-            <p class="cd-h-timeline__event-description text--subtle"> 
+            <p class="cd-h-timeline__event-description text--subtle text-justify" style="line-height: 2"> 
               Merupakan acara puncak yang dilaksanakan dalam 2 hari terdapat booth-booth dari berbacam universitas dari seluruh indonesia, di masing-masing booth akan terdapat sesi tanya jawab dan informasi mengenai kehidupan kampus dan perguruan tinggi.
             </p>
           </div>

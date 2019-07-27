@@ -42,11 +42,15 @@
 @endsection
 
 @section('content')
-  <!--================Hero Banner SM Area Start =================-->
-  <section class="hero-banner-sm dgts-banner magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
+  <section class="hero-banner magic-ball">
     <div class="container">
-      <div class="hero-banner-sm-content">
-        <h1 style="color: #6ebff3">Beasiswa Duacare</h1>
+      <div class="row align-items-center text-center text-md-left">
+        <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
+          <h1 class="wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">Beasiswa Duacare</h1>
+        </div>
+        <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
+          <img style="max-width: 80%" class="img-fluid vert-move" src="{{ asset('duacare-image/logo-icon.png') }}" alt="Duacare Image">
+        </div>
       </div>
     </div>
   </section>

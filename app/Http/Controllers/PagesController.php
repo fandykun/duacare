@@ -56,6 +56,11 @@ class PagesController extends Controller
         return view('pages.finance-report', compact('financialReports'));
     }
 
+    public function getFinanceReportData(){
+        $financialReports = FinancialReport::orderBy('year', 'ASC')->get();
+        return response()->json($financialReports);
+    }
+
     public function getDLDPage()
     {
         return view('pages.dld');

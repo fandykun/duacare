@@ -18,6 +18,8 @@ class CreateFinancialReportsTable extends Migration
             $table->string('month');
             $table->string('year');
             $table->text('link_url');
+            $table->decimal('income', 12, 2);
+            $table->decimal('outcome', 12, 2);
             $table->timestamps();
         });
     }

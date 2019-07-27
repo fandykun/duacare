@@ -9,7 +9,6 @@
   <!--================Hero Banner Area Start =================-->
   <section class="hero-banner magic-ball">
     <div class="container">
-
       <div class="row align-items-center text-center text-md-left">
         <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
           <h1 class="wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">Selamat Datang di</h1>
