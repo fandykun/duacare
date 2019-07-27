@@ -57,7 +57,7 @@ class PagesController extends Controller
     }
 
     public function getFinanceReportData(){
-        $financialReports = FinancialReport::orderBy('year', 'ASC')->get();
+        $financialReports = FinancialReport::all();
         return response()->json($financialReports);
     }
 

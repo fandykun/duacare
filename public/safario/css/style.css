@@ -2572,6 +2572,21 @@ h3,
   transition: all 0.3s ease 0s;
 }
 
+.button2 {
+  display: inline-block;
+  background-color: transparent;
+  color: #f8b500;
+  border-color: #f8b500;
+  border: 1px solid #f8b500;
+  border-radius: 30px;
+  padding: 8px 25px;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
 @media (min-width: 600px) {
   .button {
     padding: 12px 45px;
@@ -2579,6 +2594,11 @@ h3,
 }
 
 .button:hover {
+  background-color: #f8b500;
+  color: #fff;
+}
+
+.button2:hover {
   background-color: #f8b500;
   color: #fff;
 }

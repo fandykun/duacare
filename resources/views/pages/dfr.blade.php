@@ -60,6 +60,7 @@
         <div class="item"><img src="{{ asset('duacare-image/dfr/dfr6.jpg') }}" alt=""></div>
         <div class="item"><img src="{{ asset('duacare-image/dfr/dfr7.jpg') }}" alt=""></div>
         <div class="item"><img src="{{ asset('duacare-image/dfr/dfr8.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/dfr/dfr9.jpg') }}" alt=""></div> 
       </div>
     </div>
   </section>

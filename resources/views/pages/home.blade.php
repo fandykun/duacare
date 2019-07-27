@@ -13,7 +13,8 @@
         <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
           <h1 class="wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">Selamat Datang di</h1>
           <h2 class="wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">Duacare Official Website</h2>
-          <a class="button button-hero mt-4 wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="1.0s"  href="#overview">Telusuri Sekarang!</a>
+          <a class="button button-hero mt-4 wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="1.0s"  href="#overview">Telusuri Lebih Lanjut!</a><br>
+          <a class="button2 btn-sm mt-4 wow fadeInLeft" data-wow-duration="1.25s" data-wow-delay="1.25s"  href="{{url('/duacare-loyal-donature')}}">Donasi Sekarang</a><br>
         </div>
         <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
           {{-- <img class="img-fluid" src="{{ asset('safario/img/home/hero-img.png') }}" alt=""> --}}

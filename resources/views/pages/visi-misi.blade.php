@@ -122,7 +122,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="our-team">
                 <div class="pic">
-                    <img src="{{ asset('duacare-image/founder/crismalla.jpg') }}" alt="">
+                    <img src="{{ asset('duacare-image/founder/crismalla.jpeg') }}" alt="">
                 </div>
                 <div class="team-content">
                     <h3 class="title text-white">Chrismalla abya</h3>

@@ -354,6 +354,10 @@ img.vert-move {
   background-image: url('../duacare-image/banner/contact.jpg');
 }
 
+.finance-banner {
+  background-image: url('../duacare-image/banner/finance.jpg');
+}
+
 #map-region {
 /*  -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -367,5 +371,5 @@ img.vert-move {
 }
 
 .regions {
-  
+
 }
