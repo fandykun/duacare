@@ -33,14 +33,13 @@
     </div>
   </div>
 
-  {{-- <div id="body" style="display:none;" class=""> --}}
-  <div id="body" style="display:none;" class="animate-bottom">
-    @include('partials.header')
+    <div id="body" style="display:none;" class="animate-bottom">
+      @include('partials.header')
 
-    @yield('content')
+      @yield('content')      
 
-    @include('partials.footer')
-  </div>
+      @include('partials.footer')
+    </div>
 
   <script src="{{ asset('safario/vendors/jquery/jquery-3.2.1.min.js') }}"></script>
   <script src="{{ asset('safario/vendors/bootstrap/bootstrap.bundle.min.js') }}"></script>

@@ -24,7 +24,7 @@
 @section('content')
 
 
-<section class="hero-banner-sm  news-banner magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
+<section class="hero-banner-sm  news-banner magic-ball magic-ball-banner">
 <div class="container">
     <div class="hero-banner-sm-content">
     <h1>Apa Kabar Duacare</h1>
