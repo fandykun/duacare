@@ -35,10 +35,10 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3  col-md-6 col-sm-12">
+      <div class="col-lg-3 col-md-6 col-sm-12">
         <div class="single-footer-widget mail-chimp">
           <h6 class="mb-20">InstaFeed</h6>
-          <div class="" id="instafeed" class="text-center">
+          <div id="instafeed">
           </div>
         </div>
       </div>						

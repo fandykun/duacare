@@ -379,6 +379,13 @@ h3,
   .header_area.white_menu .navbar .navbar-brand img + img {
     display: none;
   }
+  .header_area.navbar_fixed .main_menu .navbar {
+    background: #fff;
+  }
+  .header_area.navbar_fixed .main_menu .navbar .nav .nav-item:hover .nav-link,
+  .header_area.navbar_fixed .main_menu .navbar .nav .nav-item.active .nav-link {
+    color: #6ebff3;
+  }
 }
 
 .header_area.white_menu .navbar .nav .nav-item .nav-link {
@@ -2724,11 +2731,13 @@ button.button {
 }
 
 .instafeed {
-  margin: -5px;
+  /*margin: -5px;*/
+  text-align: center;
 }
 
 .instafeed li {
-  overflow: hidden;
+  display: inline-block;
+  /*overflow: hidden;*/
   width: 58px;
   margin-bottom: 0 !important;
   position: relative;
@@ -2737,7 +2746,7 @@ button.button {
 
 .instafeed li img {
   margin: 5px;
-  position: absolute;
+  /*position: absolute;*/
   width: 92%;
   height: 92%;
   object-fit: cover;

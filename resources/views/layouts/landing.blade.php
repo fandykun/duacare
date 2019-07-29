@@ -77,7 +77,7 @@
     let c = 0;
     for( x in data.data ){
       if (c%3 == 0) {
-        ctx +=`<ul class="instafeed d-flex flex-wrap mb-1">`
+        ctx +=`<ul class="instafeed mb-1">`
       }
       ctx += `<li><a href="${data.data[x].link}" target="_blank"><img src="${data.data[x].images.low_resolution.url}"></a></li>`
       if (c%3 == 2) {
