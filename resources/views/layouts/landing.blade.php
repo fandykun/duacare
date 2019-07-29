@@ -15,9 +15,9 @@
   <link rel="stylesheet" href="{{ asset('safario/vendors/owl-carousel/owl.carousel.min.css') }}">
   <link rel="stylesheet" href="{{ asset('safario/vendors/flat-icon/font/flaticon.css') }}">
   <link rel="stylesheet" href="{{ asset('safario/vendors/nice-select/nice-select.css') }}">
-  <link rel="stylesheet" href="{{ asset('safario/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('safario/css/style.css?v=1.1') }}">
   <link rel="stylesheet" href="{{ asset('wow/css/libs/animate.css')}}">
-  <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+  <link rel="stylesheet" href="{{ asset('css/style.css?v=1.1')}}">
   <script>document.getElementsByTagName("html")[0].className += " js";</script>
   <link rel="stylesheet" href="{{ asset('horizontal-timeline/assets/css/style.css')}}">
   <link rel="stylesheet" href="{{ asset('ziehharmonika/ziehharmonika.css')}}">
@@ -53,7 +53,7 @@
   <script src="{{ asset('horizontal-timeline/assets/js/util.js') }}"></script>
   <script src="{{ asset('horizontal-timeline/assets/js/swipe-content.js') }}"></script>
   <script src="{{ asset('horizontal-timeline/assets/js/main.js') }}"></script>
-  <script src="{{ asset('js/main.js?v=1') }}"></script>
+  <script src="{{ asset('js/main.js?v=1.1') }}"></script>
   <script src="{{ asset('wow/dist/wow.min.js') }}"></script>
   <script src="{{ asset('ziehharmonika/ziehharmonika.js') }}"></script>
   <script>

@@ -21,7 +21,7 @@
 
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/css/util.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/css/main.css?v=1') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/css/main.css?v=1.1') }}">
     <!--===============================================================================================-->
 </head>
 
@@ -90,7 +90,7 @@
             scale: 1.0
         })
     </script>
-    <script src="{{ asset('homepage/login_register/js/main.js') }}"></script>
+    <script src="{{ asset('homepage/login_register/js/main.js?v=1.1') }}"></script>
 
 </body>
 
