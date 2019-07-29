@@ -1,70 +1,97 @@
-@extends('layouts.auth')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('style')
-<style>
-</style>
-@endsection
+<head>
+    <title>Login | DUACARE
+        <?php echo date("Y"); ?>
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" href="{{ asset('duacare-image/logo-icon.png') }}" type="image/png">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="{{asset('homepage/css/bootstrap.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="{{ asset('safario/vendors/fontawesome/css/all.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/vendor/animate/animate.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/vendor/css-hamburgers/hamburgers.min.css') }}">
+    <!--===============================================================================================-->
 
-@section('content')
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/css/util.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('homepage/login_register/css/main.css?v=1') }}">
+    <!--===============================================================================================-->
+</head>
 
-<div class="container">
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
-        <div class="col-xl-10 col-lg-12 col-md-9">
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block">
-                            <img class="img-fluid vert-move" src="{{ asset('duacare-image/logo-icon.png') }}">
-                        </div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="text-gray-900"> Admin Page</h1>
-                                        <h1 class="h4 text-gray-900 mb-4">Login to Your Account!</h1>
-                                    </div>
-                                    <form class="user" method="POST" action="{{ route('login') }}">
-                                        {{ csrf_field() }}
+<body>
 
-                                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                            <input type="email" class="form-control form-control-user" id="email" name="email" aria-describedby="emailHelp" placeholder="Masukkan email" value="{{ old('email') }}" required autofocus>
-                                            
-                                            @if ($errors->has('email'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('email') }}</strong>
-                                            </span>
-                                            @endif
-                                        </div>
-                                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                            <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password" required>
-                                        
-                                            @if ($errors->has('password'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('password') }}</strong>
-                                            </span>
-                                            @endif  
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck"  name="remember" {{ old('remember') ? 'checked' : '' }}>
-                                                <label class="custom-control-label" for="customCheck">Remember Me</label>
-                                            </div>
-                                        </div>
-
-                                        <hr>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img src="{{asset('duacare-image/logo-icon.png')}}" alt="Duacare logo">
                 </div>
+                <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+                    {{ csrf_field() }}
+                    <img src="{{asset('duacare-image/logo-icon.png')}}" class="d-block d-md-none" alt="Duacare logo" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+                    <span class="login100-form-title">
+                        Login to DUACARE
+                    </span> 
+                    @if (\Session::has('message'))
+                    <div class="alert alert-danger text-center" role="alert">
+                        <h6 style="font-size: 12px">{!! \Session::get('message') !!}</h6>
+                    </div>
+                    @endif @if (\Session::has('success'))
+                    <div class="alert alert-success text-center" role="alert">
+                        <h6 style="font-size: 12px">{!! \Session::get('success') !!}</h6>
+                    </div>
+                    @endif
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@gmail.com">
+                        <input id="email" type="email" class="input100" name="email" value="{{ old( 'email') }} " required placeholder="Email">
+
+                        <span class="focus-input100 "></span>
+                        <span class="symbol-input100 ">
+                            <i class="fas fa-envelope " aria-hidden="true "></i>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <input id="password" type="password" class="input100" required placeholder="Password" name="password">
+
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fas fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button type="submit" class="login100-form-btn">
+                            Login
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
 
-@endsection
+
+
+
+    <script src="{{ asset('sb-admin/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('sb-admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('sb-admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('sb-admin/js/sb-admin-2.min.js') }}"></script>
+
+    <script src="{{ asset('homepage/login_register/vendor/tilt/tilt.jquery.min.js') }}"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.0
+        })
+    </script>
+    <script src="{{ asset('homepage/login_register/js/main.js') }}"></script>
+
+</body>
+
+</html>

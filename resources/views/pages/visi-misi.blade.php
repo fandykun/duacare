@@ -150,7 +150,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="our-team">
                 <div class="pic">
-                    <img src="{{ asset('duacare-image/founder/mety.jpg') }}" alt="">
+                    <img src="{{ asset('duacare-image/founder/mety.jpeg') }}" alt="">
                 </div>
                 <div class="team-content">
                     <h3 class="title text-white">Metty Agustisari</h3>

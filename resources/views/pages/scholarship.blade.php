@@ -60,7 +60,7 @@
       <div class="row">
         <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
           <div class="about-img wow bounceInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">
-            <img class="img-fluid" src="{{ asset('duacare-image/dgts/dgts1.jpg') }}" alt="Duacare Image" style="width: 100%; height: auto;">
+            <img class="img-fluid" src="{{ asset('duacare-image/beasiswa/beasiswa1.jpg') }}" alt="Duacare Image" style="width: 100%; height: auto;">
           </div>
         </div>
         <div class="col-lg-7 col-md-6 about-content wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="0.5s">
@@ -102,15 +102,9 @@
         <hr>
       </div>
       <div class="owl-carousel owl-theme" id="owl-carousel-beasiswa">                
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts1.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts2.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts3.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts4.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts5.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts6.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts7.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts8.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts9.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/beasiswa/beasiswa1.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/beasiswa/beasiswa2.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/beasiswa/beasiswa3.jpg') }}" alt=""></div>
       </div>
     </div>
   </section>

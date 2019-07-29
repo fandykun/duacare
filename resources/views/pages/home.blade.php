@@ -103,7 +103,7 @@
                 @if($testimony->image)
                 <img class="card-img rounded-0" src="{{ asset('storage/testimony/'.$testimony->image) }}" alt="Testimony">
                 @else
-                <img class="card-img rounded-0" src="{{ asset('storage/testimony/'.$testimony->image) }}" alt="Duacare Image">
+                <img class="card-img rounded-0" src="{{ asset('storage/testimony/'.'/'.$testimony->image) }}" alt="Duacare Image">
                 @endif
               </div>
             </div>
