@@ -29,7 +29,7 @@ class DLDEmail extends Mailable
     public function build()
     {
         $dld = $this->dld;
-        return $this->from('duacare@gmail.com')
+        return $this->from('dld@duacare.org')
             ->subject('Duacare')
             ->view('mail', compact('dld'));
     }
