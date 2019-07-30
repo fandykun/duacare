@@ -32,9 +32,9 @@
       </div>
 
       <h2 class="text-center contact-title mb-5 wow bounceInUp" data-wow-duration="1.0s" data-wow-delay="1.2s">Hubungi Kami disini!</h2>
-      
+      <hr>
       <div class="row justify-content-center">
-        <div class="col-lg-4 wow bounceInLeft" data-wow-duration="1.0s" data-wow-delay="1.5s">
+        <div class="col-lg-4 col-sm-6 wow bounceInLeft" data-wow-duration="1.0s" data-wow-delay="1.5s">
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-map-alt"></i></span>
             <div class="media-body">
@@ -45,7 +45,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="1.5s">
+        <div class="col-lg-4 col-sm-6 wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="1.5s">
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-mobile"></i></span>
             <div class="media-body">
@@ -57,7 +57,7 @@
       </div>
 
       <div class="row justify-content-center">
-        <div class="col-lg-4 wow bounceInLeft" data-wow-duration="1.0s" data-wow-delay="2.0s">
+        <div class="col-lg-4 col-sm-6 wow bounceInLeft" data-wow-duration="1.0s" data-wow-delay="2.0s">
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-home"></i></span>
             <div class="media-body">
@@ -68,7 +68,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="2.0s">
+        <div class="col-lg-4 col-sm-6 wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="2.0s">
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-email"></i></span>
             <div class="media-body">

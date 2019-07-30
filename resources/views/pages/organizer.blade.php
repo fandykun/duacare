@@ -42,7 +42,7 @@
                     <li class="pull-left"><h3><strong>Divisi</strong></h3></li>
                     <li class="pull-right">
                         <ol class="type" id="filters">
-                            <li><a href="javascript:void(0)" data-filter="*">All</a></li>
+                            <li><a href="javascript:void(0)" data-filter="">All</a></li>
                             <li><a href="javascript:void(0)" data-filter=".ceo">Managing Direction</a></li>
                             <li><a href="javascript:void(0)" data-filter=".finance_department">Finance</a></li>
                             <li><a href="javascript:void(0)" data-filter=".branding_communication">Branding & Communication</a></li>
@@ -341,10 +341,6 @@
     $(window).on('load', function(){
         $("#all-organizer").trigger('click'); 
         var $container = $('#lightbox');
-        $container.isotope({
-            filter: '.none',
-            itemSelector: '.element-item',
-        });
 
         $('.cat a').click(function() {
             $('.cat .active').removeClass('active');

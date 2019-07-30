@@ -58,11 +58,13 @@
                             <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                                 @if(!empty($previous_item))
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{ asset('safario/img/blog/prev.jpg') }}" alt="">
+                                    <a href="{{ url('news/'.$previous_item->id.'/'.rawurlencode($previous_item->title)) }}">
+                                        <img class="img-fluid" src="{{ asset('safario/img/blog/prev.jpg') }}" alt="">
+                                    </a>
                                 </div>
                                 <div class="arrow">
-                                    <a href="#">
-                                        <span class="lnr text-white lnr-arrow-left"></span>
+                                    <a href="{{ url('news/'.$previous_item->id.'/'.rawurlencode($previous_item->title)) }}">
+                                    <span class="lnr text-white lnr-arrow-left"></span>
                                     </a>
                                 </div>
                                 <div class="detials">
@@ -82,9 +84,7 @@
                                     </a>
                                 </div>
                                 <div class="arrow">
-                                    <a href="#">
                                         <span class="lnr text-white lnr-arrow-right"></span>
-                                    </a>
                                 </div>
                                 <div class="thumb">
                                     <a href="#">
@@ -112,7 +112,16 @@
                             <button class="button rounded-0 primary-bg text-white w-100" type="submit">Cari</button>
                         </form>
                     </aside>
-
+                    <aside class="single_sidebar_widget tag_cloud_widget">
+                        <h4 class="widget_title">Event Duacare</h4>
+                        <ul class="list">
+                            @foreach ($events as $event)
+                                <li>
+                                    <a href="{{ url('/event'.'/'.str_replace(" ", "-", strtolower($event->title))) }}">{{$event->title}}</a>
+                                </li>                                
+                            @endforeach
+                        </ul>
+                    </aside>
                     <aside class="single_sidebar_widget popular_post_widget">
                         <h3 class="widget_title">Berita Terbaru</h3>
                         @foreach($latest_items as $latest_item)
@@ -131,17 +140,6 @@
                         </div>
                         @endforeach
                     </aside>
-                    <aside class="single_sidebar_widget tag_cloud_widget">
-                        <h4 class="widget_title">Event Duacare</h4>
-                        <ul class="list">
-                            @foreach ($events as $event)
-                                <li>
-                                    <a href="{{ url('/event'.'/'.str_replace(" ", "-", strtolower($event->title))) }}">{{$event->title}}</a>
-                                </li>                                
-                            @endforeach
-                        </ul>
-                    </aside>
-
                     <aside class="single_sidebar_widget instagram_feeds">
                         <h4 class="widget_title">Instagram Feeds</h4>
                         <ul class="instagram_row flex-wrap" id="newsfeed"></ul>

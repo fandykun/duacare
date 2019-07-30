@@ -1057,7 +1057,7 @@ h3,
 @media (min-width: 1200px) {
   .about-img {
     position: relative;
-/*    left: -100px;*/
+    /*    left: -100px;*/
   }
 }
 
@@ -1303,7 +1303,7 @@ h3,
 
 .card-blog .card-blog-body {
   padding: 20px 10px;
-/*  -webkit-transition: all 0.3s ease 0s;
+  /*  -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;*/
@@ -1477,6 +1477,16 @@ h3,
 
 .contact-info .media-body p {
   color: #999999;
+}
+
+@media (max-width: 767px) {
+  .contact-info .media-body h2 {
+    font-size: 22px;
+  }
+  .contact-info .media-body h3 {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
 }
 
 /*=================== contact banner end ====================*/

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Telegram\Bot\Laravel\Facades\Telegram;
 use Validator;
+use App\Mail\DLDEmail;
+use Illuminate\Support\Facades\Mail;
 
 class DldController extends Controller
 {
@@ -35,12 +37,12 @@ class DldController extends Controller
             'amount'  => 'bail|max:16'
         ]);
 
-        if (strlen(str_replace('.','',$request->amount))>=12) {
-          return redirect()->back();
+        if (strlen(str_replace('.', '', $request->amount)) >= 12) {
+            return redirect()->back();
         }
 
         if ($validator->fails()) {
-          return redirect()->back();
+            return redirect()->back();
         }
 
         try {
@@ -59,19 +61,26 @@ class DldController extends Controller
             ]);
 
             $message = "*[NEW DLD]*\n";
-            $message = $message."\n*Nama*\t : ".$data->name."\n*Graduation Year*\t : ".$data->graduation_year."\n*Origin Address*\t : ".$data->origin_address."\n*Current Address*\t : ".$data->current_address."\n*Email*\t : ".$data->email."\n*Phone Number*\t : ".$data->phone_number."\n*Line ID*\t : ".$data->line."\n*Instagram*\t : ".$data->instagram."\n*Bank Name*\t : ".$data->bank."\n*Donation Type*\t : ".$data->donation_type."\n*Amount*\t : ".$data->amount;
+            $message = $message . "\n*Nama*\t : " . $data->name . "\n*Graduation Year*\t : " . $data->graduation_year . "\n*Origin Address*\t : " . $data->origin_address . "\n*Current Address*\t : " . $data->current_address . "\n*Email*\t : " . $data->email . "\n*Phone Number*\t : " . $data->phone_number . "\n*Line ID*\t : " . $data->line . "\n*Instagram*\t : " . $data->instagram . "\n*Bank Name*\t : " . $data->bank . "\n*Donation Type*\t : " . $data->donation_type . "\n*Amount*\t : " . $data->amount;
+
+            try {
+                Mail::to($data->email)->send(new DLDEmail($data));
+            } catch (Exception $e) {
+                $eMessage = 'Send Email to dld, error: ' . $e->getMessage();
+                Log::emergency($eMessage);
+                return redirect()->back()->with('error', 'Whoops, something error!');
+            }
 
             Telegram::sendMessage([
                 'chat_id' => '-392376502',
                 'text' => $message,
                 'parse_mode' => 'Markdown'
             ]);
-            
-            Telegram::sendSticker([
-                'chat_id' => '-392376502',
-                'sticker' => 'CAADAgADsggAAgi3GQITL8y1531UoQI',
-            ]);
 
+            // Telegram::sendSticker([
+            //     'chat_id' => '-392376502',
+            //     'sticker' => 'CAADAgADsggAAgi3GQITL8y1531UoQI',
+            // ]);
         } catch (Exception $e) {
             $eMessage = 'add dld, error: ' . $e->getMessage();
             Log::emergency($eMessage);
