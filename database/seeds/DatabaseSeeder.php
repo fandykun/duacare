@@ -27,12 +27,12 @@ class DatabaseSeeder extends Seeder
         }
 
 
-        $eventsTitle = ['Beasiswa Duacare', 'Duacare Goes To School', 'Duacare For Ramadhan', 'Duacare Camp'];
+        $eventsTitle = ['Beasiswa Duacare', 'Duacare Goes To School (DGTS)', 'Duacare For Ramadhan', 'Duacare Camp'];
         $eventsDescription = [
-            'Beasiswa berupa dana pendidikan bagi siswa/siswi SMAN Negeri 2 Lumajang yang berprestasi.',
-            'Kegiatan Campus Expo dan Talkshow mengenai seputar dunia perkuliahan dan dapat dihadiri oleh seluruh siswa SMA di kabupaten Lumajang.',
-            'Kegiatan bakti sosial pada bulan Ramadhan ke desa-desa yang membutuhkan di kabupaten Lumajang',
-            'Internal day untuk meningkatkan kejasama antar organizer yang dilaksanakan setiap 2 tahun sekali.'
+            'Beasiswa berupa dana pendidikan bagi peserta didik SMAN 2 Lumajang yang berprestasi dengan latar belakang dari keluarga kurang mampu.',
+            'Serangkaian kegiatan yang bertujuan memfasilitasi siswa-siswi SMA di Kabupaten Lumajang untuk lebih mengenali dan memahami dunia perkuliahan beserta seluk beluknya.',
+            'Kegiatan bakti sosial pada bulan Ramadhan ke desa-desa atau panti asuhan yang membutuhkan di Kabupaten Lumajang.',
+            'Internal day untuk meningkatkan rasa kekeluargaan antar anggota Duacare dari seluruh angkatan'
         ];
 
         for ($i = 0; $i < count($eventsTitle); $i++) {
@@ -103,7 +103,6 @@ class DatabaseSeeder extends Seeder
                     'image' => $newsImage,
                     'created_at' => $newsCreatedAt
                 ]);
-
             }
         }
 

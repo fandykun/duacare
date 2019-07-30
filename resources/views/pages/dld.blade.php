@@ -276,7 +276,12 @@
     });
 
     $(document).on('click', '.snk', function(){
-      swal("Syarat & Ketentuan", "- Menerima email rutin dari duacare perihal kegiatan dan hal-hal lain\n- Penggunaan 10% dari dana donasi untuk operasional Duacare");
+      swal({
+        title: "Syarat & Ketentuan",
+        text: "- Donasi yang diperoleh Duacare melalui Situs dan/atau bentuk penggalangan dana lain yang dilakukan organizer Duacare akan dipotong oleh organizer maksimal sebesar 10% (sepuluh persen) sebagai biaya operasional organisasi Duacare.\n\n- Duacare Loyal Donatur tiap 3 (tiga) bulan akan mendapatkan email laporan terkini terkait laporan keuangan organisasi dan pelaksanaan kegiatan.",
+        className: "text-justify",
+      });
+      // swal("Syarat & Ketentuan", "- Donasi yang diperoleh Duacare melalui Situs dan/atau bentuk penggalangan dana lain yang dilakukan organizer Duacare akan dipotong oleh organizer maksimal sebesar 10% (sepuluh persen) sebagai biaya operasional organisasi Duacare.\n- Duacare Loyal Donatur tiap 3 (tiga) bulan akan mendapatkan email laporan terkini terkait laporan keuangan organisasi dan pelaksanaan kegiatan.");
     });
 
   </script>

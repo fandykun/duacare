@@ -169,10 +169,10 @@
       <div class="section-intro text-center pb-90px">
         <i class="far fa-question-circle icon-gradient"></i>
         <h2>Wilayah Operasional</h2>
-        <p>Di setiap region, terdapat regional manager yang bertanggung jawab terhadap kegiatan atau alumni pada region tersebut.</p>
+        <p>Hingga tahun 2019, Duacare memiliki 6 wilayah operasional yang tersebar di seluruh Indonesia, dimana disetiap wilayah operasional terdapat Regional Manager yang bertanggungjawab terhadap pengelolaan anggota Duacare dan pelaksanaan kegiatan di masing-masing wilayah.</p>
       </div>
       <img class="img-fluid" id="map-region" src="{{ asset('duacare-image/peta1.png') }}" alt="">
-      <p class="mt-4 text-center text-muted font-wight-lighter"><span class="regions mx-2">Lumajang</span><span class="regions mx-2">- <span class="mx-2"></span>Jember</span><span class="regions mx-2">- <span class="mx-2"></span>Surabaya</span><span class="regions mx-2">- <span class="mx-2"></span>Malang</span><span class="regions mx-2">- <span class="mx-2"></span>Jogja Jateng</span><span class="regions mx-2">- <span class="mx-2"></span>Jabodetabek Bandung</span></p>
+      <p class="mt-4 text-center text-muted font-wight-lighter"><strong><span class="regions mx-2">Lumajang</span><span class="regions mx-2">- <span class="mx-2"></span>Jember</span><span class="regions mx-2">- <span class="mx-2"></span>Surabaya</span><span class="regions mx-2">- <span class="mx-2"></span>Malang</span><span class="regions mx-2">- <span class="mx-2"></span>Jogja Jateng</span><span class="regions mx-2">- <span class="mx-2"></span>Jabodetabek Bandung</span></strong></p>
     </div>
   </section>
 
