@@ -27,12 +27,34 @@
     Database
     </div>
 
-    <!-- Nav Item - News -->
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Media</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Media Duacare:</h6>
+            <a class="collapse-item" href="{{ url('/admin/news') }}">Berita</a>
+            <a class="collapse-item" href="{{ url('/admin/article') }}">Artikel</a>
+          </div>
+        </div>
+      </li>
+
+    {{-- <!-- Nav Item - News -->
     <li id="nav-news" class="nav-item">
     <a class="nav-link" href="{{ url('/admin/news') }}">
         <i class="fas fa-fw fa-table"></i>
         <span>Berita</span></a>
     </li>
+
+    <!-- Nav Item - News -->
+    <li id="nav-news" class="nav-item">
+        <a class="nav-link" href="{{ url('/article/news') }}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Artikel</span></a>
+        </li> --}}
 
     <!-- Nav Item - Organizer -->
     <li id="nav-organizer" class="nav-item">
@@ -55,13 +77,6 @@
         <span>Testimoni</span></a>
     </li>
 
-    <!-- Nav Item - Slider -->
-    <li id="nav-slider" class="nav-item">
-    <a class="nav-link" href="{{ url('/admin/slider') }}">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Slider</span></a>
-    </li>
-
     <!-- Nav Item - DLD -->
     <li id="nav-dld" class="nav-item">
     <a class="nav-link" href="{{ url('/admin/dld') }}">
@@ -74,6 +89,13 @@
     <a class="nav-link" href="{{ url('/admin/financial-report') }}">
         <i class="fas fa-fw fa-table"></i>
         <span>Laporan Keuangan</span></a>
+    </li>
+
+    <!-- Nav Item - Slider -->
+    <li id="nav-slider" class="nav-item">
+    <a class="nav-link" href="{{ url('/admin/slider') }}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Slider</span></a>
     </li>
 
     <!-- Divider -->

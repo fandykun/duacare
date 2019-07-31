@@ -11,6 +11,7 @@ use Telegram\Bot\Laravel\Facades\Telegram;
 use Validator;
 use App\Mail\DLDEmail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Validation\ValidationException;
 
 class DldController extends Controller
 {
@@ -45,6 +46,7 @@ class DldController extends Controller
             return redirect()->back();
         }
 
+        DB::beginTransaction();
         try {
             $data = Dld::create([
                 'name'  => $request->name,
@@ -63,14 +65,7 @@ class DldController extends Controller
             $message = "*[NEW DLD]*\n";
             $message = $message . "\n*Nama*\t : " . $data->name . "\n*Graduation Year*\t : " . $data->graduation_year . "\n*Origin Address*\t : " . $data->origin_address . "\n*Current Address*\t : " . $data->current_address . "\n*Email*\t : " . $data->email . "\n*Phone Number*\t : " . $data->phone_number . "\n*Line ID*\t : " . $data->line . "\n*Instagram*\t : " . $data->instagram . "\n*Bank Name*\t : " . $data->bank . "\n*Donation Type*\t : " . $data->donation_type . "\n*Amount*\t : " . $data->amount;
 
-            try {
-                Mail::to($data->email)->send(new DLDEmail($data));
-            } catch (Exception $e) {
-                $eMessage = 'Send Email to dld, error: ' . $e->getMessage();
-                Log::emergency($eMessage);
-                return redirect()->back()->with('error', 'Whoops, something error!');
-            }
-
+            Mail::to($data->email)->send(new DLDEmail($data));
             Telegram::sendMessage([
                 'chat_id' => '-392376502',
                 'text' => $message,
@@ -81,11 +76,18 @@ class DldController extends Controller
             //     'chat_id' => '-392376502',
             //     'sticker' => 'CAADAgADsggAAgi3GQITL8y1531UoQI',
             // ]);
-        } catch (Exception $e) {
+        } catch (ValidationException $e) {
+            DB::rollback();
+            $eMessage = 'add dld, error: ' . $e->getMessage();
+            Log::emergency($eMessage);
+            return redirect()->back()->with('error', 'Whoops, something error!');
+        } catch (\Exception $e) {
+            DB::rollback();
             $eMessage = 'add dld, error: ' . $e->getMessage();
             Log::emergency($eMessage);
             return redirect()->back()->with('error', 'Whoops, something error!');
         }
+        DB::commit();
         return redirect()->back()->with('success', 'success');
     }
 

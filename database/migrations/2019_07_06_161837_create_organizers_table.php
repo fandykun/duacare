@@ -16,9 +16,13 @@ class CreateOrganizersTable extends Migration
         Schema::create('organizers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('position');
-            $table->string('phone_number');
-            $table->string('image');
+            $table->string('division');
+            $table->string('email');
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

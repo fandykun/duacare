@@ -16,9 +16,9 @@ img {
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <a href="{{ route('news.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambahkan Berita</a>
+        <a href="{{ route('article.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambahkan Artikel</a>
         <h1 class="h3 mb-0 text-gray-800"><strong>ARTIKEL DUACARE</strong></h1>
-        <a href="{{ route('news.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Export Database</a>
+        <a href="{{ route('article.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Export Database</a>
     </div>
 
     <!-- DataTales Example -->
@@ -33,7 +33,6 @@ img {
                         <tr class="text-center">
                             <th>Judul</th>
                             <th>Deskripsi</th>
-                            <th>Kategori</th>
                             <th>Gambar</th>
                             <th>Tanggal</th>
                             <th>Action</th>
@@ -43,31 +42,29 @@ img {
                         <tr class="text-center">
                             <th>Judul</th>
                             <th>Deskripsi</th>
-                            <th>Kategori</th>
                             <th>Gambar</th>
                             <th>Tanggal</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>
                     <tbody>
-                    @foreach($news as $berita)
+                    @foreach($articles as $article)
                     <tr>
-                        <td class="text-xs">{{ $berita->title }}</td>
-                        <td class="text-xs ellipsis-5">{!! $berita->description !!} </td>
-                        <td>{{ $berita->events->title }}</td>
-                        <td><img src="{{ asset('storage/news/'.$berita->image) }}"></td>
+                        <td class="text-xs">{{ $article->title }}</td>
+                        <td class="text-xs ellipsis-5">{!! $article->description !!} </td>
+                        <td><img src="{{ asset('storage/article/'.$article->image) }}"></td>
                         <td>
-                            {{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%A,') }}<br>
-                            {{ \Carbon\Carbon::parse($berita->created_at)->formatLocalized('%d %B %Y') }}
+                            {{ \Carbon\Carbon::parse($article->created_at)->formatLocalized('%A,') }}<br>
+                            {{ \Carbon\Carbon::parse($article->created_at)->formatLocalized('%d %B %Y') }}
                         </td>
                         <td class="align-middle text-center">
-                            <button class="btn btn-warning btn-icon-split btn-sm edit" style="margin-bottom: 6px;" data-id="{{ $berita->id }}">
+                            <button class="btn btn-warning btn-icon-split btn-sm edit" style="margin-bottom: 6px;" data-id="{{ $article->id }}">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-info-circle"></i>
                                 </span>
                                 <span class="text">Edit</span>
                             </button>
-                            <button class="btn btn-danger btn-icon-split btn-sm delete" data-id="{{ $berita->id }}">
+                            <button class="btn btn-danger btn-icon-split btn-sm delete" data-id="{{ $article->id }}">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
@@ -88,13 +85,13 @@ img {
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Edit Berita</h5>
+                <h5 class="modal-title" id="exampleModalCenterTitle">Edit Artikel</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('news.update') }}" enctype="multipart/form-data" id="edit-form">
+                <form method="POST" action="{{ route('article.update') }}" enctype="multipart/form-data" id="edit-form">
                     {{ csrf_field() }}
                     <input name="_method" type="hidden" value="PUT">
                     <input type="hidden" name="id" id="id">
@@ -107,14 +104,6 @@ img {
                         <label for="exampleFormControlTextarea1">Deskripsi</label>
                         {{-- <textarea name="description" class="form-control" id="description" rows="10" required=></textarea> --}}
                         <div class="form-control" style="height: 300px;" class="mb-3" id="description"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Kategori</label>
-                        <select class="form-control" id="category" name="event_id">
-                            @foreach($events as $event)
-                                <option value="{{$event->id}}">{{$event->title}}</option>
-                            @endforeach
-                        </select>
                     </div>
                     <div class="form-group">
                         <label for="">Tanggal</label>
@@ -130,10 +119,10 @@ img {
         </div>
     </div>
 </div>
-<form method="post" id="deleteNews" action="{{route('news.delete')}}">
+<form method="post" id="deleteArticle" action="{{route('article.delete')}}">
     {{ csrf_field() }}
     <input name="_method" type="hidden" value="DELETE">
-    <input type="hidden" name="id" id="idNews" name="id">
+    <input type="hidden" name="id" id="idArticle" name="id">
 </form> 
 @endsection
 
@@ -142,7 +131,7 @@ img {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    $("#nav-news").addClass("active");
+    $("#nav-article").addClass("active");
      const toolbarOptions = [
         ['bold', 'italic', 'underline', 'strike'],
         ['blockquote', 'code-block'],
@@ -164,7 +153,7 @@ img {
         let newsData;
         try {
             newsData = await $.ajax({
-                url: '{{url('admin/news/show')}}/' + dataId,
+                url: '{{url('admin/article/show')}}/' + dataId,
                 dataType: 'json'
             });
         } catch (error) {
@@ -174,9 +163,7 @@ img {
         }
         $("#id").val(dataId)
         $("#title").val(newsData.title)
-        // $("#description").val(newsData.description)
         quill2.root.innerHTML = newsData.description
-        $("#category").val(newsData.event_id)
         $("#created_at").val((newsData.created_at).slice(0,10))
         $("#modalEdit").modal('show');
     });
@@ -186,15 +173,15 @@ img {
         console.log(dataId)
         swal({
           title: "Are you sure?",
-          text: "Berita yang telah dihapus tidak dapat dikembalikan!",
+          text: "Data yang telah dihapus tidak dapat dikembalikan!",
           icon: "warning",
           buttons: true,
           dangerMode: true,
         })
         .then((willDelete) => {
           if (willDelete) {
-            $('#idNews').val(dataId);
-            $('#deleteNews').submit();
+            $('#idArticle').val(dataId);
+            $('#deleteArticle').submit();
           } else {
             return false;
           }

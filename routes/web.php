@@ -67,6 +67,15 @@ Route::prefix('/admin')->group(function () {
 		Route::delete('/news', 'NewsController@deleteNews')->name('news.delete');
 		Route::get('/news/export', 'NewsController@exportNews')->name('news.export');
 
+		//Article
+		Route::get('/article', 'ArticleController@readArticlePage');
+		Route::get('/article/show/{id}', 'ArticleController@getArticle');
+		Route::get('/article/create', 'ArticleController@createArticlePage')->name('article.create');
+		Route::post('/article/create', 'ArticleController@storeArticle')->name('article.store');
+		Route::put('/article', 'ArticleController@updateArticle')->name('article.update');
+		Route::delete('/article', 'ArticleController@deleteArticle')->name('article.delete');
+		Route::get('/article/export', 'ArticleController@exportArticle')->name('article.export');
+
 		//Organizer
 		Route::get('/organizer', 'OrganizerController@index');
 		Route::get('/organizer/show/{id}', 'OrganizerController@getOrganizer');

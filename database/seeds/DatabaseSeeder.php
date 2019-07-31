@@ -123,7 +123,7 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        $OrganizerPosition = [
+        $OrganizerDivision = [
             'Founder',
             'Branding & Communication',
             'Human Resource & Development',
@@ -134,8 +134,8 @@ class DatabaseSeeder extends Seeder
         for ($i = 0; $i < 20; $i++) {
             Organizer::create([
                 'name' => $faker->name,
-                'position' => $OrganizerPosition[rand(0, 4)],
-                'phone_number' => $faker->phoneNumber,
+                'division' => $OrganizerDivision[rand(0, 4)],
+                'email' => $faker->email,
                 'image' => 'dummy.png'
             ]);
         }

@@ -113,7 +113,7 @@ class NewsController extends Controller
 
             return new StreamedResponse($callback, 200, $headers);
         } catch (\Exception $e) {
-            $eMessage = 'delete news - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
+            $eMessage = 'Export news - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
             Log::emergency($eMessage);
             return redirect()->back()->with('error', 'Whoops, something error!');
         }
