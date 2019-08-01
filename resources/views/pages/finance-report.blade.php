@@ -31,17 +31,13 @@
             <th>Bulan</th>
             <th>Tahun</th>
             <th>Link</th> 
-            <th>Pemasukan</th>  
-            <th>Pengeluaran</th>  
           </tr>
         </thead>
         @foreach($financialReports as $fr)
           <tr>
             <td>{{ $fr->month }}</td>
             <td>{{ $fr->year }}</td>
-            <td><a style="text-decoration: none;" class="text-info" href="{{ $fr->link_url }}" target="_black">{{ $fr->link_url }}</a></td>
-            <td>Rp. {{ $fr->income }}</td> 
-            <td>Rp. {{ $fr->outcome }}</td>
+            <td><a style="text-decoration: none;" class="btn btn-outline-info btn-sm" role="button" aria-pressed="true" href="{{ $fr->link_url }}" target="_black">Download</a></td>
           </tr>
         @endforeach
       </table>

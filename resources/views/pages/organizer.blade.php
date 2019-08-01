@@ -67,16 +67,58 @@
                                 <small>{{$organizer->email}}</small>
                                 <ul class="social">
                                     @if($organizer->facebook)
-                                        <li><a target="_blank" href="{{$organizer->facebook}}"><i class="fab fa-facebook"></i></a></li>
+                                        <li><a target="_blank" href="https://www.facebook.com/{{$organizer->facebook}}"><i class="fab fa-facebook"></i></a></li>
                                     @endif
                                     @if($organizer->twitter)
-                                        <li><a target="_blank" href="{{$organizer->twitter}}"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a target="_blank" href="https://twitter.com/{{$organizer->twitter}}"><i class="fab fa-twitter"></i></a></li>
                                     @endif
                                     @if($organizer->instagram)
-                                        <li><a target="_blank" href="{{$organizer->instagram}}"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a target="_blank" href="https://www.instagram.com/{{$organizer->instagram}}"><i class="fab fa-instagram"></i></a></li>
                                     @endif
                                     @if($organizer->linkedin)
-                                        <li><a target="_blank" href="{{$organizer->linkedin}}"><i class="fab fa-linkedin"></i></a></li>
+                                        <li><a target="_blank" href="https://www.linkedin.com/in/{{$organizer->linkedin}}"><i class="fab fa-linkedin"></i></a></li>
+                                    @endif
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+            </div>
+            <br><br>
+        </div>
+    </div>
+    <hr>
+    <div id="tf-works mt-4">
+        <div class="container"> <!-- Container -->
+            <div class="section-title text-center center">
+                <h2>Regional Manager</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="space"></div>
+
+            <div class="row justify-content-center" id="lightbox">
+                @foreach($rms as $rm)
+                    <div class="col-md-3 col-sm-6 element-item mb-4">
+                        <div class="our-team">
+                            <div class="pic">
+                                <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                            </div>
+                            <div class="team-content">
+                                <h3 class="title text-white">{{$rm->name}}</h3>
+                                <span class="post">{{$rm->description}}</span>
+                                <small>{{$rm->email}}</small>
+                                <ul class="social">
+                                    @if($rm->facebook)
+                                        <li><a target="_blank" href="https://www.facebook.com/{{$rm->facebook}}"><i class="fab fa-facebook"></i></a></li>
+                                    @endif
+                                    @if($rm->twitter)
+                                        <li><a target="_blank" href="https://twitter.com/{{$rm->twitter}}"><i class="fab fa-twitter"></i></a></li>
+                                    @endif
+                                    @if($rm->instagram)
+                                        <li><a target="_blank" href="https://www.instagram.com/{{$rm->instagram}}"><i class="fab fa-instagram"></i></a></li>
+                                    @endif
+                                    @if($rm->linkedin)
+                                        <li><a target="_blank" href="https://www.linkedin.com/in/{{$rm->linkedin}}"><i class="fab fa-linkedin"></i></a></li>
                                     @endif
                                 </ul>
                             </div>

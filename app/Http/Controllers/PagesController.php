@@ -29,7 +29,8 @@ class PagesController extends Controller
     public function getOrganizerPage()
     {
         $organizers = Organizer::where('division', '!=', 'RM')->get();
-        return view('pages.organizer', compact('organizers'));
+        $rms = Organizer::where('division', 'RM')->get(); 
+        return view('pages.organizer', compact('organizers', 'rms'));
     }
 
     private function getNumberFromMonthName($month)
