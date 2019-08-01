@@ -14,30 +14,30 @@
     text-align: center;
     vertical-align: middle;
 }
-.circle {
-    background: #6ebff3;
-    border-radius: 200px;
-    height: 200px;
-    font-weight: lighter;
-    width: 200px;
+.square {
+    background: #fff;
+    /*height: 200px;*/
+    width: 50%;
     display: table;
     margin: 0 auto;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-  box-shadow: 0px 10px 20px 0px rgba(14, 30, 80, 0.2);
+    box-shadow: 0px 3px 5px 0px rgba(14, 30, 80, 0.1);
 }
-.circle h4 {
-    vertical-align: middle;
-    color: #fff;
-    display: table-cell;
+.square h3 {
+    color: #6ebff3;
+    font-weight: bold;
+}
+.big-icon {
+    color: #6ebff3;
+    font-size: 60px;
+}
+.square:hover {
+    box-shadow: 0px 10px 15px 0px rgba(14, 50, 100, 0.4);
 }
 
-
-.circle:hover {
-  box-shadow: 0px 10px 20px 0px rgba(14, 50, 100, 0.4);
-}
 </style>
 @endsection
 
@@ -72,22 +72,26 @@
     </div>
   </section>
 
-  <section class="bg-gray section-padding magic-ball magic-ball-testimonial pb-xl-5" id="more">
+  <section class="section-padding magic-ball magic-ball-testimonial pb-xl-5" id="more">
     <div class="container">
       <div class="section-intro text-center pb-90px">
         <i class="far fa-question-circle icon-gradient"></i>
-        <h2>Info Beasiswa</h2>
+        <h2>Statistik Beasiswa</h2>
         <hr>
       </div>
       <div class="row justify-content-center">
-        <div class="col-md-4 block">
-          <div class="circle text-center">
-              <h4>Total 66 Siswa<br>Penerima Beasiswa</h4>
+        <div class="col-md-4 block mb-4">
+          <div class="square pb-2 pt-4 px-2 text-center">
+              <i class="fas big-icon fa-graduation-cap mb-4"></i><br>
+              <h3>66</h3>
+              <p>Penerima Beasiswa</p>
           </div>
         </div>
         <div class="col-md-4 block">
-          <div class="circle text-center">
-              <h4>Total 66 Juta<br>Biaya tersalurkan</h4>
+          <div class="square pb-2 pt-4 px-2 text-center">
+              <i class="fas big-icon fa-wallet mb-4"></i><br>
+              <h3>65</h3>
+              <p>Juta Biaya tersalurkan</p>
           </div>
         </div>
       </div>

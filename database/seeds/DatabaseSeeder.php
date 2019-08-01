@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         }
 
 
-        $eventsTitle = ['Beasiswa Duacare', 'Duacare Goes To School (DGTS)', 'Duacare For Ramadhan', 'Duacare Camp'];
+        $eventsTitle = ['Beasiswa Duacare', 'Duacare Goes To School', 'Duacare For Ramadhan', 'Duacare Camp'];
         $eventsDescription = [
             'Beasiswa berupa dana pendidikan bagi peserta didik SMAN 2 Lumajang yang berprestasi dengan latar belakang dari keluarga kurang mampu.',
             'Serangkaian kegiatan yang bertujuan memfasilitasi siswa-siswi SMA di Kabupaten Lumajang untuk lebih mengenali dan memahami dunia perkuliahan beserta seluk beluknya.',

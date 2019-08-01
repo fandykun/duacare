@@ -17,7 +17,6 @@
           <a class="button2 btn-sm mt-4 wow fadeInLeft" data-wow-duration="1.25s" data-wow-delay="1.25s"  href="{{url('/duacare-loyal-donature')}}">Donasi Sekarang</a><br>
         </div>
         <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
-          {{-- <img class="img-fluid" src="{{ asset('safario/img/home/hero-img.png') }}" alt=""> --}}
           <img style="max-width: 80%" class="img-fluid vert-move" src="{{ asset('duacare-image/logo-icon.png') }}" alt="Duacare Image">
         </div>
       </div>
@@ -30,11 +29,10 @@
   <section class="section-margin generic-margin" id="overview">
     <div class="container">
       <div class="section-intro text-center pb-90px">
-        {{-- <img class="section-intro-img" src="{{ asset('safario/img/home/section-icon.png') }}" alt=""> --}}
         <i class="far fa-eye icon-gradient"></i>
         <h2>Overview</h2>
         <hr>
-        <p>Duacare adalah Organisasi sosial alumni SMAN 2 Lumajang yang berpegang teguh pada semboyan “Dare to care!, berikut adalah event yang rutin dilaksanakan oleh Duacare</p>
+        <p>"Duacare adalah Organisasi sosial alumni SMAN 2 Lumajang yang berpegang teguh pada semboyan `Dare to care!` Hidup ini bagaikan Jaring laba-laba, setiap perbuatan akan berpengaruh pada orang lain. Sama seperti kita menggetarkan satu benang jaring maka jaring akan bergetar. Jadi Beranilah untuk peduli sesama!"</p>
       </div>
       @php
         $image_list = [

@@ -53,7 +53,7 @@
                             <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                                 @if(!empty($previous_item))
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{ asset('safario/img/blog/prev.jpg') }}" alt="">
+                                    <img class="img-fluid" src="{{ asset('duacare-image/prev.jpg') }}" alt="">
                                 </div>
                                 <div class="arrow">
                                     <a href="#">
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="thumb">
                                     <a href="#">
-                                        <img class="img-fluid" src="{{ asset('safario/img/blog/next.jpg') }}" alt="">
+                                        <img class="img-fluid" src="{{ asset('duacare-image/next.jpg') }}" alt="">
                                     </a>
                                 </div>
                                 @endif

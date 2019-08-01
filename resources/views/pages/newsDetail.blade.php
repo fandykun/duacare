@@ -59,7 +59,7 @@
                                 @if(!empty($previous_item))
                                 <div class="thumb">
                                     <a href="{{ url('news/'.$previous_item->id.'/'.rawurlencode($previous_item->title)) }}">
-                                        <img class="img-fluid" src="{{ asset('safario/img/blog/prev.jpg') }}" alt="">
+                                        <img class="img-fluid" src="{{ asset('duacare-image/prev.jpg') }}" alt="">
                                     </a>
                                 </div>
                                 <div class="arrow">
@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="thumb">
                                     <a href="#">
-                                        <img class="img-fluid" src="{{ asset('safario/img/blog/next.jpg') }}" alt="">
+                                        <img class="img-fluid" src="{{ asset('duacare-image/next.jpg') }}" alt="">
                                     </a>
                                 </div>
                                 @endif
