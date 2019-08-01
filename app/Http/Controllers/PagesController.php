@@ -8,6 +8,7 @@ use App\Event;
 use App\News;
 use App\Article;
 use App\FinancialReport;
+use App\Organizer;
 
 class PagesController extends Controller
 {
@@ -27,7 +28,8 @@ class PagesController extends Controller
 
     public function getOrganizerPage()
     {
-        return view('pages.organizer');
+        $organizers = Organizer::where('division', '!=', 'RM')->get();
+        return view('pages.organizer', compact('organizers'));
     }
 
     private function getNumberFromMonthName($month)
