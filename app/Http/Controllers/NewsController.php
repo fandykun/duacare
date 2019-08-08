@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
@@ -28,13 +29,17 @@ class NewsController extends Controller
     {
         try {
             if ($request->hasFile('image')) {
-                $imageName = $request->file('image')->getClientOriginalName();
-                $request->file('image')->storeAs('public/news', $imageName);
-            } else $imageName = 'dummy.png';
+                $filenameWithExt = $request->file('image')->getClientOriginalName();
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                $extension = $request->file('image')->getClientOriginalExtension();
+                $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+                $request->file('image')->storeAs('public/news', $fileNameToStore);
+            } else
+                $fileNameToStore = 'dummy-news.png';
             News::create([
                 'title' => $request->title,
                 'description' => $request->description,
-                'image' => $imageName,
+                'image' => $fileNameToStore,
                 'event_id' => $request->event_id
             ]);
         } catch (\Exception $e) {
@@ -60,6 +65,7 @@ class NewsController extends Controller
     public function updateNews(Request $request)
     {
         try {
+
             News::find($request->id)->update([
                 'title' => $request->title,
                 'description'  =>  $request->description,
@@ -78,7 +84,10 @@ class NewsController extends Controller
     public function deleteNews(Request $request)
     {
         try {
-            News::where('id', $request->id)->delete();
+            $news = News::where('id', $request->id);
+            if ($news->image != 'dummy-news.png')
+                Storage::delete('public/news/' . $news->image);
+            $news->delete();
         } catch (\Exception $e) {
             $eMessage = 'delete news - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
             Log::emergency($eMessage);

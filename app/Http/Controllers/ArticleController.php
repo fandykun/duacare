@@ -24,13 +24,18 @@ class ArticleController extends Controller
     {
         try {
             if ($request->hasFile('image')) {
-                $imageName = $request->file('image')->getClientOriginalName();
-                $request->file('image')->storeAs('public/article', $imageName);
-            } else $imageName = 'dummy.png';
+                $filenameWithExt = $request->file('image')->getClientOriginalName();
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                $extension = $request->file('image')->getClientOriginalExtension();
+                $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+                $request->file('image')->storeAs('public/article', $fileNameToStore);
+            } else
+                $fileNameToStore = 'dummy.png';
             Article::create([
                 'title' => $request->title,
+                'author' => $request->author,
                 'description' => $request->description,
-                'image' => $imageName
+                'image' => $fileNameToStore
             ]);
         } catch (\Exception $e) {
             $eMessage = 'Add Article - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
@@ -57,6 +62,7 @@ class ArticleController extends Controller
         try {
             Article::find($request->id)->update([
                 'title' => $request->title,
+                'author' => $request->author,
                 'description'  =>  $request->description,
                 'created_at'    =>  $request->created_at,
                 'updated_at'    =>  $request->created_at,
@@ -72,7 +78,10 @@ class ArticleController extends Controller
     public function deleteArticle(Request $request)
     {
         try {
-            Article::where('id', $request->id)->delete();
+            $article = Article::where('id', $request->id);
+            if ($article->image != 'dummy.png')
+                Storage::delete('public/article/' . $article->image);
+            $article->delete();
         } catch (\Exception $e) {
             $eMessage = 'delete article - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
             Log::emergency($eMessage);

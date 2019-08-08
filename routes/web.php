@@ -34,6 +34,12 @@ Route::get('/contact', 'PagesController@getContactPage');
 
 Route::post('/dld/submit', 'DldController@submitDLD')->name('submit.dld');
 
+Route::get('mailable', function () {
+	$dld = App\Dld::find(1);
+
+	return new App\Mail\DLDEmail($dld);
+});
+
 Route::get('/event/duacare-goes-to-school', 'PagesController@getDGTSPage');
 Route::get('/event/duacare-for-ramadhan', 'PagesController@getDFRPage');
 Route::get('/event/beasiswa-duacare', 'PagesController@getBeasiswaPage');

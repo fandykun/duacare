@@ -99,6 +99,7 @@ class DatabaseSeeder extends Seeder
 
                 Article::create([
                     'title' => $newsTitle[$i] . '-' . $j,
+                    'author' => 'Lani',
                     'description' => $newsDescription[$i],
                     'image' => $newsImage,
                     'created_at' => $newsCreatedAt
