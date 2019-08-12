@@ -20,7 +20,6 @@
   <link rel="stylesheet" href="{{ asset('css/style.css?v=1.1')}}">
   <script>document.getElementsByTagName("html")[0].className += " js";</script>
   <link rel="stylesheet" href="{{ asset('horizontal-timeline/assets/css/style.css')}}">
-  <link rel="stylesheet" href="{{ asset('ziehharmonika/ziehharmonika.css')}}">
   @yield('style')
 </head>
 <body class="bg-shape" onload="loadOn()">
@@ -55,7 +54,6 @@
   <script src="{{ asset('horizontal-timeline/assets/js/main.js') }}"></script>
   <script src="{{ asset('js/main.js?v=1.1') }}"></script>
   <script src="{{ asset('wow/dist/wow.min.js') }}"></script>
-  <script src="{{ asset('ziehharmonika/ziehharmonika.js') }}"></script>
   <script>
     new WOW().init();
     function loadOn() {
