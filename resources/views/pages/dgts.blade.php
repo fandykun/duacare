@@ -107,6 +107,8 @@
         <hr>
       </div>
       <div class="owl-carousel owl-theme" id="owl-carousel-dgts">                
+        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts10.jpg') }}" alt=""></div>
+        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts11.jpg') }}" alt=""></div>
         <div class="item"><img src="{{ asset('duacare-image/dgts/dgts1.jpg') }}" alt=""></div>
         <div class="item"><img src="{{ asset('duacare-image/dgts/dgts2.jpg') }}" alt=""></div>
         <div class="item"><img src="{{ asset('duacare-image/dgts/dgts3.jpg') }}" alt=""></div>
@@ -116,7 +118,6 @@
         <div class="item"><img src="{{ asset('duacare-image/dgts/dgts7.jpg') }}" alt=""></div>
         <div class="item"><img src="{{ asset('duacare-image/dgts/dgts8.jpg') }}" alt=""></div>
         <div class="item"><img src="{{ asset('duacare-image/dgts/dgts9.jpg') }}" alt=""></div>
-        <div class="item"><img src="{{ asset('duacare-image/dgts/dgts10.jpg') }}" alt=""></div>
       </div>
     </div>
   </section>
