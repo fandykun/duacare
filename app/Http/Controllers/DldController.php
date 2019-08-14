@@ -78,13 +78,11 @@ class DldController extends Controller
             //     'sticker' => 'CAADAgADsggAAgi3GQITL8y1531UoQI',
             // ]);
         } catch (ValidationException $e) {
-            return $e->getMessage();
             DB::rollback();
             $eMessage = 'add dld, error: ' . $e->getMessage();
             Log::emergency($eMessage);
             return redirect()->back()->with('error', 'Whoops, something error!');
         } catch (\Exception $e) {
-            return $e->getMessage();
             DB::rollback();
             $eMessage = 'add dld, error: ' . $e->getMessage();
             Log::emergency($eMessage);
