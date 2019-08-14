@@ -31,6 +31,6 @@ class DLDEmail extends Mailable
         $dld = $this->dld;
         return $this->from('dld@duacare.org')
             ->subject('Duacare')
-            ->markdown('mail', compact('dld'));
+            ->view('mail', compact('dld'));
     }
 }
