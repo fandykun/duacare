@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('/bug', function () {
+	$sql = base_path('_SQL\data-users.sql');
+	dd($sql);
+});
+
 //Page
 Route::get('/', 'PagesController@getHomePage');
 Route::get('/updated-activity', 'TelegramBotController@updatedActivity');
@@ -20,7 +25,7 @@ Route::get('/organizer', 'PagesController@getOrganizerPage');
 Route::get('/laporan-keuangan', 'PagesController@getFinanceReportPage');
 Route::get('/v1/get-finance-report/', 'PagesController@getFinanceReportData');
 
-Route::get('/duacare-loyal-donature', 'PagesController@getDLDPage');
+Route::get('/duacare-loyal-donatur', 'PagesController@getDLDPage');
 
 Route::get('/news', 'PagesController@getNewsPage');
 Route::get('/news/search', 'PagesController@getNewsBySearch')->name('search.news');
@@ -83,13 +88,22 @@ Route::prefix('/admin')->group(function () {
 		Route::get('/article/export', 'ArticleController@exportArticle')->name('article.export');
 
 		//Organizer
-		Route::get('/organizer', 'OrganizerController@index');
-		Route::get('/organizer/show/{id}', 'OrganizerController@getOrganizer');
-		Route::get('/organizer/create', 'OrganizerController@createOrganizerPage')->name('organizer.create');
-		Route::post('/organizer/create', 'OrganizerController@storeOrganizer')->name('organizer.store');
-		Route::put('/organizer', 'OrganizerController@updateOrganizer')->name('organizer.update');
-		Route::delete('/organizer', 'OrganizerController@deleteOrganizer')->name('organizer.delete');
-		Route::get('/organizer/export', 'OrganizerController@exportOrganizer')->name('organizer.export');
+		// Route::get('/organizer', 'OrganizerController@index');
+		// Route::get('/organizer/show/{id}', 'OrganizerController@getOrganizer');
+		// Route::get('/organizer/create', 'OrganizerController@createOrganizerPage')->name('organizer.create');
+		// Route::post('/organizer/create', 'OrganizerController@storeOrganizer')->name('organizer.store');
+		// Route::put('/organizer', 'OrganizerController@updateOrganizer')->name('organizer.update');
+		// Route::delete('/organizer', 'OrganizerController@deleteOrganizer')->name('organizer.delete');
+		// Route::get('/organizer/export', 'OrganizerController@exportOrganizer')->name('organizer.export');
+
+		//User
+		Route::get('/user', 'UserController@index');
+		Route::get('/user/show/{id}', 'UserController@getUser');
+		Route::get('/user/create', 'UserController@createUserPage')->name('user.create');
+		Route::post('/user/create', 'UserController@storeUser')->name('user.store');
+		Route::put('/user', 'UserController@updateUser')->name('user.update');
+		Route::delete('/user', 'UserController@deleteUser')->name('user.delete');
+		Route::get('/user/export', 'UserController@exportUser')->name('user.export');
 
 		//DLD
 		Route::get('/dld', 'DldController@index');

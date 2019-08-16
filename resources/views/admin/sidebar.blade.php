@@ -42,23 +42,9 @@
         </div>
       </li>
 
-    {{-- <!-- Nav Item - News -->
-    <li id="nav-news" class="nav-item">
-    <a class="nav-link" href="{{ url('/admin/news') }}">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Berita</span></a>
-    </li>
-
-    <!-- Nav Item - News -->
-    <li id="nav-news" class="nav-item">
-        <a class="nav-link" href="{{ url('/article/news') }}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Artikel</span></a>
-        </li> --}}
-
     <!-- Nav Item - Organizer -->
     <li id="nav-organizer" class="nav-item">
-    <a class="nav-link" href="{{ url('/admin/organizer') }}">
+    <a class="nav-link" href="{{ url('/admin/user') }}">
         <i class="fas fa-fw fa-table"></i>
         <span>Organizer</span></a>
     </li>
@@ -89,13 +75,6 @@
     <a class="nav-link" href="{{ url('/admin/financial-report') }}">
         <i class="fas fa-fw fa-table"></i>
         <span>Laporan Keuangan</span></a>
-    </li>
-
-    <!-- Nav Item - Slider -->
-    <li id="nav-slider" class="nav-item">
-    <a class="nav-link" href="{{ url('/admin/slider') }}">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Slider</span></a>
     </li>
 
     <!-- Divider -->

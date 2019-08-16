@@ -14,7 +14,7 @@
           <h1 class="wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">Selamat Datang di</h1>
           <h2 class="wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="0.5s">Duacare Official Website</h2>
           <a class="button button-hero mt-4 wow fadeInLeft" data-wow-duration="1.0s" data-wow-delay="1.0s"  href="#overview">Telusuri Lebih Lanjut!</a><br>
-          <a class="button2 btn-sm mt-4 wow fadeInLeft" data-wow-duration="1.25s" data-wow-delay="1.25s"  href="{{url('/duacare-loyal-donature')}}">Donasi Sekarang</a><br>
+          <a class="button2 btn-sm mt-4 wow fadeInLeft" data-wow-duration="1.25s" data-wow-delay="1.25s"  href="{{url('/duacare-loyal-donatur')}}">Donasi Sekarang</a><br>
         </div>
         <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
           <img style="max-width: 80%" class="img-fluid vert-move" src="{{ asset('duacare-image/logo-icon.png') }}" alt="Duacare Image">

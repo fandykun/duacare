@@ -9,7 +9,7 @@
   <section class="hero-banner-sm dld-banner magic-ball magic-ball-banner">
     <div class="container">
       <div class="hero-banner-sm-content">
-        <h1>Duacare Loyal Donature (DLD)</h1>
+        <h1>Duacare Loyal Donatur (DLD)</h1>
         {{-- <p>Air seed winged lights saw kind whales in sixth best a dont seas dron image so fish all tree on</p> --}}
       </div>
     </div>
@@ -19,7 +19,7 @@
   <!--================Tour section Start =================-->
 @if (\Session::has('success'))
   <div class="alert alert-primary text-center" role="alert">
-    Selamat, anda telah menjadi <em>Duacare Loyal Donature</em>, anda akan menerima email dalam kurun waktu tertentu sebagai laporan keuangan duacare. Terimakasih!
+    Selamat, anda telah menjadi <em>Duacare Loyal Donatur</em>, anda akan menerima email dalam kurun waktu tertentu sebagai laporan keuangan duacare. Terimakasih!
   </div>
 @elseif (\Session::has('error'))
   <div class="alert alert-danger text-center" role="alert">
@@ -50,8 +50,8 @@
           <div class="row">
             <div class="col-lg-10 offset-lg-1">
               <div class="tour-content">
-                <h2>Duacare Loyal Donature</h2>
-                <p>Duacare loyal donature telah membantu mewujudkan mimpi-mimpi banyak orang bersama duacare melalui serangkaian kegiatan yang telah terlaksana.</p>
+                <h2>Duacare Loyal Donatur</h2>
+                <p>Duacare loyal donatur telah membantu mewujudkan mimpi-mimpi banyak orang bersama duacare melalui serangkaian kegiatan yang telah terlaksana.</p>
               </div>
             </div>
           </div>
@@ -121,7 +121,7 @@
       <div class="row">
         <div class="col-lg-6 col-xl-5 align-self-center mb-5 mb-lg-0">
           <div class="search-content">
-            <h2 class="text-center mb-5">Bergabunglah menjadi salah satu <em>Duacare Loyal Donature</em></h2>
+            <h2 class="text-center mb-5">Bergabunglah menjadi salah satu <em>Duacare Loyal Donatur</em></h2>
             <div class="text-center">
               <img class="card-img rounded-0 img-fluid vert-move" style="height: 250px; width: auto; margin: auto;" src="{{ asset('duacare-image/dld.jpg') }}" alt="">
             </div>
@@ -129,7 +129,7 @@
         </div>
         <div class="col-lg-6 col-xl-6 offset-xl-1">
           <div class="search-wrapper">
-            <h3>Daftar Duacare Loyal Donature</h3>
+            <h3>Daftar Duacare Loyal Donatur</h3>
 
             <form class="search-form" id="daftar-dld" action="{{ route('submit.dld') }}" method="POST">
               {{ csrf_field() }}

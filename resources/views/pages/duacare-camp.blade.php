@@ -37,7 +37,7 @@
         </div>
         <div class="col-lg-7 col-md-6 about-content wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="0.5s">
           <h2 class="mb-4" style="color: grey; margin-bottom: 0; font-size: 42px">Duacare Camp</h2>
-          <p class="text-justify" style="line-height: 2.0">adalah kegiatan yang dilaksanakan setiap 2 tahun sekali untuk agenda internal dimana seluruh anggota duacare dapat ikut bergabung, teridiri dari berbagai acara untuk mempererat tali silaturahmi antar sesama anggota duacare dari berbagai angkatan.</p>
+          <p class="text-justify" style="line-height: 2.0">adalah kegiatan yang ditujukan bagi seluruh anggota Duacare dari berbagai angkatan yang dilaksanakan tiap 2 tahun sekali. Selain bertujuan untuk meningkatkan rasa kekeluargaan antar anggota, kegiatan ini juga memiliki tujuan sebagai wadah regenerasi kepengurusan Duacare.</p>
           <a class="button" href="#more">Lihat Keseruannya</a>
         </div>
       </div>

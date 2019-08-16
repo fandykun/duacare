@@ -10,6 +10,7 @@ use App\Organizer;
 use App\Slider;
 use App\Dld;
 use App\Article;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,14 +19,13 @@ class DatabaseSeeder extends Seeder
     {
         $faker = Faker::create('id_ID');
 
-        for ($i = 0; $i < 3; $i++) {
-            User::create([
-                'name' => $faker->name,
-                'email' => 'admin' . ($i + 1) . '@gmail.com',
-                'password' => bcrypt('secret'),
-            ]);
+        $users_sql = base_path('_SQL\data-users.sql');
+        DB::unprepared(file_get_contents($users_sql));
+        $users = User::all();
+        foreach ($users as $user) {
+            $user->password = bcrypt('daretocare');
+            $user->save();
         }
-
 
         $eventsTitle = ['Beasiswa Duacare', 'Duacare Goes To School', 'Duacare For Ramadhan', 'Duacare Camp'];
         $eventsDescription = [
@@ -74,104 +74,104 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        $newsTitle = [
-            'Duacare Goes To School hadirkan alumni dari Institut Ternak Lele',
-            'Beasiswa Duacare memfasilitasi biaya siswa SMAN 2 Lumajang hingga lulus',
-            'Duacarecamp 2021 berlokasi di Puncak Semeru'
-        ];
+        // $newsTitle = [
+        //     'Duacare Goes To School hadirkan alumni dari Institut Ternak Lele',
+        //     'Beasiswa Duacare memfasilitasi biaya siswa SMAN 2 Lumajang hingga lulus',
+        //     'Duacarecamp 2021 berlokasi di Puncak Semeru'
+        // ];
 
-        $newsDescription = $testimoniesDescription;
-        $newsImage = 'dummy-news.png';
-        $newsEventID = [2, 1, 4];
+        // $newsDescription = $testimoniesDescription;
+        // $newsImage = 'dummy-news.png';
+        // $newsEventID = [2, 1, 4];
 
-        for ($j = 0; $j < 10; $j++) {
-            for ($i = 0; $i < count($newsTitle); $i++) {
+        // for ($j = 0; $j < 10; $j++) {
+        //     for ($i = 0; $i < count($newsTitle); $i++) {
 
-                $newsCreatedAt = Carbon::createFromTimeStamp($faker->dateTimeBetween('-30 days', '-2 days')->getTimestamp());
+        //         $newsCreatedAt = Carbon::createFromTimeStamp($faker->dateTimeBetween('-30 days', '-2 days')->getTimestamp());
 
-                News::create([
-                    'title' => $newsTitle[$i] . '-' . $j,
-                    'description' => $newsDescription[$i],
-                    'image' => $newsImage,
-                    'event_id' => $newsEventID[$i],
-                    'created_at' => $newsCreatedAt
-                ]);
+        //         News::create([
+        //             'title' => $newsTitle[$i] . '-' . $j,
+        //             'description' => $newsDescription[$i],
+        //             'image' => $newsImage,
+        //             'event_id' => $newsEventID[$i],
+        //             'created_at' => $newsCreatedAt
+        //         ]);
 
-                Article::create([
-                    'title' => $newsTitle[$i] . '-' . $j,
-                    'author' => 'Lani',
-                    'description' => $newsDescription[$i],
-                    'image' => $newsImage,
-                    'created_at' => $newsCreatedAt
-                ]);
-            }
-        }
+        //         Article::create([
+        //             'title' => $newsTitle[$i] . '-' . $j,
+        //             'author' => 'Lani',
+        //             'description' => $newsDescription[$i],
+        //             'image' => $newsImage,
+        //             'created_at' => $newsCreatedAt
+        //         ]);
+        //     }
+        // }
 
-        //Financial Report
-        for ($i = 0; $i < 10; $i++) {
-            $date = Carbon::createFromTimeStamp($faker->dateTimeBetween('now', '+1 year')->getTimestamp());
-            $month = \Carbon\Carbon::parse($date)->formatLocalized('%B');
-            $year = rand(2015, 2019);
-            $link_url = 'intip.in/linknya-' . $i . '-disini';
-            $pemasukan = $faker->randomNumber($nbDigits = NULL, $strict = false);
-            $pengeluaran = $faker->randomNumber($nbDigits = NULL, $strict = false);
-            FinancialReport::create([
-                'month' => $month,
-                'year' => $year,
-                'link_url' => $link_url,
-                'income' => $pemasukan,
-                'outcome' => $pengeluaran,
-            ]);
-        }
+        // //Financial Report
+        // for ($i = 0; $i < 10; $i++) {
+        //     $date = Carbon::createFromTimeStamp($faker->dateTimeBetween('now', '+1 year')->getTimestamp());
+        //     $month = \Carbon\Carbon::parse($date)->formatLocalized('%B');
+        //     $year = rand(2015, 2019);
+        //     $link_url = 'intip.in/linknya-' . $i . '-disini';
+        //     $pemasukan = $faker->randomNumber($nbDigits = NULL, $strict = false);
+        //     $pengeluaran = $faker->randomNumber($nbDigits = NULL, $strict = false);
+        //     FinancialReport::create([
+        //         'month' => $month,
+        //         'year' => $year,
+        //         'link_url' => $link_url,
+        //         'income' => $pemasukan,
+        //         'outcome' => $pengeluaran,
+        //     ]);
+        // }
 
-        $OrganizerDivision = [
-            'Founder',
-            'Branding & Communication',
-            'Human Resource & Development',
-            'Finance',
-            'Enterpreneur'
-        ];
+        // $OrganizerDivision = [
+        //     'Founder',
+        //     'Branding & Communication',
+        //     'Human Resource & Development',
+        //     'Finance',
+        //     'Enterpreneur'
+        // ];
 
-        for ($i = 0; $i < 20; $i++) {
-            Organizer::create([
-                'name' => $faker->name,
-                'division' => $OrganizerDivision[rand(0, 4)],
-                'email' => $faker->email,
-                'image' => 'dummy.png'
-            ]);
-        }
+        // for ($i = 0; $i < 20; $i++) {
+        //     Organizer::create([
+        //         'name' => $faker->name,
+        //         'division' => $OrganizerDivision[rand(0, 4)],
+        //         'email' => $faker->email,
+        //         'image' => 'dummy.png'
+        //     ]);
+        // }
 
-        //Slider
-        for ($i = 0; $i < 10; $i++) {
-            Slider::create([
-                'name' => $eventsTitle[rand(0, 3)],
-                'image' => 'dummy.png'
-            ]);
-        }
+        // //Slider
+        // for ($i = 0; $i < 10; $i++) {
+        //     Slider::create([
+        //         'name' => $eventsTitle[rand(0, 3)],
+        //         'image' => 'dummy.png'
+        //     ]);
+        // }
 
-        //DLD
-        $listBank = [
-            'BRI', 'BNI', 'Mandiri', 'BCA', 'Bank Jatim'
-        ];
+        // //DLD
+        // $listBank = [
+        //     'BRI', 'BNI', 'Mandiri', 'BCA', 'Bank Jatim'
+        // ];
 
-        $donationType = [
-            'Bulanan', 'Insidental'
-        ];
+        // $donationType = [
+        //     'Bulanan', 'Insidental'
+        // ];
 
-        for ($i = 1; $i <= 15; $i++) {
-            Dld::create([
-                'name' => $faker->name,
-                'graduation_year' => rand(2005, 2018),
-                'origin_address' => $faker->streetAddress,
-                'current_address' => $faker->address,
-                'email' => $faker->email,
-                'phone_number' => $faker->phoneNumber,
-                'line' => '@' . $faker->userName,
-                'instagram' => '@' . $faker->userName,
-                'bank' => $listBank[rand(0, 4)],
-                'donation_type' => $donationType[$i % 2],
-                'amount' => $i * 100000
-            ]);
-        }
+        // for ($i = 1; $i <= 15; $i++) {
+        //     Dld::create([
+        //         'name' => $faker->name,
+        //         'graduation_year' => rand(2005, 2018),
+        //         'origin_address' => $faker->streetAddress,
+        //         'current_address' => $faker->address,
+        //         'email' => $faker->email,
+        //         'phone_number' => $faker->phoneNumber,
+        //         'line' => '@' . $faker->userName,
+        //         'instagram' => '@' . $faker->userName,
+        //         'bank' => $listBank[rand(0, 4)],
+        //         'donation_type' => $donationType[$i % 2],
+        //         'amount' => $i * 100000
+        //     ]);
+        // }
     }
 }

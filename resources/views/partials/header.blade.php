@@ -28,7 +28,7 @@
 								<li class="nav-item"><a class="nav-link" href="{{url('/news')}}">Berita</a>
 			            	</ul>
 						</li>
-			          	<li class="nav-item" id="nav-dld"><a class="nav-link" href="{{url('/duacare-loyal-donature')}}" >Daftar DLD</a>
+			          	<li class="nav-item" id="nav-dld"><a class="nav-link" href="{{url('/duacare-loyal-donatur')}}" >Daftar DLD</a>
 			          	<li class="nav-item" id="nav-contact"><a class="nav-link" href="{{url('/contact')}}" >Contact Us</a></li>
 			        </ul>
 			        {{-- <div class="nav-right text-center text-lg-right py-4 py-lg-0">

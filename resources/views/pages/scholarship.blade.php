@@ -64,8 +64,9 @@
           </div>
         </div>
         <div class="col-lg-7 col-md-6 about-content wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="0.5s">
-          <h2 class="mb-4" style="color: grey; margin-bottom: 0; font-size: 42px">Beasiswa Duacare</h2>
-          <p class="text-justify" style="line-height: 2.0">adalah program beasiswa yang diberikan setiap semester kepada siswa/siswi SMA 2 Lumajang, setiap semester para penerima beasiswa akan menjalani proses seleksi, penerima beasiswa setiap semesternya berjumlah sebanyak 6 orang masing-masing mendapat uang beasiswa sebanyak Rp. 1.000.000,-</p>
+          <h2 class="mb-2" style="color: grey; margin-bottom: 0; font-size: 42px">Beasiswa Duacare</h2>
+          <p class="text-justify" style="line-height: 2.0;">Program beasiswa ini memberikan bantuan biaya sekolah dan dukungan kepada siswa-siswi yang menunjukkan potensi kepemimpinan dan prestasi akademis, untuk menyelesaikan pendidikan mereka di SMAN 2 Lumajang. Harapannya melalui beasiswa ini, para penerima beasiswa bisa berkontribusi secara positif terhadap SMAN 2 Lumajang dan tempat mereka tinggal. 
+            <br>Hingga tahun 2019, Duacare melalui program ini telah memberikan bantuan kepada 66 siswa SMAN 2 Lumajang yang berprestasi dengan latar belakang dari keluarga kurang mampu dengan total dana yang diberikan mencapai sekitar Rp. 65.000.000.</p>
           <a class="button" href="#more">Lihat Lebih Detail</a>
         </div>
       </div>
