@@ -39,12 +39,6 @@ Route::get('/contact', 'PagesController@getContactPage');
 
 Route::post('/dld/submit', 'DldController@submitDLD')->name('submit.dld');
 
-Route::get('mailable', function () {
-	$dld = App\Dld::find(1);
-
-	return new App\Mail\DLDEmail($dld);
-});
-
 Route::get('/event/duacare-goes-to-school', 'PagesController@getDGTSPage');
 Route::get('/event/duacare-for-ramadhan', 'PagesController@getDFRPage');
 Route::get('/event/beasiswa-duacare', 'PagesController@getBeasiswaPage');
@@ -133,12 +127,12 @@ Route::prefix('/admin')->group(function () {
 		Route::get('/financial-report/export', 'FinancialReportController@exportFinancialReport')->name('financialReport.export');
 
 		//Slider
-		Route::get('/slider', 'SliderController@index');
-		Route::get('/slider/show/{id}', 'SliderController@getSlider');
-		Route::get('/slider/create', 'SliderController@createSliderPage')->name('slider.create');
-		Route::post('/slider/create', 'SliderController@storeSlider')->name('slider.store');
-		Route::put('/slider', 'SliderController@updateSlider')->name('slider.update');
-		Route::delete('/slider', 'SliderController@deleteSlider')->name('slider.delete');
-		Route::get('/slider/export', 'SliderController@exportSlider')->name('slider.export');
+		// Route::get('/slider', 'SliderController@index');
+		// Route::get('/slider/show/{id}', 'SliderController@getSlider');
+		// Route::get('/slider/create', 'SliderController@createSliderPage')->name('slider.create');
+		// Route::post('/slider/create', 'SliderController@storeSlider')->name('slider.store');
+		// Route::put('/slider', 'SliderController@updateSlider')->name('slider.update');
+		// Route::delete('/slider', 'SliderController@deleteSlider')->name('slider.delete');
+		// Route::get('/slider/export', 'SliderController@exportSlider')->name('slider.export');
 	});
 });

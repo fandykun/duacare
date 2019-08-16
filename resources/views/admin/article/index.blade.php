@@ -32,6 +32,7 @@ img {
                     <thead>
                         <tr class="text-center">
                             <th>Judul</th>
+                            <th>Penulis</th>
                             <th>Deskripsi</th>
                             <th>Gambar</th>
                             <th>Tanggal</th>
@@ -41,6 +42,7 @@ img {
                     <tfoot>
                         <tr class="text-center">
                             <th>Judul</th>
+                            <th>Penulis</th>
                             <th>Deskripsi</th>
                             <th>Gambar</th>
                             <th>Tanggal</th>
@@ -51,6 +53,7 @@ img {
                     @foreach($articles as $article)
                     <tr>
                         <td class="text-xs">{{ $article->title }}</td>
+                        <td class="text-xs">{{ $article->author }}</td>
                         <td class="text-xs ellipsis-5">{!! $article->description !!} </td>
                         <td><img src="{{ asset('storage/article/'.$article->image) }}"></td>
                         <td>
@@ -101,6 +104,10 @@ img {
                         <input type="text" class="form-control" id="title" placeholder="Masukkan judul" required name="title">
                     </div>
                     <div class="form-group">
+                        <label for="">Penulis</label>
+                        <input type="text" class="form-control" id="author" placeholder="Masukkan penulisnya" required name="author">
+                    </div>
+                    <div class="form-group">
                         <label for="exampleFormControlTextarea1">Deskripsi</label>
                         {{-- <textarea name="description" class="form-control" id="description" rows="10" required=></textarea> --}}
                         <div class="form-control" style="height: 300px;" class="mb-3" id="description"></div>
@@ -131,7 +138,7 @@ img {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    $("#nav-article").addClass("active");
+    $("#nav-media").addClass("active");
      const toolbarOptions = [
         ['bold', 'italic', 'underline', 'strike'],
         ['blockquote', 'code-block'],
@@ -163,6 +170,7 @@ img {
         }
         $("#id").val(dataId)
         $("#title").val(newsData.title)
+        $("#author").val(newsData.author)
         quill2.root.innerHTML = newsData.description
         $("#created_at").val((newsData.created_at).slice(0,10))
         $("#modalEdit").modal('show');
