@@ -65,7 +65,7 @@
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.js"></script>
 <script>
-    $("#nav-news").addClass("active");
+    $("#nav-media").addClass("active");
 
     $('.custom-file-input').on('change', function() { 
         let fileName = $(this).val().split('\\').pop(); 

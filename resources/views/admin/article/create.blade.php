@@ -25,6 +25,12 @@
                         <input class="form-control" type="text" name="title" placeholder="Input Judul">
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label for="author" class="col-sm-2 col-form-label text-lg">Penulis</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="author" placeholder="Input Judul">
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <label for="description" class="text-lg">Deskripsi</label>
@@ -53,7 +59,7 @@
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.js"></script>
 <script>
-    $("#nav-article").addClass("active");
+    $("#nav-media").addClass("active");
 
     $('.custom-file-input').on('change', function() { 
         let fileName = $(this).val().split('\\').pop(); 
