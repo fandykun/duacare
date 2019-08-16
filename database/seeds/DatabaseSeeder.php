@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         $faker = Faker::create('id_ID');
 
-        $users_sql = base_path('_SQL\data-users.sql');
+        $users_sql = base_path('_SQL/data-users.sql');
         DB::unprepared(file_get_contents($users_sql));
         $users = User::all();
         foreach ($users as $user) {

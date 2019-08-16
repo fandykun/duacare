@@ -231,11 +231,11 @@ img.vert-move {
     border-right: 1px solid transparent;
     transform: scale(1, 0);
 }
-.our-team:hover .pic:before,
+/*.our-team:hover .pic:before,
 .our-team:hover .pic:after{
     border-color: #6ebff3;
     transform: scale(1);
-}
+}*/
 .our-team .pic img{
     width: 100%;
     height: auto;

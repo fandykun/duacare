@@ -8,7 +8,7 @@ use App\Event;
 use App\News;
 use App\Article;
 use App\FinancialReport;
-use App\Organizer;
+use App\User;
 
 class PagesController extends Controller
 {
@@ -28,8 +28,8 @@ class PagesController extends Controller
 
     public function getOrganizerPage()
     {
-        $organizers = Organizer::where('division', '!=', 'RM')->get();
-        $rms = Organizer::where('division', 'RM')->get(); 
+        $organizers = User::where('division', '!=', 'RM')->get();
+        $rms = User::where('division', 'RM')->get(); 
         return view('pages.organizer', compact('organizers', 'rms'));
     }
 

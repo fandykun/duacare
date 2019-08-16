@@ -35,6 +35,7 @@
 
 <section class="bg-gray section-padding pb-xl-5">
     <div class="container">
+      @if($news)
         <div class="row justify-content-center">
             <div class="col-12 col-md-5">
                 <div class="">
@@ -57,6 +58,7 @@
                  <img class="img-fluid rounded-0" style="object-fit: contain; width:auto; max-height:400px" src="{{ asset('storage/articles/'. $news->image ) }}" alt="{{$news->title}}">
             </div>
         </div>
+      @endif
     </div>
 </section>
 

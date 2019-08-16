@@ -14,6 +14,10 @@
       float: left;
     }
 
+    .row-flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
   </style>
 @endsection
 
@@ -47,19 +51,19 @@
                             <li><a href="javascript:void(0)" data-filter=".Finance">Finance</a></li>
                             <li><a href="javascript:void(0)" data-filter=".BnC">Branding & Communication</a></li>
                             <li><a href="javascript:void(0)" data-filter=".HRD">Human Resource</a></li>
-                            <li><a href="javascript:void(0)" data-filter=".Kwu">Entrepreneurship</a></li>
+                            <li><a href="javascript:void(0)" data-filter=".KWU">Entrepreneurship</a></li>
                         </ol>
                     </li>
                 </ul>
                 <div class="clearfix"></div>
             </div>
 
-            <div class="row justify-content-center" id="lightbox">
+            <div class="row row-flex justify-content-center" id="lightbox" style="display: flex;">
                 @foreach($organizers as $organizer)
-                    <div class="col-md-3 col-sm-6 element-item mb-4 {{$organizer->division}}">
-                        <div class="our-team">
+                    <div class="col-md-3 col-sm-6 element-item mb-4 {{$organizer->division}}" style="display: flex;">
+                        <div class="our-team" style="flex: 1">
                             <div class="pic">
-                                <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                                <img class="main-img" src="{{ asset('duacare-image/organizer/'.$organizer->name.'.png') }}" alt="">
                             </div>
                             <div class="team-content">
                                 <h3 class="title text-white">{{$organizer->name}}</h3>
@@ -101,7 +105,7 @@
                     <div class="col-md-3 col-sm-6 element-item mb-4">
                         <div class="our-team">
                             <div class="pic">
-                                <img src="{{ asset('duacare-image/dld.jpg') }}" alt="">
+                                <img class="main-img" src="{{ asset('duacare-image/organizer/'.$rm->name.'.png') }}" alt="">
                             </div>
                             <div class="team-content">
                                 <h3 class="title text-white">{{$rm->name}}</h3>
@@ -143,6 +147,13 @@
             $(this).addClass('active');
             var selector = $(this).attr('data-filter');
             $container.isotope({ filter: selector });
+        });
+        var image = "";
+        $(".main-img").mouseover(function(){
+            images = (this.src).replace('.png','');
+            this.src= `${images}1.png`
+        }).mouseout(function(){
+            this.src= `${images}.png`
         });
     });
 
