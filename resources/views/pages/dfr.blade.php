@@ -37,7 +37,7 @@
         </div>
         <div class="col-lg-7 col-md-6 about-content wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="0.5s">
           <h2 class="mb-4" style="color: grey; margin-bottom: 0; font-size: 42px">Duacare For Ramadhan</h2>
-          <p class="text-justify" style="line-height: 2.0">adalah kegiatan tahunan yang dilaksanakan pada bulan Ramadhan, kegiatan berupa acara pada desa yang membutuhkan meliputi pemeriksaan kesehatan, pengobatan gratis, sosialisasi, dan pembagian bahan-bahan pokok.</p>
+          <p class="text-justify" style="line-height: 2.0">Duacare tiap tahunnya juga tak pernah berhenti melakukan kegiatan bakti sosial di desa-desa atau panti asihan yang membutuhkan di penjuru Kabupaten Lumajang melalui kegiatan Duacare For Ramadhan (DFR). Berbagai kegiatan sosial berbasis kerelawanan tumbuh dalam berbagai bentuk, pemberian sembako kepada keluarga kurang mampu, pemberian bantuan pada panti asuhan, penyuluhan pertanian, pemberian bantuan fasilitas SD, pemberian bantuan fasilitas musholla, pembuatan mini perpustakaan, hingga cek kesehatan dan pengobatan gratis merupakan contoh kegiatan yang Duacare rutin lakukan tiap tahunnya.</p>
           <a class="button" href="#more">Lihat Keseruannya</a>
         </div>
       </div>
