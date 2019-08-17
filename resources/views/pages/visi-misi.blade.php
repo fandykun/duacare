@@ -227,10 +227,14 @@
 
   <section class="section-margin">
     <div class="container">
+      <div class="section-intro text-center pb-90px">
+        <i class="far fa-question-circle icon-gradient"></i>
+        <h2>Tentang Kami</h2>
+      </div>
       <div class="row justify-content-center">
         <div class="col-12 col-md-8">
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xvKIcf1xuBQ" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/gGDN11LkqDc" allowfullscreen></iframe>
           </div>          
         </div>
       </div>
