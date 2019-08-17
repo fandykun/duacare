@@ -37,7 +37,7 @@
         </div>
         <div class="col-lg-7 col-md-6 about-content wow bounceInRight" data-wow-duration="1.0s" data-wow-delay="0.5s">
           <h2 class="mb-4" style="color: grey; margin-bottom: 0; font-size: 42px">Duacare Goes To School</h2>
-          <p class="text-justify" style="line-height: 2.0">adalah serangkaian kegiatan yang dilaksanakan di SMA 2 Lumajang yang diikuti oleh bermacam perguruan tinggi maupun akademi sebagai sarana penyaluran informasi tentang jenjang setelah sekolah menengah atas dan juga kegiatan talkshow dengan narasumber alumni SMA 2 Lumajang.</p>
+          <p class="text-justify" style="line-height: 2.0">Secara rutin setiap tahunnya, DGTS melalui rangkaian kegiatannya yaitu talkshow inspiratif, campus expo, dan bedah jurusan berupaya membantu mengedukasi mengenai perguruan tinggi siswa siswi SMA di Kabupaten Lumajang khususnya SMAN 2 Lumajang.</p>
           <a class="button" href="#more">Lihat Keseruannya</a>
         </div>
       </div>
@@ -54,7 +54,7 @@
         <div class="cd-h-timeline__line">
           <ol style="list-style: none;">
             <li><a href="#0" data-date="16/01/2014" class="cd-h-timeline__date cd-h-timeline__date--selected">Bedah Jurusan</a></li>
-            <li><a href="#0" data-date="28/02/2014" class="cd-h-timeline__date">Talkshow</a></li>
+            <li><a href="#0" data-date="28/02/2014" class="cd-h-timeline__date">Talkshow Inspiratif</a></li>
             <li><a href="#0" data-date="20/04/2014" class="cd-h-timeline__date">Campus Expo</a></li>
           </ol>
 
@@ -74,15 +74,15 @@
           <div class="cd-h-timeline__event-content containerss">
             <h2 class="cd-h-timeline__event-title text-center ">Bedah Jurusan</h2>
             <p class="cd-h-timeline__event-description text--subtle text-justify" style="line-height: 2"> 
-              Acara yang dihadiri oleh para alumni dari berbagai jurusan dan universitas atau perguruan tinggi, membentuk kegiatan model FGD (Forum Group Discussion) dalam bermacam-macam rumpun ilmu, para siswa siswi akan berkumpul sesuai minat dan bakat dan akan tanya jawab dengan para alumni yang berada pada rumpun ilmu tersebut.
+              Merupakan kegiatan yang diawali dengan pemaparan detail jurusan dilanjut diskusi intim dua arah yang diisi langsung oleh para mahasiswa yang berprestasi di jurusannya. Melalui kegiatan ini, para peserta dapat merasakan jadi mahasiswa dan mempelajari seluk beluk jurusan yang diinginkan agar tidak salah jurusan.
             </p>
           </div>
         </li>
         <li class="cd-h-timeline__event text-component">
           <div class="cd-h-timeline__event-content containerss">
-            <h2 class="cd-h-timeline__event-title text-center">Talkshow</h2>
+            <h2 class="cd-h-timeline__event-title text-center">Talkshow Inspiratif</h2>
             <p class="cd-h-timeline__event-description text--subtle text-justify" style="line-height: 2"> 
-             Seluruh siswa siswi SMA 2 Lumajang kelas 12 akan berkumpul mengikuti kegiatan talkshow dengan alumni SMA 2 Lumajang yang telah dipilih dan mampu meningkatkan semangat serta ambisi para murid.
+              Merupakan Kegiatan yang menghadirkan sejumlah pembicara yang juga termasuk alumni SMAN 2 Lumajang yang telah sukses dibidangnya dan akan berbagi pengalaman serta memberikan inspirasi bagi siswa-siswi SMAN 2 Lumajang.
             </p>
           </div>
         </li>
@@ -91,7 +91,7 @@
           <div class="cd-h-timeline__event-content containerss">
             <h2 class="cd-h-timeline__event-title text-center">Campus Expo</h2>
             <p class="cd-h-timeline__event-description text--subtle text-justify" style="line-height: 2"> 
-              Merupakan acara puncak yang dilaksanakan dalam 2 hari terdapat booth-booth dari berbacam universitas dari seluruh indonesia, di masing-masing booth akan terdapat sesi tanya jawab dan informasi mengenai kehidupan kampus dan perguruan tinggi.
+              Merupakan acara puncak dimana berbagai macam Perguruan Tinggi Negeri, Perguruan Tinggi Swasta, hingga Perguruan Tinggi Kedinasan di Indonesia akan membuka booth masing masing guna memberikan sosialisasi tentang kampus mereka, jurusan bahkan hingga kultur budaya kota tempat mereka menimba ilmu. Selain itu, melalui acara ini para peserta dapat berfoto dengan jas almamater kampus impian, dan juga membeli merchandise khas kampus impian.
             </p>
           </div>
         </li>
