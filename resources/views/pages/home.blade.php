@@ -97,7 +97,7 @@
         <div class="testimonial__item">
           <div class="row">
             <div class="col-md-3 col-lg-2 align-self-center">
-              <div class="testimonial__img">
+              <div class="testimonial__img mx-auto text-center">
                 @if($testimony->image)
                 <img class="card-img rounded-0" src="{{ asset('storage/testimony/'.$testimony->image) }}" alt="Testimony">
                 @else
