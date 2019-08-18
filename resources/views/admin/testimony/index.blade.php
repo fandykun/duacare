@@ -52,7 +52,7 @@ img {
                     <tr>
                         <td>{{ $testimony->title }}</td>
                         <td>{{ $testimony->detail }} </td>
-                        <td class="text-xs">{!! $testimony->description !!}</td>
+                        <td class="text-xs ql-editor">{!! $testimony->description !!}</td>
                         <td>
                             @if(!empty($testimony->image))
                                 <img src="{{ asset('storage/testimony/'.$testimony->image) }}">

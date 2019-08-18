@@ -92,7 +92,7 @@
                                 </a>
                                 <br>
                                 <small><i class="far fa-user mr-2"></i>{{ $article->author }}</small>
-                                <br>
+                                <br><hr>
                                 <div class="ellipsis-3 text-justify">
                                   {!! $article->description !!}
                                 </div>

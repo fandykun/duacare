@@ -1,6 +1,7 @@
 @extends('layouts.landing')
 
 @section('style')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css" />
   <style>
 .thumb-80 {
   position: relative;
@@ -42,9 +43,9 @@
                     <div class="feature-img">
                         <img class="img-fluid" src="{{ asset('storage/articles/'. $article->image) }}" alt="">
                     </div>
-                    <div class="blog_details">
+                    <div class="blog_details ql-editor">
                         <h2>{{ $article->title }}</h2>
-                        <ul class="blog-info-link mt-3 mb-4">
+                        <ul class="blog-info-link">
                             <li><i class="far fa-user"></i><a style="font-size: 15px;">{{ $article->author }}</a>
                             </li>
                         </ul>

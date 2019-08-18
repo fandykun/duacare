@@ -53,7 +53,7 @@ img {
                     @foreach($news as $berita)
                     <tr>
                         <td class="text-xs">{{ $berita->title }}</td>
-                        <td class="text-xs ellipsis-5">{!! $berita->description !!} </td>
+                        <td class="text-xs ellipsis-5 ql-editor">{!! $berita->description !!} </td>
                         <td>{{ $berita->events->title }}</td>
                         <td><img src="{{ asset('storage/news/'.$berita->image) }}"></td>
                         <td>

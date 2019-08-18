@@ -46,7 +46,7 @@
                     <tr>
                         <td>{{ $event->id }}</td>
                         <td>{{ $event->title }}</td>
-                        <td>{!! $event->description !!} </td>
+                        <td class="ql-editor">{!! $event->description !!} </td>
                         <td class="align-middle text-center">
                             <button class="btn btn-warning btn-icon-split btn-sm edit" style="margin-bottom: 6px;" data-id="{{ $event->id }}">
                                 <span class="icon text-white-50">

@@ -1,6 +1,7 @@
 @extends('layouts.landing')
 
 @section('style')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css" />
   <style>
 .thumb-80 {
   position: relative;
@@ -43,9 +44,9 @@
                     <div class="feature-img">
                         <img class="img-fluid" src="{{ asset('storage/news/'. $news->image) }}" alt="">
                     </div>
-                    <div class="blog_details ml-4">
+                    <div class="blog_details ml-4 ql-editor">
                         <h2>{{ $news->title }}</h2>
-                        <ul class="blog-info-link mt-3 mb-4">
+                        <ul class="blog-info-link">
                             <li><a href="{{ url('/event'.'/'.str_replace(" ", "-", strtolower($news->events->title))) }}"><i class="far fa-user"></i>{{ $news->events->title }}</a></li>
                         </ul>
                         {!! $news->description !!}

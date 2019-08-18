@@ -54,7 +54,7 @@ img {
                     <tr>
                         <td class="text-xs">{{ $article->title }}</td>
                         <td class="text-xs">{{ $article->author }}</td>
-                        <td class="text-xs ellipsis-5">{!! $article->description !!} </td>
+                        <td class="text-xs ellipsis-5 ql-editor">{!! $article->description !!} </td>
                         <td><img src="{{ asset('storage/articles/'.$article->image) }}"></td>
                         <td>
                             {{ \Carbon\Carbon::parse($article->created_at)->formatLocalized('%A,') }}<br>
