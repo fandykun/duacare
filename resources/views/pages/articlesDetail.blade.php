@@ -44,8 +44,12 @@
                     </div>
                     <div class="blog_details">
                         <h2>{{ $article->title }}</h2>
+                        <ul class="blog-info-link mt-3 mb-4">
+                            <li><i class="far fa-user"></i><a style="font-size: 15px;">{{ $article->author }}</a>
+                            </li>
+                        </ul>
+                        {!! $article->description !!}
                     </div>
-                    {!! $article->description !!}
                 </div>
                 <div class="navigation-top">
                     <div class="navigation-area">

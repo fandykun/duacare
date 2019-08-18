@@ -88,6 +88,7 @@
         ['bold', 'italic', 'underline', 'strike'],
         ['blockquote', 'code-block'],
         [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+        [{ align: '' }, { align: 'center' }, { align: 'justify' }],
         [{ 'script': 'sub'}, { 'script': 'super' }],
         ['clean']
     ];
