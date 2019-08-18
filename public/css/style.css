@@ -177,9 +177,13 @@
 
 .card-img-style-2 {
   display: block;
-  height: 300px; 
+  height: 196px; 
   width: auto; 
   overflow: hidden;
+}
+
+@media (max-width: 768px){
+
 }
 
 img.vert-move {
@@ -348,7 +352,6 @@ img.vert-move {
 
 .organizer-banner {
   background-image: url('../duacare-image/banner/organizer.jpg');
-  background-position: 0 -185px;
 }
 
 .contact-banner {

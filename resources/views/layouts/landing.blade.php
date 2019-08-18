@@ -15,9 +15,9 @@
   <link rel="stylesheet" href="{{ asset('safario/vendors/owl-carousel/owl.carousel.min.css') }}">
   <link rel="stylesheet" href="{{ asset('safario/vendors/flat-icon/font/flaticon.css') }}">
   <link rel="stylesheet" href="{{ asset('safario/vendors/nice-select/nice-select.css') }}">
-  <link rel="stylesheet" href="{{ asset('safario/css/style.css?v=1.1') }}">
+  <link rel="stylesheet" href="{{ asset('safario/css/style.css?v=1.2') }}">
   <link rel="stylesheet" href="{{ asset('wow/css/libs/animate.css')}}">
-  <link rel="stylesheet" href="{{ asset('css/style.css?v=1.1')}}">
+  <link rel="stylesheet" href="{{ asset('css/style.css?v=1.2')}}">
   <script>document.getElementsByTagName("html")[0].className += " js";</script>
   <link rel="stylesheet" href="{{ asset('horizontal-timeline/assets/css/style.css')}}">
   @yield('style')

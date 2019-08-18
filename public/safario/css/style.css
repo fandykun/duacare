@@ -851,6 +851,7 @@ h3,
 }
 
 .hero-banner-sm {
+  background-position: center center;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -880,10 +881,8 @@ h3,
 
 @media (max-width: 768px) {
   .hero-banner-sm {
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
+    background-size: cover; 
+    /*height:100vh;     */
     padding-top: 0px;
     /*padding-bottom: 0px;*/
   }
@@ -1807,13 +1806,13 @@ h3,
 }
 
 .blog_details {
-  padding: 30px 0 20px 10px;
+  padding: 30px 20px 20px 20px;
   /* box-shadow: 0px 10px 20px 0px rgba(221, 221, 221, 0.5); */
 }
 
 @media (min-width: 768px) {
   .blog_details {
-    padding: 60px 30px 35px 35px;
+    padding: 40px 35px 35px 35px;
   }
 }
 

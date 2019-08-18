@@ -76,8 +76,8 @@
                     <div class="col-lg-4 my-5 mb-lg-0 d-flex align-items-stretch">
                         <article class="blog_item">
                             <div class="blog_item_img">
-                                <div class="card-img-style-2">
-                                    <img class="card-img img-fluid rounded-0" src="{{ asset('storage/articles/'. $article->image ) }}" alt="{{$article->title}}">
+                                <div class="card-img-style-2 mx-auto text-center">
+                                    <img style="height: 100%; width: auto;" class="card-img img-fluid rounded-0" src="{{ asset('storage/articles/'. $article->image ) }}" alt="{{$article->title}}">
                                 </div>
                                 <a href="{{ url('article/'.$article->id.'/'.rawurlencode($article->title)) }}" class="blog_item_date">
                                     <h5>{{ \Carbon\Carbon::parse($article->created_at)->formatLocalized('%d')}}</h5>
@@ -90,11 +90,12 @@
                                 <a class="d-inline-block text-justify" href="{{ url('article/'.$article->id.'/'.rawurlencode($article->title)) }}">
                                     <h5>{{ $article->title }}</h5>
                                 </a>
+                                <br>
+                                <small><i class="far fa-user mr-2"></i>{{ $article->author }}</small>
+                                <br>
                                 <div class="ellipsis-3 text-justify">
                                   {!! $article->description !!}
                                 </div>
-                                <ul class="blog-info-link">
-                                </ul>
                             </div>
                         </article>
                     </div>
