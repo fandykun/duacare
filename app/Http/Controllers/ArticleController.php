@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Article;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -28,9 +29,9 @@ class ArticleController extends Controller
                 $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
                 $extension = $request->file('image')->getClientOriginalExtension();
                 $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-                $request->file('image')->storeAs('public/article', $fileNameToStore);
+                $request->file('image')->storeAs('public/articles', $fileNameToStore);
             } else
-                $fileNameToStore = 'dummy.png';
+                $fileNameToStore = 'dummy-news.png';
             Article::create([
                 'title' => $request->title,
                 'author' => $request->author,
@@ -60,13 +61,24 @@ class ArticleController extends Controller
     public function updateArticle(Request $request)
     {
         try {
-            Article::find($request->id)->update([
-                'title' => $request->title,
-                'author' => $request->author,
-                'description'  =>  $request->description,
-                'created_at'    =>  $request->created_at,
-                'updated_at'    =>  $request->created_at,
-            ]);
+            $article = Article::find($request->id);
+            $article->title = $request->title;
+            $article->author = $request->author;
+            $article->description = $request->description;
+            $article->created_at = $request->created_at;
+            $article->updated_at = $request->created_at;
+            if ($request->hasFile('image')) {
+                $filenameWithExt = $request->file('image')->getClientOriginalName();
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                $extension = $request->file('image')->getClientOriginalExtension();
+                $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+                $request->file('image')->storeAs('public/articles', $fileNameToStore);
+                if ($article->image != 'dummy-news.png')
+                    Storage::delete('public/articles/' . $article->image);
+            } else
+                $fileNameToStore = $article->image;
+            $article->image = $fileNameToStore;
+            $article->save();
         } catch (\Exception $e) {
             $eMessage = 'update article - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
             Log::emergency($eMessage);

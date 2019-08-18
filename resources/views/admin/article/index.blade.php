@@ -55,7 +55,7 @@ img {
                         <td class="text-xs">{{ $article->title }}</td>
                         <td class="text-xs">{{ $article->author }}</td>
                         <td class="text-xs ellipsis-5">{!! $article->description !!} </td>
-                        <td><img src="{{ asset('storage/article/'.$article->image) }}"></td>
+                        <td><img src="{{ asset('storage/articles/'.$article->image) }}"></td>
                         <td>
                             {{ \Carbon\Carbon::parse($article->created_at)->formatLocalized('%A,') }}<br>
                             {{ \Carbon\Carbon::parse($article->created_at)->formatLocalized('%d %B %Y') }}
@@ -109,13 +109,16 @@ img {
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Deskripsi</label>
-                        {{-- <textarea name="description" class="form-control" id="description" rows="10" required=></textarea> --}}
                         <div class="form-control" style="height: 300px;" class="mb-3" id="description"></div>
                     </div>
                     <div class="form-group">
                         <label for="">Tanggal</label>
                         <input type="datetime" class="form-control" id="created_at" required name="created_at">
                         <small>format : yyyy-mm-dd</small>
+                    </div>
+                    <div class="custom-file form-group col-sm-4">
+                        <input type="file" accept="image/*" class="custom-file-input" id="image" name="image">
+                        <label class="custom-file-label" for="">Ganti Gambar</label>
                     </div>
             </div>
             <div class="modal-footer">
@@ -152,7 +155,7 @@ img {
         modules: {
           toolbar: toolbarOptions
         },
-        placeholder: 'Deskripsi.',
+        placeholder: '  Deskripsi',
       });
 
     $(document).on('click', ".edit", async function() {
@@ -173,6 +176,11 @@ img {
         $("#author").val(newsData.author)
         quill2.root.innerHTML = newsData.description
         $("#created_at").val((newsData.created_at).slice(0,10))
+        $("#image").attr(newsData.image)
+        $('.custom-file-input').on('change', function() { 
+            let fileName = $(this).val().split('\\').pop(); 
+            $(this).next('.custom-file-label').addClass("selected").html(fileName); 
+        }); 
         $("#modalEdit").modal('show');
     });
 

@@ -32,7 +32,6 @@
 </div>
 </section>
 
-
 <section class="blog_area section-margin-large">
     <div class="container">
         <div class="row">
@@ -55,7 +54,9 @@
                         <a class="d-inline-block text-justify" href="{{ url('news/'.$berita->id.'/'.rawurlencode($berita->title)) }}">
                             <h2>{{ $berita->title }}</h2>
                         </a>
-                        <p class="text-justify">{{ $berita->description }}</p>
+                        <div class="text-justify">
+                            {!! $berita->description !!}
+                        </div>
                         <ul class="blog-info-link">
                             <li><a href="{{ url('/event'.'/'.str_replace(" ", "-", strtolower($berita->events->title))) }}"><i class="far fa-user"></i> {{ $berita->events->title }} </a></li>
                         </ul>

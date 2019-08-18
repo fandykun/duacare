@@ -93,8 +93,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Deskripsi</label>
-                        {{-- <textarea name="description" class="form-control" id="description" rows="10" required=></textarea> --}}
-                        <div class="form-control" style="height: 300px;" class="mb-3" id="description"></div>
+                        <textarea name="description" class="form-control" id="description" rows="6" required></textarea>
                     </div>
             </div>
             <div class="modal-footer">
@@ -119,22 +118,6 @@
 <script>
     $("#nav-event").addClass("active");
 
-    const toolbarOptions = [
-        ['bold', 'italic', 'underline', 'strike'],
-        ['blockquote', 'code-block'],
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-        [{ 'script': 'sub'}, { 'script': 'super' }],
-        ['clean']
-    ];
-    
-    const quill2 = new Quill('#description', {
-        theme: 'snow',
-        modules: {
-          toolbar: toolbarOptions
-        },
-        placeholder: 'Ubah Deskripsi disini',
-      });
-
     $(document).on('click', ".edit", async function() {
         const dataId = $(this).attr('data-id');
         let newsData;
@@ -150,8 +133,7 @@
         }
         $("#id").val(dataId)
         $("#title").val(newsData.title)
-        // $("#description").val(newsData.description)
-        quill2.root.innerHTML = newsData.description
+        $("#description").val(newsData.description)
         $("#modalEdit").modal('show');
     });
 

@@ -90,9 +90,10 @@
                                 <a class="d-inline-block text-justify" href="{{ url('article/'.$article->id.'/'.rawurlencode($article->title)) }}">
                                     <h5>{{ $article->title }}</h5>
                                 </a>
-                                <p class="ellipsis-3 text-justify">{{ $article->description }}</p>
+                                <div class="ellipsis-3 text-justify">
+                                  {!! $article->description !!}
+                                </div>
                                 <ul class="blog-info-link">
-                                    {{-- <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li> --}}
                                 </ul>
                             </div>
                         </article>

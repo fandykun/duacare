@@ -105,7 +105,6 @@ img {
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Deskripsi</label>
-                        {{-- <textarea name="description" class="form-control" id="description" rows="10" required=></textarea> --}}
                         <div class="form-control" style="height: 300px;" class="mb-3" id="description"></div>
                     </div>
                     <div class="form-group">
@@ -120,6 +119,10 @@ img {
                         <label for="">Tanggal</label>
                         <input type="datetime" class="form-control" id="created_at" required name="created_at">
                         <small>format : yyyy-mm-dd</small>
+                    </div>
+                    <div class="custom-file form-group col-sm-4">
+                        <input type="file" accept="image/*" class="custom-file-input" id="image" name="image">
+                        <label class="custom-file-label" for="">Ganti Gambar</label>
                     </div>
             </div>
             <div class="modal-footer">
@@ -156,7 +159,7 @@ img {
         modules: {
           toolbar: toolbarOptions
         },
-        placeholder: 'Deskripsi.',
+        placeholder: '  Deskripsi',
       });
 
     $(document).on('click', ".edit", async function() {
@@ -174,10 +177,14 @@ img {
         }
         $("#id").val(dataId)
         $("#title").val(newsData.title)
-        // $("#description").val(newsData.description)
         quill2.root.innerHTML = newsData.description
         $("#category").val(newsData.event_id)
         $("#created_at").val((newsData.created_at).slice(0,10))
+        $("#image").attr(newsData.image)
+        $('.custom-file-input').on('change', function() { 
+            let fileName = $(this).val().split('\\').pop(); 
+            $(this).next('.custom-file-label').addClass("selected").html(fileName); 
+        }); 
         $("#modalEdit").modal('show');
     });
 

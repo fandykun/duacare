@@ -150,5 +150,16 @@ img {
           }
         });
     });
+
+    $("#edit-form").submit(function(e) {
+        var editor = document.querySelector('#description')
+        var html = editor.children[0].innerHTML
+        if (!html.length) {
+          alert("Cannot be empty!");
+          e.preventDefault();
+          return false;
+        }
+        $("input[name='description']").val(html);
+      });
 </script>
 @endsection

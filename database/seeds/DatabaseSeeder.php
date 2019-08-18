@@ -74,38 +74,38 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        // $newsTitle = [
-        //     'Duacare Goes To School hadirkan alumni dari Institut Ternak Lele',
-        //     'Beasiswa Duacare memfasilitasi biaya siswa SMAN 2 Lumajang hingga lulus',
-        //     'Duacarecamp 2021 berlokasi di Puncak Semeru'
-        // ];
+        $newsTitle = [
+            'Duacare Goes To School hadirkan alumni dari Institut Ternak Lele',
+            'Beasiswa Duacare memfasilitasi biaya siswa SMAN 2 Lumajang hingga lulus',
+            'Duacarecamp 2021 berlokasi di Puncak Semeru'
+        ];
 
-        // $newsDescription = $testimoniesDescription;
-        // $newsImage = 'dummy-news.png';
-        // $newsEventID = [2, 1, 4];
+        $newsDescription = $testimoniesDescription;
+        $newsImage = 'dummy-news.png';
+        $newsEventID = [2, 1, 4];
 
-        // for ($j = 0; $j < 10; $j++) {
-        //     for ($i = 0; $i < count($newsTitle); $i++) {
+        for ($j = 0; $j < 10; $j++) {
+            for ($i = 0; $i < count($newsTitle); $i++) {
 
-        //         $newsCreatedAt = Carbon::createFromTimeStamp($faker->dateTimeBetween('-30 days', '-2 days')->getTimestamp());
+                $newsCreatedAt = Carbon::createFromTimeStamp($faker->dateTimeBetween('-30 days', '-2 days')->getTimestamp());
 
-        //         News::create([
-        //             'title' => $newsTitle[$i] . '-' . $j,
-        //             'description' => $newsDescription[$i],
-        //             'image' => $newsImage,
-        //             'event_id' => $newsEventID[$i],
-        //             'created_at' => $newsCreatedAt
-        //         ]);
+                News::create([
+                    'title' => $newsTitle[$i] . '-' . $j,
+                    'description' => $newsDescription[$i],
+                    'image' => $newsImage,
+                    'event_id' => $newsEventID[$i],
+                    'created_at' => $newsCreatedAt
+                ]);
 
-        //         Article::create([
-        //             'title' => $newsTitle[$i] . '-' . $j,
-        //             'author' => 'Lani',
-        //             'description' => $newsDescription[$i],
-        //             'image' => $newsImage,
-        //             'created_at' => $newsCreatedAt
-        //         ]);
-        //     }
-        // }
+                Article::create([
+                    'title' => $newsTitle[$i] . '-' . $j,
+                    'author' => 'Lani',
+                    'description' => $newsDescription[$i],
+                    'image' => $newsImage,
+                    'created_at' => $newsCreatedAt
+                ]);
+            }
+        }
 
         // //Financial Report
         // for ($i = 0; $i < 10; $i++) {

@@ -68,14 +68,14 @@ img {
                         <td>{{ $user->twitter }}</td>
                         <td>{{ $user->linkedin }}</td>
                         <td>{{ $user->instagram }}</td>
-                        <td><img src="{{ asset('storage/user/'.$user->image) }}"></td>
+                        <td><img src="{{ asset('duacare-image/organizer/'.$user->name.'.png') }}" style="width: 100px;"></td>
                         <td class="align-middle text-center">
-                            <button class="btn btn-warning btn-icon-split btn-sm edit" data-id="{{ $user->id }}">
+                            <button class="btn btn-warning btn-icon-split btn-sm edit my-2" data-id="{{ $user->id }}">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-info-circle"></i>
                                 </span>
                                 <span class="text">Edit</span>
-                            </button>
+                            </button><br>
                             <button class="btn btn-danger btn-icon-split btn-sm delete" data-id="{{ $user->id }}">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>

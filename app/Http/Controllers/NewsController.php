@@ -65,14 +65,24 @@ class NewsController extends Controller
     public function updateNews(Request $request)
     {
         try {
-
-            News::find($request->id)->update([
-                'title' => $request->title,
-                'description'  =>  $request->description,
-                'event_id' =>  $request->event_id,
-                'created_at'    =>  $request->created_at,
-                'updated_at'    =>  $request->created_at,
-            ]);
+            $news = News::find($request->id);
+            $news->title = $request->title;
+            $news->description = $request->description;
+            $news->event_id = $request->event_id;
+            $news->created_at = $request->created_at;
+            $news->updated_at = $request->created_at;
+            if ($request->hasFile('image')) {
+                $filenameWithExt = $request->file('image')->getClientOriginalName();
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                $extension = $request->file('image')->getClientOriginalExtension();
+                $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+                $request->file('image')->storeAs('public/news', $fileNameToStore);
+                if ($news->image != 'dummy-news.png')
+                    Storage::delete('public/news/' . $news->image);
+            } else
+                $fileNameToStore = $news->image;
+            $news->image = $fileNameToStore;
+            $news->save();
         } catch (\Exception $e) {
             $eMessage = 'update news - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
             Log::emergency($eMessage);

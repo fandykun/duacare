@@ -110,7 +110,11 @@ img {
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Deskripsi</label>
-                        <div class="form-control" style="height: 300px;" class="mb-3" id="description"></div>
+                        <textarea name="description" class="form-control" id="description" rows="8" required></textarea>
+                    </div>
+                    <div class="custom-file form-group col-sm-4">
+                        <input type="file" accept="image/*" class="custom-file-input" id="image" name="image">
+                        <label class="custom-file-label" for="">Ganti Gambar</label>
                     </div>
             </div>
             <div class="modal-footer">
@@ -129,28 +133,11 @@ img {
 
 @endsection
 
-
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     $("#nav-testimony").addClass("active");
-
-    const toolbarOptions = [
-        ['bold', 'italic', 'underline', 'strike'],
-        ['blockquote', 'code-block'],
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-        [{ 'script': 'sub'}, { 'script': 'super' }],
-        ['clean']
-    ];
-    
-    const quill2 = new Quill('#description', {
-        theme: 'snow',
-        modules: {
-          toolbar: toolbarOptions
-        },
-        placeholder: 'Ubah Deskripsi disini',
-      });
 
     $(document).on('click', ".edit", async function() {
         const dataId = $(this).attr('data-id');
@@ -168,8 +155,14 @@ img {
         $("#id").val(dataId)
         $("#title").val(newsData.title)
         $("#detail").val(newsData.detail)
-        quill2.root.innerHTML = newsData.description
+        $("#description").val(newsData.description)
+        $("#image").attr(newsData.image)
+        $('.custom-file-input').on('change', function() { 
+            let fileName = $(this).val().split('\\').pop(); 
+            $(this).next('.custom-file-label').addClass("selected").html(fileName); 
+        });
         $("#modalEdit").modal('show');
+
     });
 
     $(document).on('click', ".delete", async function() {

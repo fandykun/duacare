@@ -29,37 +29,19 @@ class PagesController extends Controller
     public function getOrganizerPage()
     {
         $organizers = User::where('division', '!=', 'RM')->get();
-        $rms = User::where('division', 'RM')->get(); 
+        $rms = User::where('division', 'RM')->get();
         return view('pages.organizer', compact('organizers', 'rms'));
-    }
-
-    private function getNumberFromMonthName($month)
-    {
-        $monthName = [
-            'Januari', 'Februari', 'Maret', 'April',
-            'Mei', 'Juni', 'Juli', 'Agustus',
-            'September', 'Oktober', 'November', 'Desember'
-        ];
-        return $monthName[$month];
     }
 
     public function getFinanceReportPage()
     {
-        // $financialReports = FinancialReport::all()->first();
-        // $monthName = [
-        //     'Januari', 'Februari', 'Maret', 'April',
-        //     'Mei', 'Juni', 'Juli', 'Agustus',
-        //     'September', 'Oktober', 'November', 'Desember'
-        // ];
-        // $test = array_search($financialReports->month, $monthName) + 1;
-
-        //sek gak wero carane nge-custom sort gawe karo bulan
         $financialReports = FinancialReport::orderBy('year', 'ASC')->get();
 
         return view('pages.finance-report', compact('financialReports'));
     }
 
-    public function getFinanceReportData(){
+    public function getFinanceReportData()
+    {
         $financialReports = FinancialReport::all();
         return response()->json($financialReports);
     }

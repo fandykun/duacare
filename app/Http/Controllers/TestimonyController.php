@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class TestimonyController extends Controller
 {
@@ -62,10 +63,17 @@ class TestimonyController extends Controller
     public function updateTestimony(Request $request)
     {
         try {
-            Testimony::find($request->id)->update([
-                'title' => $request->title,
-                'description'  =>  $request->description
-            ]);
+            $testimony = Testimony::find($request->id);
+            $testimony->title = $request->title;
+            $testimony->description = $request->description;
+            if ($request->hasFile('image')) {
+                $imageName = $request->file('image')->getClientOriginalName();
+                $request->file('image')->storeAs('public/testimony', $imageName);
+                if ($testimony->image != NULL)
+                    Storage::delete('public/testimony/' . $testimony->image);
+            } else $imageName = $testimony->image;
+            $testimony->image = $imageName;
+            $testimony->save();
         } catch (\Exception $e) {
             $eMessage = 'update Testimony - User: ' . Auth::user()->id . ', error: ' . $e->getMessage();
             Log::emergency($eMessage);
