@@ -54,6 +54,9 @@ Route::prefix('/admin')->group(function () {
 	Route::group(['middleware' => ['auth']], function () {
 		Route::get('/', 'AdminController@getDashboardPage');
 
+		Route::get('/change-password', 'AdminController@changePasswordPage');
+		Route::post('/change-password', 'AdminController@changePassword')->name('change.password');
+
 		//Event
 		Route::get('/event', 'EventController@index');
 		Route::get('/event/show/{id}', 'EventController@getEvent');

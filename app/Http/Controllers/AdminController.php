@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Validator;
+use App\User;
+use Auth;
 
 class AdminController extends Controller
 {
@@ -37,4 +41,38 @@ class AdminController extends Controller
 
         return (new StreamedResponse($callback, 200, $headers))->sendContent();
     }
+
+    public function changePasswordPage()
+    {
+        return view('admin.change-password');
+    }
+
+    public function changePassword(Request $request)
+    {
+        if (!Hash::check($request->old_password, Auth::user()->password)) {
+            return redirect()->back()->with(['error' => 'Wrong current password']);
+        }
+
+        $validator = Validator::make($request->all(), [
+            'password' => 'required|min:6|max:30|different:old_password|confirmed'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()
+                ->back()
+                ->withErrors($validator);
+        }
+
+        try {
+            $user = User::find(Auth::user()->id);
+            $user->update([
+                'password' => bcrypt($request->password)
+            ]);
+
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => 'Change Password Failed']);
+        }
+        return redirect()->back()->with(['success' => 'Change Password Success']);
+    }
+    
 }
