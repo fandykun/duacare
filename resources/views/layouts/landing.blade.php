@@ -6,6 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Duacare Official Website</title>
   <link rel="icon" href="{{ asset('duacare-image/logo-icon.png') }}" type="image/png">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146330249-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-146330249-1');
+  </script>
 
   <link rel="stylesheet" href="{{ asset('safario/vendors/bootstrap/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('safario/vendors/fontawesome/css/all.min.css') }}">
