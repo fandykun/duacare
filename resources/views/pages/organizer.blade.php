@@ -52,6 +52,7 @@
                             <li><a href="javascript:void(0)" data-filter=".BnC">Branding & Communication</a></li>
                             <li><a href="javascript:void(0)" data-filter=".HRD">Human Resource</a></li>
                             <li><a href="javascript:void(0)" data-filter=".KWU">Entrepreneurship</a></li>
+                            <li><a href="javascript:void(0)" data-filter=".RM">Regional Manager</a></li>
                         </ol>
                     </li>
                 </ul>
@@ -87,22 +88,9 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
-            <br><br>
-        </div>
-    </div>
-    <hr>
-    <div id="tf-works mt-4">
-        <div class="container"> <!-- Container -->
-            <div class="section-title text-center center">
-                <h2>Regional Manager</h2>
-                <div class="clearfix"></div>
-            </div>
-            <div class="space"></div>
 
-            <div class="row justify-content-center" id="lightbox">
                 @foreach($rms as $rm)
-                    <div class="col-md-3 col-sm-6 element-item mb-4">
+                    <div class="col-md-3 col-sm-6 element-item mb-4 RM">
                         <div class="our-team">
                             <div class="pic">
                                 <img class="main-img" src="{{ asset('duacare-image/organizer/'.$rm->name.'.png') }}" alt="">
@@ -128,12 +116,12 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                @endforeach
             </div>
             <br><br>
         </div>
     </div>
-
+    <hr>
 @endsection
 
 @section('script')
